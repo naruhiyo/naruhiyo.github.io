@@ -1,0 +1,33 @@
+{
+  "name": "naruhiyo.github.io",
+  "version": "1.0.0",
+  "description": "A landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naruhiyo/naruhiyo-landing.git"
+  },
+  "keywords": [
+    "Github",
+    "Pages"
+  ],
+  "author": "hiyoko3,narugit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naruhiyo/naruhiyo-landing/issues"
+  },
+  "homepage": "https://github.com/naruhiyo/naruhiyo-landing#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
