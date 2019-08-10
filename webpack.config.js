@@ -14,7 +14,10 @@ module.exports = {
     main: [path.resolve(__dirname, 'src/main.tsx')]
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias: {
+        '@': path.resolve(__dirname, 'src/')
+    }
   },
   plugins: [
     new htmlWebpackPlugin({

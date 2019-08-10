@@ -15,9 +15,18 @@
     "experimentalDecorators": true,
     "esModuleInterop": true
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "test/spec/components/Hello.test.tsx", "test/spec/setUpTests.ts"],
   "exclude": [
+    "coverage",
     "dist",
-    "node_modules"
+    "node_modules",
+    "jest.config.js",
+    "jest.config.feature.js",
+    "jest-puppeteer.config.js",
+    "./src/setupTests.ts",
+    "./src/**/*.test.ts",
+    "./src/**/*.test.tsx",
+    "./feature/**/*.test.ts",
+    "./feature/**/*.test.tsx"
   ]
 }
