@@ -15,7 +15,7 @@
     "experimentalDecorators": true,
     "esModuleInterop": true
   },
-  "include": ["./src/**/*", "test/spec/components/Hello.test.tsx", "test/setUpTests.ts"],
+  "include": ["./src/**/*", "./test", "types/**/*.ts"],
   "exclude": [
     "coverage",
     "dist",

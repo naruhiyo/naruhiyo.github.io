@@ -89,7 +89,9 @@
     "webpack-serve": "^3.1.1"
   },
   "dependencies": {
+    "grommet": "^2.7.5",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2"
   }
 }
