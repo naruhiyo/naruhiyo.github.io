@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as style from '@/scss/Hello.scss';
+import * as style from '../scss/Hello.scss';
 
 export type HelloProps = {
   compiler: string;
