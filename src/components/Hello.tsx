@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as style from '../scss/Hello.scss';
-import 'normalize.css'
 import { Grommet, Box, Button } from 'grommet';
 
 export type HelloProps = {

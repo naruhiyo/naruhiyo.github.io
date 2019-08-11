@@ -1,11 +1,15 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react"
+import * as ReactDOM from "react-dom"
+import { BrowserRouter, Route } from "react-router-dom"
 
-import 'normalize.css'
+import "normalize.css"
 
-import { Hello } from './components/Hello';
+import { Hello } from "./components/Hello"
 
 ReactDOM.render(
-  <Hello compiler="TypeScript" framework="React" />,
-  document.getElementById('root')
-);
+  <BrowserRouter>
+    <Route path="/" component={Hello} />
+    <Route path="hello" component={Hello} />
+  </BrowserRouter>,
+  document.getElementById("root")
+)
