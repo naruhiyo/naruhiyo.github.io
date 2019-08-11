@@ -142,6 +142,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.yml$/,
+        use: [{ loader: 'json-loader' }, { loader: 'yaml-flat-loader' }]
       }
     ]
   },

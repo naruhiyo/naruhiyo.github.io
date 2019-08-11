@@ -1,16 +1,18 @@
-import * as yaml from "js-yaml"
-import i18n from "i18next"
+import i18next from "i18next"
 import { initReactI18next } from "react-i18next"
-
-import en from '../i18n/en.json'
-import ja from '../i18n/ja.json'
+import enYml from "../i18n/en.yml"
+import jaYml from "../i18n/ja.yml"
 
 const resources = {
-  ja: ja,
-  en: en,
-};
+  ja: {
+    translation: jaYml
+  },
+  en: {
+    translation: enYml
+  }
+}
 
-i18n
+i18next
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
@@ -22,6 +24,5 @@ i18n
       escapeValue: false // react already safes from xss
     }
   })
-  console.warn(resources);
 
-export default i18n
+export default i18next

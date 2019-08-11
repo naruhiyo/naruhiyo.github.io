@@ -1,16 +1,12 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import { BrowserRouter, Route } from "react-router-dom"
 import './plugins/i18n';
 
 import "normalize.css"
 
-import { Hello } from "./components/Hello"
+import App from "./components/App"
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Route path="/" component={Hello} />
-    <Route path="hello" component={Hello} />
-  </BrowserRouter>,
+  <App/>,
   document.getElementById("root")
 )
