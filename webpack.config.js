@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const environment = process.env.NODE_ENV || 'development';
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -14,9 +16,27 @@ module.exports = {
     main: [path.resolve(__dirname, 'src/main.tsx')]
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: [
+      '.ts',
+      '.tsx',
+      '.js',
+      '.json',
+      '.css',
+      '.scss',
+      '.jpg',
+      '.jpeg',
+      '.gif',
+      '.png',
+      '.bmp',
+      '.tiff',
+      'woff',
+      'eot',
+      'ttf',
+      '.svg',
+      '.ico'
+    ],
     alias: {
-        '@': path.resolve(__dirname, 'src/')
+      '@': path.resolve(__dirname, 'src/')
     }
   },
   plugins: [
@@ -43,6 +63,10 @@ module.exports = {
         'msapplication-TileImage': '',
         'msapplication-TileColor': '#a1d8e6'
       }
+    }),
+    new ExtractTextPlugin({
+      filename: isProduction ? "[name].[chunkhash].css" : "[name].css",
+      allChunks: true
     })
   ],
   output: {
@@ -65,6 +89,59 @@ module.exports = {
         enforce: 'pre',
         test: /\.js$/,
         loader: 'source-map-loader'
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2,
+                modules: true,
+                sourceMap: !isProduction
+              }
+            },
+            {
+              loader: 'typed-css-modules-loader',
+              options: {
+                camelCase: true,
+                searchDir: './src',
+                outDir: './typings'
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: !isProduction,
+                plugins: [autoprefixer()]
+              }
+            },
+            {
+              loader: 'sass-loader'
+            }
+          ]
+        })
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
+      },
+      {
+        test: /\.(png|jpe?g|gif|bmp|tiff|woff|eot|ttf|svg|ico)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: isProduction ? '[name]-[hash].[ext]' : '[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },

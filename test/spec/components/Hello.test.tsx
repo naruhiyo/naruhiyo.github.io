@@ -1,4 +1,4 @@
-import { Hello } from '../../src/components/Hello';
+import { Hello } from '../../../src/components/Hello';
 import { shallow } from 'enzyme';
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
