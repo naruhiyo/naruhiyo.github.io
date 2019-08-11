@@ -1,24 +1,14 @@
+import * as yaml from "js-yaml"
 import i18n from "i18next"
 import { initReactI18next } from "react-i18next"
 
-// the translations
-// (tip move them in a JSON file and import them)
+import en from '../i18n/en.json'
+import ja from '../i18n/ja.json'
+
 const resources = {
-  en: {
-    translation: {
-			hello_world: 'Welcome to React and react-i18next',
-			hoge: 'hoge',
-			fuga: 'fuga'
-    }
-	},
-	ja: {
-		translation: {
-			hello_world: 'ようこそ React and react-i18next',
-			hoge: 'ほげ',
-			fuga: 'ふが'
-		}
-	}
-}
+  ja: ja,
+  en: en,
+};
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -32,5 +22,6 @@ i18n
       escapeValue: false // react already safes from xss
     }
   })
+  console.warn(resources);
 
 export default i18n
