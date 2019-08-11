@@ -39,12 +39,12 @@ $ storybook
 |webpack|dev|Yes||
 |react|dev, prod|Yes||
 |react-dom|dev, prod|Yes||
-|react-router|dev, prodYes||
+|react-router|dev, prodYes|Yes|
 |react-router-dom|dev, prod|Yes||
 |react-i18next|dev, prod|Yes||
 |i18next|dev, prod|Yes||
 |typescript|dev|Yes||
-|css-modules|dev|?|It works but error messages are shown|
+|css-modules|dev|Yes||
 |scss|dev|Yes||
 |storybook|test|[No](https://github.com/naruhiyo/naruhiyo.github.io/issues/2)||
 |jest|test|[No](https://github.com/naruhiyo/naruhiyo.github.io/issues/2)||
@@ -56,7 +56,7 @@ $ storybook
 
 |name|in purpose|working?|note|
 |:--|:--|:--|:--|
-|grommet|dev, prod|Yes||
+|grommet|dev, prod|Yes|[documentation](https://v2.grommet.io/)|
 
 ### Licence
 
