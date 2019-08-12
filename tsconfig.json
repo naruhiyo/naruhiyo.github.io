@@ -15,7 +15,10 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "compilerOptions": {
+        "typeRoots": ["types", "node_modules_@types"]
+    }
   },
   "include": ["./src/**/*", "./test", "types/**/*.ts", "typings/yml.d.ts"],
   "exclude": [
