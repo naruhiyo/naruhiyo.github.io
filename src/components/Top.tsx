@@ -5,7 +5,7 @@ import Header from './layouts/Header'
 import { Box, Grid } from 'grommet'
 
 export default () => {
-	const { t, i18n } = useTranslation()
+	const { t } = useTranslation()
 
 	return (
 		<div>

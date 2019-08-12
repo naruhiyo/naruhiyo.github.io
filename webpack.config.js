@@ -108,7 +108,7 @@ module.exports = {
               options: {
                 camelCase: true,
                 searchDir: './src',
-                outDir: './typings'
+                outDir: './types'
               }
             },
             {
@@ -132,12 +132,12 @@ module.exports = {
         })
       },
       {
-        test: /\.(png|jpe?g|gif|bmp|tiff|woff|eot|ttf|svg|ico)$/,
+        // test: /\.(png|jpe?g|gif|bmp|tiff|woff|eot|ttf|svg|ico)$/,
+        test: /\.(jpg|png)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
-              limit: 8192,
               name: isProduction ? '[name]-[hash].[ext]' : '[name].[ext]'
             }
           }

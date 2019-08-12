@@ -3,5 +3,5 @@
 node_modules
 *package-lock.json
 dist
-*typings/**/*.scss.d.ts
+*types/**/*.d.ts
 *stories/**/*.js
