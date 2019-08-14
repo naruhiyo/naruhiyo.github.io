@@ -4,17 +4,19 @@ footer:
   copyright: "narugit and hiyoko3"
 colaborators:
   - profile:
-      name: "narugit"
-      image: ""
+      name: "@narugit"
+      image: "public/images/narugit.png"
+      bio: "Special manager and Genius engineer"
       link:
         github: "https://github.com/narugit"
         qiita: ""
   - profile:
-      name: "hiyoko3"
-      image: ""
+      name: "@hiyoko3"
+      image: "public/images/hiyoko3.png"
+      bio: "Backend engineer"
       link:
         github: "https://github.com/hiyoko3"
-        portofolio: "https://hiyoko3.github.io"
+        portfolio: "https://hiyoko3.github.io"
         qiita: ""
 products:
   - product:

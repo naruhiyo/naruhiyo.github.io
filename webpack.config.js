@@ -1,10 +1,12 @@
 const path = require('path');
-const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WriteFileWebpackPlugin = require('write-file-webpack-plugin');
 const environment = process.env.NODE_ENV || 'development';
 const isProduction = process.env.NODE_ENV === 'production';
+const publicPath = isProduction ? 'public/images' : 'dist/public/images'
 
 module.exports = {
   // If mode is "production", the app is optimized.
@@ -13,7 +15,7 @@ module.exports = {
   mode: environment,
   devtool: isProduction ? false : 'source-map',
   entry: {
-    main: [path.resolve(__dirname, 'src/main.tsx')]
+    main: path.resolve(__dirname, 'src/main.tsx')
   },
   resolve: {
     extensions: [
@@ -37,7 +39,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new htmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
       minify: {
         html5: true,
@@ -64,10 +66,17 @@ module.exports = {
     new ExtractTextPlugin({
       filename: isProduction ? "[name].[chunkhash].css" : "[name].css",
       allChunks: true
-    })
+    }),
+    new CopyWebpackPlugin([
+      { 
+        from: path.resolve(__dirname, 'src/assets/images'), 
+        to: path.resolve(__dirname, publicPath)
+      },
+    ]),
+    new WriteFileWebpackPlugin()
   ],
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: isProduction ? '[name].[chunkhash].js' : '[name].js'
   },
   optimization: {

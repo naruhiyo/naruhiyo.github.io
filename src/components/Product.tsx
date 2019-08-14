@@ -1,18 +1,24 @@
+import { Box, Heading } from 'grommet'
 import * as React from "react"
-import { useTranslation } from "react-i18next"
 
 type productProps = {
+	key: number;
+	id: number;
 	product: {
 		name: string;
 		image: string;
-		desc: string;	
+		desc: string;
 	}
 }
 
 export default (props: productProps) => {
-	const { t } = useTranslation()
-
 	return (
-		<div></div>
+		<Box
+			elevation="large"
+			key={props.id}
+			pad="small"
+		>
+    <Heading level={3}>{props.product.name}</Heading>
+  </Box>
 	);
 }

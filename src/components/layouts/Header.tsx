@@ -1,7 +1,6 @@
 import { Box, Grid, Image, Select, Heading } from 'grommet'
 import * as React from 'react';
 import { useTranslation } from "react-i18next"
-import brandLogoPng from '../../assets/brand-logo.png'
 
 export default () => {
 	const { t } = useTranslation()
@@ -26,7 +25,7 @@ export default () => {
 					>
 					<Box direction="row" align="center">
 						<Box width="xxsmall" height="xxsmall">
-							<Image fit="cover" src={brandLogoPng} />
+							<Image fit="cover" src="public/images/brand-logo.png" />
 						</Box>
 						<Box pad={{ horizontal: "small" }}>
 							<Heading level="3">{ HeaderText.title }</Heading>
