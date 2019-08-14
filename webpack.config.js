@@ -34,10 +34,7 @@ module.exports = {
       'ttf',
       '.svg',
       '.ico'
-    ],
-    alias: {
-      '@': path.resolve(__dirname, 'src/')
-    }
+    ]
   },
   plugins: [
     new htmlWebpackPlugin({
@@ -144,8 +141,8 @@ module.exports = {
         ]
       },
       {
-        test: /\.yml$/,
-        use: [{ loader: 'json-loader' }, { loader: 'yaml-flat-loader' }]
+        test: /\.(yml|yaml)$/,
+        use: [{ loader: 'json-loader' }, { loader: 'yaml-loader' }]
       }
     ]
   },

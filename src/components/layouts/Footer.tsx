@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next"
 
 export default () => {
 	const { t, i18n } = useTranslation()
+	const FooterText: any = t('footer')
 
 	return (
 		<Grid
@@ -15,7 +16,7 @@ export default () => {
 				]}
 			>
 			<Box gridArea="footer" align="center" justify="center">
-				<Text margin="small">&copy; { t('footer.copyright') }</Text>
+				<Text margin="small">&copy; { FooterText.copyright }</Text>
 			</Box>
 		</Grid>
 	)

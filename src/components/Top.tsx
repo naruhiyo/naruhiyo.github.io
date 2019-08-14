@@ -1,11 +1,18 @@
+import { Box, Grid, Grommet, Heading } from 'grommet'
 import * as React from "react"
 import { useTranslation } from "react-i18next"
 import Footer from './layouts/Footer'
 import Header from './layouts/Header'
-import { Grommet, Box, Grid } from 'grommet'
+import Product from './Product'
+import Colaborator from './Colaborator'
 
 export default () => {
 	const { t } = useTranslation()
+	const colaborators: [] = t('colaborators');
+	const products: [] = t('products');
+
+	const productList = products.map(v => (<Product product={v}/>));
+	const colaboratorList = colaborators.map(v => (<Colaborator profile={v}/>));
 
 	return (
 		<Grommet>
@@ -23,13 +30,13 @@ export default () => {
 			>
 			</Grid>
 			<Box gridArea="colaborator" pad="medium">
-				<p>Colaborators</p>
+				<Heading level="4">Colaborators</Heading>
 			</Box>
 			<Box gridArea="product" pad="medium">
-				<p>Products</p>
+				<Heading level="4">Products</Heading>
 			</Box>
 			<Box gridArea="contact" pad="medium">
-				<p>Contact Us</p>
+				<Heading level="4" >Contact Us</Heading>
 			</Box>
 		<Footer />
 		</Grommet>

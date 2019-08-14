@@ -2,6 +2,26 @@ header:
   title: "NaruHiyo"
 footer:
   copyright: "narugit and hiyoko3"
-hello_world: "ようこそ React and react-i18next"
-hoge: "ほげ"
-fuga: "ふが"
+colaborators:
+  - profile:
+      name: "narugit"
+      image: ""
+      link:
+        github: "https://github.com/narugit"
+        qiita: ""
+  - profile:
+      name: "hiyoko3"
+      image: ""
+      link:
+        github: "https://github.com/hiyoko3"
+        portofolio: "https://hiyoko3.github.io"
+        qiita: ""
+products:
+  - product:
+      name: "Memoma"
+      image: ""
+      desc: ""
+  - product:
+      name: "Partytion"
+      image: ""
+      desc: ""
