@@ -34,7 +34,7 @@ export default () => {
 
 					<Box width="xsmall">
 						<Select
-							options={['ja', 'en']}
+							options={['ja']}
 							value={value}
 							onChange={({ option }) => setValue(option) }
 						/>

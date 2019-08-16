@@ -2,28 +2,38 @@ header:
   title: "NaruHiyo"
 footer:
   copyright: "narugit and hiyoko3"
-colaborators:
-  - profile:
-      name: "@narugit"
-      image: "public/images/narugit.png"
-      bio: "Special manager and Genius engineer"
-      link:
-        github: "https://github.com/narugit"
-        qiita: ""
-  - profile:
-      name: "@hiyoko3"
-      image: "public/images/hiyoko3.png"
-      bio: "Backend engineer"
-      link:
-        github: "https://github.com/hiyoko3"
-        portfolio: "https://hiyoko3.github.io"
-        qiita: ""
+collaborators:
+  head: "Collaborators"
+  items:
+    - profile:
+        name: "@narugit"
+        image: "public/images/narugit.png"
+        bio: "Special manager and Genius engineer"
+        link:
+          github: "https://github.com/narugit"
+          portfolio: ""
+          qiita: "https://qiita.com/narugit"
+    - profile:
+        name: "@hiyoko3"
+        image: "public/images/hiyoko3.png"
+        bio: "Backend engineer"
+        link:
+          github: "https://github.com/hiyoko3"
+          portfolio: "https://hiyoko3.github.io"
+          qiita: "https://qiita.com/hiyoko3"
 products:
-  - product:
-      name: "Memoma"
-      image: ""
-      desc: ""
-  - product:
-      name: "Partytion"
-      image: ""
-      desc: ""
+  head: "Products"
+  items:
+    - product:
+        name: "Memoma"
+        image: "public/images/memoma.png"
+        desc: "Electronを利用したクロスプラットフォーム対応の3カラム型メモアプリ。Markdown記法に対応"
+        github: "https://github.com/naruhiyo/Memoma"
+    - product:
+        name: "Partytion"
+        image: "public/images/no_image.png"
+        desc: "製作中...!"
+        github: "https://github.com/naruhiyo/partytion"
+contact:
+  head: "Contact us"
+  message: "`***@gmail.com`\n`***` には *sb.gm.0823* と入力してください。"

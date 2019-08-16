@@ -1,4 +1,5 @@
-import { Box, Heading } from 'grommet'
+import { Box, Button, Heading, Image, Text } from 'grommet'
+import { Github } from 'grommet-icons'
 import * as React from "react"
 
 type productProps = {
@@ -8,6 +9,7 @@ type productProps = {
 		name: string;
 		image: string;
 		desc: string;
+		github: string;
 	}
 }
 
@@ -18,7 +20,19 @@ export default (props: productProps) => {
 			key={props.id}
 			pad="small"
 		>
-    <Heading level={3}>{props.product.name}</Heading>
-  </Box>
+			<Heading level={3} margin="xsmall">{props.product.name}</Heading>
+
+			<Box width="medium" height="small" alignSelf="center">
+				<Image margin="xxsmall" fit="contain" src={props.product.image} ></Image>
+			</Box>
+
+			<Text textAlign="center" margin="small" size="small">{props.product.desc}</Text>
+
+			<Box direction="row" gap="small" pad="small" justify="start">
+				{props.product.github && (
+					<Button href={props.product.github} target="_blank" icon={<Github />} plain></Button>
+				)}
+			</Box>
+		</Box>
 	);
 }

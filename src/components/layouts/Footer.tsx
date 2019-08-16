@@ -3,7 +3,7 @@ import * as React from "react"
 import { useTranslation } from "react-i18next"
 
 export default () => {
-	const { t, i18n } = useTranslation()
+	const { t } = useTranslation()
 	const FooterText: any = t('footer')
 
 	return (

@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFileWebpackPlugin = require('write-file-webpack-plugin');
 const environment = process.env.NODE_ENV || 'development';
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = environment === 'production';
 const publicPath = isProduction ? 'public/images' : 'dist/public/images'
 
 module.exports = {
