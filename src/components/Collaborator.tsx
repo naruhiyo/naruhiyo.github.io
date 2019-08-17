@@ -23,6 +23,7 @@ export default (props: collaboratorProps) => {
 			elevation="large"
 			key={props.id}
 			pad="xxsmall"
+			background="white"
 		>
 			<Box width="small" height="small" alignSelf="center">
 				<Image margin="xsmall" fit="cover" src={props.profile.image} ></Image>

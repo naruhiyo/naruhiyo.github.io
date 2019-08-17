@@ -4,7 +4,7 @@
   "description": "A landing page",
   "main": "index.js",
   "scripts": {
-    "tcm": "tcm src -p scss/**/*.scss -c -o ./types",
+    "tcm": "tcm src -p assets/scss/**/*.scss -c -o ./types",
     "predev": "npm run tcm",
     "dev": "webpack-dev-server --config ./webpack.config.js",
     "prebuild": "npm run tcm",

@@ -19,6 +19,7 @@ export default (props: productProps) => {
 			elevation="large"
 			key={props.id}
 			pad="small"
+			background="white"
 		>
 			<Heading level={3} margin="xsmall">{props.product.name}</Heading>
 
