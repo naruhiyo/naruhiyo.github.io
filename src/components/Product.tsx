@@ -11,6 +11,7 @@ type productProps = {
 		desc: string;
 		github: string;
 	}
+	size: string
 }
 
 export default (props: productProps) => {
@@ -18,13 +19,14 @@ export default (props: productProps) => {
 		<Box
 			elevation="large"
 			key={props.id}
-			pad="small"
+			pad={props.size}
 			background="white"
+			margin="xsmall"
 		>
 			<Heading level={3} margin="xsmall">{props.product.name}</Heading>
 
 			<Box width="medium" height="small" alignSelf="center">
-				<Image margin="xxsmall" fit="contain" src={props.product.image} ></Image>
+				<Image fit="contain" src={props.product.image} ></Image>
 			</Box>
 
 			<Text textAlign="center" margin="small" size="small">{props.product.desc}</Text>

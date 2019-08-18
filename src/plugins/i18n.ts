@@ -1,8 +1,8 @@
 import i18next from "i18next"
 import i18nextBrowserLanguagedetector from "i18next-browser-languagedetector"
 import { initReactI18next } from "react-i18next"
-import enYml from "../i18n/en.yml"
-import jaYml from "../i18n/ja.yml"
+import enYml from "../assets/i18n/en.yml"
+import jaYml from "../assets/i18n/ja.yml"
 
 
 const resources = {

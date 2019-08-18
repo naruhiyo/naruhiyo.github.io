@@ -14,7 +14,8 @@ type collaboratorProps = {
 			portfolio: string;
 			qiita: string;
 		}
-	}
+	};
+	size: string
 }
 
 export default (props: collaboratorProps) => {
@@ -22,11 +23,11 @@ export default (props: collaboratorProps) => {
 		<Box
 			elevation="large"
 			key={props.id}
-			pad="xxsmall"
 			background="white"
+			margin="small"
 		>
 			<Box width="small" height="small" alignSelf="center">
-				<Image margin="xsmall" fit="cover" src={props.profile.image} ></Image>
+				<Image margin={ { vertical: props.size } } fit="contain" src={props.profile.image} ></Image>
 			</Box>
 			<Heading level={5} textAlign="center" margin={ { vertical: "small"} }>{props.profile.name}</Heading>
 
