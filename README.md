@@ -27,7 +27,7 @@ $ npm run test:spec # pr npm run test:spec:watch
 $ npm run test:feature
 
 # storybook
-$ storybook
+$ npm run storybook
 ```
 
 ### Dev Env

@@ -94,7 +94,10 @@ module.exports = {
       {
         enforce: 'pre',
         test: /\.js$/,
-        loader: 'source-map-loader'
+        use: [
+          { loader: 'source-map-loader' },
+          { loader: 'babel-loader' }
+        ]
       },
       {
         test: /\.scss$/,
