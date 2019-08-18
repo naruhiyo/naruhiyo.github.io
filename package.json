@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production ",
     "lint": "eslint --ext .ts --ext .tsx src/**/*.ts src/**/*.tsx",
     "lint:fix": "eslint --ext .ts --ext .tsx  src/**/*.ts src/**/*.tsx --fix",
-    "storybook": "start-storybook -p 9001 -s ./dist/public -c .storybook",
+    "storybook": "start-storybook -p 9001 -c .storybook -s ./dist",
     "build-storybook": "build-storybook",
     "precommit": "lint-staged"
   },
@@ -40,6 +40,8 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-info": "^5.1.11",
+    "@storybook/addon-options": "^5.1.11",
+    "@storybook/addon-viewport": "^5.1.11",
     "@storybook/react": "^5.1.11",
     "@types/i18next": "^12.1.0",
     "@types/react": "^16.9.2",
