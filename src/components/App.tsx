@@ -1,15 +1,15 @@
-import * as React from 'react';
-import { BrowserRouter, Route } from "react-router-dom"
-import Top from "./Top"
+import * as React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Top from './Top'
 
 export default class App extends React.Component {
-  public render() {
+  render() {
     return (
-			<div className="App">
-				<BrowserRouter>
-					<Route exact path="/" component={Top} />
-				</BrowserRouter>
+      <div className="App">
+        <BrowserRouter>
+          <Route exact path="/" component={Top} />
+        </BrowserRouter>
       </div>
-    );
+    )
   }
 }
