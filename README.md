@@ -1,14 +1,12 @@
 # naruhiyo landing page
 
-***Project portfilio***
+***NaruHiyo Project portfilio***
 
 - [Welcome!]()
 
-- [Documentation]()
-
 ## Getting Started
 
-```
+```sh
 # package install
 $ npm i
 
@@ -29,7 +27,7 @@ $ npm run test:spec # pr npm run test:spec:watch
 $ npm run test:feature
 
 # storybook
-$ storybook
+$ npm run storybook
 ```
 
 ### Dev Env
@@ -44,12 +42,10 @@ $ storybook
 |react-i18next|dev, prod|Yes||
 |i18next|dev, prod|Yes||
 |typescript|dev|Yes||
-|css-modules|dev|Yes||
 |scss|dev|Yes||
 |storybook|test|[No](https://github.com/naruhiyo/naruhiyo.github.io/issues/2)||
 |jest|test|[No](https://github.com/naruhiyo/naruhiyo.github.io/issues/2)||
-|redux|dev, prod|?|no install yet|
-|ts-int|test|?|no check yet|
+|es-lint|test|?|no check yet|
 |typedoc|doc|?|no install yet|
 
 ### UI Framework
