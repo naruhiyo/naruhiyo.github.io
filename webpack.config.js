@@ -8,8 +8,8 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const environment = process.env.NODE_ENV || 'development'
 const isProduction = environment === 'production'
-const publicPath = isProduction ? 'public' : 'dist'
-const resourcePath = `${publicPath}/resources`
+const publicPath = isProduction ? './' : 'dist'
+const resourcePath = `${publicPath}/public/resources`
 
 module.exports = {
   // If mode is 'production', the app is optimized.
@@ -18,7 +18,36 @@ module.exports = {
   mode: environment,
   devtool: isProduction ? false : 'source-map',
   entry: {
-    main: path.resolve(__dirname, 'src/main.tsx')
+    'public/main': path.resolve(__dirname, 'src/main.tsx')
+  },
+  output: {
+    path: path.resolve(__dirname, publicPath),
+    filename: isProduction ? '[name].[chunkhash].js' : '[name].js'
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        plugins: {
+          test: /src\/plugins/,
+          name: 'public/plugins',
+          chunks: 'initial',
+          enforce: true
+        },
+        grommet: {
+          test: /node_modules\/grommet/,
+          name: 'public/grommet',
+          chunks: 'initial',
+          enforce: true
+        },
+        vendor: {
+          test: /node_modules/,
+          name: 'public/vendor',
+          chunks: 'initial',
+          enforce: true
+        }
+      }
+    },
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   resolve: {
     extensions: [
@@ -79,17 +108,6 @@ module.exports = {
     ]),
     new WriteFileWebpackPlugin()
   ],
-  output: {
-    path: path.resolve(__dirname, publicPath),
-    filename: isProduction ? '[name].[chunkhash].js' : '[name].js'
-  },
-  optimization: {
-    splitChunks: {
-      name: 'vendor',
-      chunks: 'initial'
-    },
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-  },
   module: {
     rules: [
       {
@@ -104,6 +122,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
               loader: 'css-loader',
               options: {
@@ -135,8 +154,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader'
+          MiniCssExtractPlugin.loader,
+          'css-loader',
         ]
       },
       {
