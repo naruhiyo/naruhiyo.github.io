@@ -28,5 +28,13 @@
       "ecmaFeatures": {
         "jsx": true
       }
+  },
+  "overrides": [
+    {
+      "files": ["webpack.config.js"],
+      "rules": {
+          "strict": "off"
+      }
   }
+  ]
 }

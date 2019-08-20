@@ -5,3 +5,4 @@ node_modules
 dist
 types/**/scss/*.d.ts
 stories/**/*.js
+public

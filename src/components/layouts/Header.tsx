@@ -6,7 +6,7 @@ const Header = () => {
   const { t } = useTranslation()
   const [value, setValue] = React.useState('ja')
 
-  const HeaderText: any = t('header')
+  const Header: any = t('header')
   return (
     <Grid
       fill
@@ -24,10 +24,10 @@ const Header = () => {
       >
         <Box direction="row" align="center">
           <Box width="xxsmall" height="xxsmall">
-            <Image fit="cover" src="public/images/brand-logo.png" />
+            <Image fit="cover" src={Header.logo} />
           </Box>
           <Box pad={{ horizontal: 'small' }}>
-            <Heading level="3">{HeaderText.title}</Heading>
+            <Heading level="3">{Header.title}</Heading>
           </Box>
         </Box>
 

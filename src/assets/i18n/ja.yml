@@ -1,14 +1,15 @@
 header:
   title: "NaruHiyo Pages"
+  logo: "resources/images/brand-logo.png"
 footer:
   copyright: "narugit and hiyoko3"
-banner: "public/images/top.png"
+banner: "resources/images/top.png"
 collaborators:
   head: "Collaborators"
   items:
     - profile:
         name: "@narugit"
-        image: "public/images/narugit.png"
+        image: "resources/images/narugit.png"
         bio: "Special manager and Genius engineer"
         link:
           github: "https://github.com/narugit"
@@ -16,7 +17,7 @@ collaborators:
           qiita: "https://qiita.com/narugit"
     - profile:
         name: "@hiyoko3"
-        image: "public/images/hiyoko3.png"
+        image: "resources/images/hiyoko3.png"
         bio: "Backend engineer"
         link:
           github: "https://github.com/hiyoko3"
@@ -27,12 +28,12 @@ products:
   items:
     - product:
         name: "Memoma"
-        image: "public/images/memoma.png"
+        image: "resources/images/memoma.png"
         desc: "Electronを利用したクロスプラットフォーム対応の3カラム型メモアプリ。Markdown記法に対応"
         github: "https://github.com/naruhiyo/Memoma"
     - product:
         name: "Partytion"
-        image: "public/images/no_image.png"
+        image: "resources/images/no_image.png"
         desc: "製作中...!"
         github: "https://github.com/naruhiyo/partytion"
 contact:
