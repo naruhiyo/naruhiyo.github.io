@@ -8,7 +8,7 @@
     "predev": "npm run tcm",
     "dev": "webpack-dev-server --config ./webpack.config.js",
     "prebuild": "npm run tcm",
-    "build": "rm -rf dist/public/*; NODE_ENV=production webpack",
+    "build": "rm -rf build/public/*; NODE_ENV=production webpack",
     "lint": "eslint --ext .ts --ext .tsx src/**/*.ts src/**/*.tsx",
     "lint:fix": "eslint --ext .ts --ext .tsx  src/**/*.ts src/**/*.tsx --fix",
     "storybook": "start-storybook -p 9001 -c .storybook -s ./dist",
