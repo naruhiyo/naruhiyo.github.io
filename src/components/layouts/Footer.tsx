@@ -1,4 +1,4 @@
-import { Box, Grid, Text } from 'grommet'
+import { Box, Text } from 'grommet'
 import * as React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -7,16 +7,15 @@ const Footer = () => {
   const Footer: any = t('footer')
 
   return (
-    <Grid
-      fill
-      columns={['auto', 'flex']}
-      rows={['auto']}
-      areas={[{ name: 'footer', start: [0, 0], end: [1, 0] }]}
+    <Box
+      height="xsmall"
+      pad="small"
+      gridArea="footer"
+      align="center"
+      justify="center"
     >
-      <Box gridArea="footer" align="center" justify="center">
-        <Text margin="small">&copy; {Footer.copyright}</Text>
-      </Box>
-    </Grid>
+      <Text>&copy; {Footer.copyright}</Text>
+    </Box>
   )
 }
 

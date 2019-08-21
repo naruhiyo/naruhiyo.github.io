@@ -10,7 +10,7 @@ collaborators:
     - profile:
         name: "@narugit"
         image: "public/resources/images/narugit.png"
-        bio: "Special manager and Genius engineer"
+        bio: "Genius gourmet engineer"
         link:
           github: "https://github.com/narugit"
           portfolio: ""
@@ -18,7 +18,7 @@ collaborators:
     - profile:
         name: "@hiyoko3"
         image: "public/resources/images/hiyoko3.png"
-        bio: "Backend engineer"
+        bio: "Full stack piyopiyo engineer"
         link:
           github: "https://github.com/hiyoko3"
           portfolio: "https://hiyoko3.github.io"

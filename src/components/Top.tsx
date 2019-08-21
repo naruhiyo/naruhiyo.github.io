@@ -15,9 +15,11 @@ import Footer from './layouts/Footer'
 import Header from './layouts/Header'
 import Product from './Product'
 const grommetCustomStyle = {
+  global: {},
   image: {
-    extend: `width: 100%`,
+    extend: `width: 100%;`,
   },
+  box: {},
 }
 
 const Top = () => {
@@ -58,62 +60,42 @@ const Top = () => {
   )
 
   return (
-    <Grommet theme={grommetCustomStyle}>
+    <Grommet theme={grommetCustomStyle} full>
       <Header />
       <ResponsiveContext.Consumer>
         {size => (
           <Box>
-            <Box fill={true}>
-              <Image fit="cover" src={t('banner')}></Image>
-            </Box>
+            <Image fit="cover" src={t('banner')}></Image>
 
-            <Grid
-              fill
-              columns={['auto', 'flex']}
-              rows={['auto', 'flex']}
-              areas={[
-                { name: 'collaborator', start: [0, 0], end: [1, 0] },
-                { name: 'product', start: [1, 0], end: [2, 0] },
-                { name: 'contact', start: [1, 0], end: [2, 0] },
-              ]}
-            />
-
-            <Box gridArea="collaborator" pad={size}>
+            <Box pad={size} margin={{ bottom: size }}>
               <Heading level="3">{collaborators.head}</Heading>
               <Grid
-                fill
                 columns={{
                   count: 'fill',
                   size: 'small',
                 }}
-                gap="small"
-                margin={{ bottom: size }}
+                gap={size}
               >
                 {collaboratorList}
               </Grid>
             </Box>
 
-            <Box gridArea="product" pad={size} background="light-1">
-              <Heading level="3">{products.head}</Heading>
-              <Grid
-                fill
-                columns={{
-                  count: 'fill',
-                  size: size,
-                }}
-                gap="small"
-                margin={{ bottom: 'large' }}
-              >
-                {productList}
-              </Grid>
+            <Box background="light-1">
+              <Box pad={size} margin={{ bottom: size }}>
+                <Heading level="3">{products.head}</Heading>
+                <Grid
+                  columns={{
+                    count: 'fill',
+                    size: size,
+                  }}
+                  gap="small"
+                >
+                  {productList}
+                </Grid>
+              </Box>
             </Box>
 
-            <Box
-              gridArea="contact"
-              margin={{ bottom: size }}
-              pad={size}
-              height={size}
-            >
+            <Box pad={size} margin={{ bottom: size }}>
               <Heading level="3">{contact.head}</Heading>
 
               <Text

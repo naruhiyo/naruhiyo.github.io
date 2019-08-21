@@ -27,7 +27,7 @@ const Product = (props: productProps) => {
         {props.product.name}
       </Heading>
 
-      <Box width="medium" height="small" alignSelf="center">
+      <Box width="medium" height="small" alignSelf="center" pad="small">
         <Image fit="contain" src={props.product.image}></Image>
       </Box>
 

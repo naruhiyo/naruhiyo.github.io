@@ -20,13 +20,15 @@ type collaboratorProps = {
 
 const Collaborator = (props: collaboratorProps) => {
   return (
-    <Box elevation="large" key={props.id} background="white" margin="small">
-      <Box width="small" height="small" alignSelf="center">
-        <Image
-          margin={{ vertical: props.size }}
-          fit="contain"
-          src={props.profile.image}
-        ></Image>
+    <Box
+      a11yTitle="Collaborator Components"
+      elevation={props.size}
+      key={props.id}
+      background="white"
+      pad={props.size}
+    >
+      <Box height="small" width="small" alignSelf="center" pad="small">
+        <Image fit="contain" src={props.profile.image}></Image>
       </Box>
       <Heading level={5} textAlign="center" margin={{ vertical: 'small' }}>
         {props.profile.name}

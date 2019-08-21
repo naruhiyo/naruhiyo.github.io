@@ -8,7 +8,7 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const environment = process.env.NODE_ENV || 'development'
 const isProduction = environment === 'production'
-const publicPath = isProduction ? './' : 'dist'
+const publicPath = 'dist'
 const resourcePath = `${publicPath}/public/resources`
 
 module.exports = {
