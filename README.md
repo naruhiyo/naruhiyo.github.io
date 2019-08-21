@@ -2,7 +2,7 @@
 
 ***NaruHiyo Project portfilio***
 
-- [Welcome!]()
+- [Welcome Access!](https://naruhiyo.github.io/)
 
 ## Getting Started
 
