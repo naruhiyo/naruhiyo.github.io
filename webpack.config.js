@@ -26,28 +26,37 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
+      chunks: 'all',
+      minChunks: 3,
       cacheGroups: {
-        plugins: {
-          test: /src\/plugins/,
-          name: 'public/plugins',
-          chunks: 'initial',
-          enforce: true
+        icon: {
+          test: /node_modules\/grommet-icons/,
+          name: 'public/icon',
+          priority: -20,
+          enforce: true,
         },
         grommet: {
           test: /node_modules\/grommet/,
           name: 'public/grommet',
-          chunks: 'initial',
-          enforce: true
+          priority: -30,
+          enforce: true,
         },
         vendor: {
           test: /node_modules/,
           name: 'public/vendor',
           chunks: 'initial',
-          enforce: true
+          priority: -40,
+          enforce: true,
         }
       }
     },
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [
+      new TerserJSPlugin({
+        cache: true,
+        parallel: true,
+      }), 
+      new OptimizeCSSAssetsPlugin({})
+    ],
   },
   resolve: {
     extensions: [
