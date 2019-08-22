@@ -9,7 +9,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const environment = process.env.NODE_ENV || 'development'
 const isProduction = environment === 'production'
 const publicPath = isProduction ? 'build' : 'dist'
-const resourcePath = `${publicPath}/public/resources`
+const resourcePath = `${publicPath}/public`
 
 module.exports = {
   // If mode is 'production', the app is optimized.
@@ -18,11 +18,11 @@ module.exports = {
   mode: environment,
   devtool: isProduction ? false : 'source-map',
   entry: {
-    'public/main': path.resolve(__dirname, 'src/main.tsx')
+    'public/main': path.resolve(__dirname, 'src/main.tsx'),
   },
   output: {
     path: path.resolve(__dirname, publicPath),
-    filename: isProduction ? '[name].[chunkhash].js' : '[name].js'
+    filename: isProduction ? '[name].[chunkhash].js' : '[name].js',
   },
   optimization: {
     splitChunks: {
@@ -55,7 +55,7 @@ module.exports = {
         cache: true,
         parallel: true,
       }), 
-      new OptimizeCSSAssetsPlugin({})
+      new OptimizeCSSAssetsPlugin(),
     ],
   },
   resolve: {
@@ -87,7 +87,7 @@ module.exports = {
         minifyCSS: true,
         collapseWhitespace: true,
         removeComments: true,
-        removeEmptyAttributes: true
+        removeEmptyAttributes: true,
       },
       inject: true,
       chunksSortMode: 'dependency',
@@ -102,12 +102,12 @@ module.exports = {
         'format-detection': 'telephone=no', //- Disabled phone number (iOS)
         //- /* ==== Windows Theme ==== */
         'msapplication-TileImage': '',
-        'msapplication-TileColor': '#a1d8e6'
+        'msapplication-TileColor': '#a1d8e6',
       }
     }),
     new MiniCssExtractPlugin({
       filename: isProduction ? '[name].[chunkhash].css' : '[name].css',
-      allChunks: true
+      allChunks: true,
     }),
     new CopyWebpackPlugin([
       {
@@ -115,7 +115,7 @@ module.exports = {
         to: path.resolve(__dirname, `${resourcePath}/images`)
       }
     ]),
-    new WriteFileWebpackPlugin()
+    new WriteFileWebpackPlugin(),
   ],
   module: {
     rules: [
@@ -137,7 +137,7 @@ module.exports = {
               options: {
                 importLoaders: 2,
                 modules: true,
-                sourceMap: !isProduction
+                sourceMap: !isProduction,
               }
             },
             {
@@ -145,27 +145,27 @@ module.exports = {
               options: {
                 camelCase: true,
                 searchDir: './src',
-                outDir: './types'
+                outDir: './types',
               }
             },
             {
               loader: 'postcss-loader',
               options: {
                 sourceMap: !isProduction,
-                plugins: [autoprefixer()]
+                plugins: [autoprefixer()],
               }
             },
             {
-              loader: 'sass-loader'
-            }
-          ]
+              loader: 'sass-loader',
+            },
+          ],
       },
       {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-        ]
+        ],
       },
       {
         // test: /\.(png|jpe?g|gif|bmp|tiff|woff|eot|ttf|svg|ico)$/,
@@ -174,16 +174,16 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: isProduction ? '[name]-[hash].[ext]' : '[name].[ext]'
+              name: isProduction ? '[name]-[hash].[ext]' : '[name].[ext]',
             }
           }
         ]
       },
       {
         test: /\.(yml|yaml)$/,
-        use: [{ loader: 'json-loader' }, { loader: 'yaml-loader' }]
-      }
-    ]
+        use: [{ loader: 'json-loader' }, { loader: 'yaml-loader' }],
+      },
+    ],
   },
   devServer: {
     host: '0.0.0.0',
