@@ -19,6 +19,9 @@ $ npm run fmt
 # package build
 $ npm run build
 
+# deploy to github pages
+$ npm run deploy
+
 # test
 ## spec
 $ npm run test:spec # pr npm run test:spec:watch
