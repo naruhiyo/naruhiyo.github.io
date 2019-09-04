@@ -1,9 +1,10 @@
 {
   "name": "naruhiyo.github.io",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A landing page",
   "main": "index.js",
   "scripts": {
+    "deploy": "npm run build && git add build && git commit -m \"update github page\" && git subtree push -P build origin master",
     "tcm": "tcm src -p assets/scss/**/*.scss -c -o ./types",
     "predev": "npm run tcm",
     "dev": "webpack-dev-server --config ./webpack.config.js",
