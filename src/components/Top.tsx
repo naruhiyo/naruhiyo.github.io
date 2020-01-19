@@ -14,6 +14,7 @@ import Collaborator from './Collaborator'
 import Footer from './layouts/Footer'
 import Header from './layouts/Header'
 import Product from './Product'
+import Activity from './Activity'
 const grommetCustomStyle = {
   global: {},
   image: {
@@ -36,28 +37,32 @@ const Top = () => {
     head: string
     message: string
   } = t('contact')
+  const activities: {
+    head: string
+    items: []
+  } = t('activities')
 
-  const productList = products.items.map((product: any, idx: number) => (
+  const productList = products.items.map((item: any, idx: number) => (
     <ResponsiveContext.Consumer key={idx}>
       {size => (
-        <Product product={product.product} key={idx} id={idx} size={size} />
+        <Product product={item.product} key={idx} id={idx} size={size} />
       )}
     </ResponsiveContext.Consumer>
   ))
-  const collaboratorList = collaborators.items.map(
-    (collaborator: any, idx: number) => (
-      <ResponsiveContext.Consumer key={idx}>
-        {size => (
-          <Collaborator
-            profile={collaborator.profile}
-            key={idx}
-            id={idx}
-            size={size}
-          />
-        )}
-      </ResponsiveContext.Consumer>
-    )
-  )
+  const collaboratorList = collaborators.items.map((item: any, idx: number) => (
+    <ResponsiveContext.Consumer key={idx}>
+      {size => (
+        <Collaborator profile={item.profile} key={idx} id={idx} size={size} />
+      )}
+    </ResponsiveContext.Consumer>
+  ))
+  const activityList = activities.items.map((item: any, idx: number) => (
+    <ResponsiveContext.Consumer key={idx}>
+      {size => (
+        <Activity activity={item.activity} key={idx} id={idx} size={size} />
+      )}
+    </ResponsiveContext.Consumer>
+  ))
 
   return (
     <Grommet theme={grommetCustomStyle} full>
@@ -91,6 +96,21 @@ const Top = () => {
                   gap="small"
                 >
                   {productList}
+                </Grid>
+              </Box>
+            </Box>
+
+            <Box background="light-1">
+              <Box pad={size} margin={{ bottom: size }}>
+                <Heading level="3">{activities.head}</Heading>
+                <Grid
+                  columns={{
+                    count: 'fill',
+                    size: size,
+                  }}
+                  gap="small"
+                >
+                  {activityList}
                 </Grid>
               </Box>
             </Box>

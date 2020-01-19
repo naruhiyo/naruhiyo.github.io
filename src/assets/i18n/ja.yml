@@ -28,14 +28,21 @@ products:
   items:
     - product:
         name: "Memoma"
-        image: "public/images/memoma.png"
+        image: "public/images/memoma.gif"
         desc: "Electronを利用したクロスプラットフォーム対応の3カラム型メモアプリ。Markdown記法に対応"
         github: "https://github.com/naruhiyo/Memoma"
     - product:
         name: "Partytion"
-        image: "public/images/no_image.png"
-        desc: "製作中...!"
+        image: "public/images/partytion.gif"
+        desc: "飲み会でのミニゲームとして使えるiPhoneアプリ"
         github: "https://github.com/naruhiyo/partytion"
+activities:
+  head: "Activity"
+  items:
+    - activity:
+        name: "NaruHiyo 競プロ部"
+        desc: "プログラミング能力を向上させるために AtCdoer を利用してアルゴリズムを勉強中！"
+        github: "https://github.com/naruhiyo/algorithm-enhancement"
 contact:
   head: "Contact us"
   message: "`***@gmail.com` \n\n `***` には ***sb.gm.0823*** と入力してください。"
