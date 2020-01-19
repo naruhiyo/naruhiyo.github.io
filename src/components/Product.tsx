@@ -35,16 +35,19 @@ const Product = (props: productProps) => {
         {props.product.desc}
       </Text>
 
-      <Box direction="row" gap="small" pad="small" justify="start">
-        {props.product.github && (
-          <Button
-            href={props.product.github}
-            target="_blank"
-            icon={<Github />}
-            plain
-          ></Button>
-        )}
-      </Box>
+      {props.product.github && (
+        <Button
+          href={props.product.github}
+          target="_blank"
+          plain
+          hoverIndicator="light-3"
+        >
+          <Box direction="row" pad="small">
+            <Github />
+            <Text margin={{ left: 'xsmall' }}>Github</Text>
+          </Box>
+        </Button>
+      )}
     </Box>
   )
 }

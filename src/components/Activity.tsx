@@ -30,21 +30,19 @@ const Activity = (props: activityProps) => {
         {props.activity.desc}
       </Text>
 
-      <Box direction="row" gap="small" justify="start">
-        {props.activity.github && (
-          <Button
-            href={props.activity.github}
-            target="_blank"
-            plain
-            hoverIndicator="light-3"
-          >
-            <Box direction="row" pad="small">
-              <Github />
-              <Text margin={{ left: 'xsmall' }}>Github</Text>
-            </Box>
-          </Button>
-        )}
-      </Box>
+      {props.activity.github && (
+        <Button
+          href={props.activity.github}
+          target="_blank"
+          plain
+          hoverIndicator="light-3"
+        >
+          <Box direction="row" pad="small">
+            <Github />
+            <Text margin={{ left: 'xsmall' }}>Github</Text>
+          </Box>
+        </Button>
+      )}
     </Box>
   )
 }

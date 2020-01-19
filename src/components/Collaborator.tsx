@@ -12,7 +12,7 @@ type collaboratorProps = {
     link: {
       github: string
       portfolio: string
-      qiita: string
+      atcoder: string
     }
   }
   size: string
@@ -38,32 +38,45 @@ const Collaborator = (props: collaboratorProps) => {
         {props.profile.bio}
       </Text>
 
-      <Box direction="row" gap="small" pad="small" justify="start">
-        {props.profile.link.github && (
-          <Button
-            href={props.profile.link.github}
-            target="_blank"
-            icon={<Github />}
-            plain
-          ></Button>
-        )}
-        {props.profile.link.portfolio && (
-          <Button
-            href={props.profile.link.portfolio}
-            target="_blank"
-            icon={<Link />}
-            plain
-          ></Button>
-        )}
-        {props.profile.link.qiita && (
-          <Button
-            href={props.profile.link.qiita}
-            target="_blank"
-            icon={<Article />}
-            plain
-          ></Button>
-        )}
-      </Box>
+      {props.profile.link.github && (
+        <Button
+          href={props.profile.link.github}
+          target="_blank"
+          plain
+          hoverIndicator="light-3"
+        >
+          <Box direction="row" pad="small">
+            <Github />
+            <Text margin={{ left: 'xsmall' }}>Github</Text>
+          </Box>
+        </Button>
+      )}
+      {props.profile.link.portfolio && (
+        <Button
+          href={props.profile.link.portfolio}
+          target="_blank"
+          plain
+          hoverIndicator="light-3"
+        >
+          <Box direction="row" pad="small">
+            <Link />
+            <Text margin={{ left: 'xsmall' }}>Portfolio</Text>
+          </Box>
+        </Button>
+      )}
+      {props.profile.link.atcoder && (
+        <Button
+          href={props.profile.link.atcoder}
+          target="_blank"
+          plain
+          hoverIndicator="light-3"
+        >
+          <Box direction="row" pad="small">
+            <Article />
+            <Text margin={{ left: 'xsmall' }}>AtCoder</Text>
+          </Box>
+        </Button>
+      )}
     </Box>
   )
 }

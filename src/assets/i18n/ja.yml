@@ -13,8 +13,8 @@ collaborators:
         bio: "Genius gourmet engineer"
         link:
           github: "https://github.com/narugit"
-          portfolio: ""
-          qiita: "https://qiita.com/narugit"
+          portfolio: "https://narugit.github.io/"
+          atcoder: "https://atcoder.jp/users/narucode"
     - profile:
         name: "@hiyoko3"
         image: "public/images/hiyoko3.png"
@@ -22,7 +22,7 @@ collaborators:
         link:
           github: "https://github.com/hiyoko3"
           portfolio: "https://hiyoko3.github.io"
-          qiita: "https://qiita.com/hiyoko3"
+          atcoder: "https://atcoder.jp/users/ae_hiyoko3"
 products:
   head: "Products"
   items:
