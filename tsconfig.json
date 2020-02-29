@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
-    "rootDirs": ["src", "types", "stories"],
+    "rootDirs": ["src", "types"],
     "outDir": "dist",
     "sourceMap": true,
     "module": "commonjs",
@@ -17,18 +17,10 @@
     "moduleResolution": "node",
     "resolveJsonModule": true
   },
-  "include": ["./src/**/*", "./test", "types/**/*.ts"],
+  "include": ["./src/**/*", "types/**/*.ts"],
   "exclude": [
     "coverage",
     "dist",
-    "node_modules",
-    "jest.config.js",
-    "jest.config.feature.js",
-    "jest-puppeteer.config.js",
-    "./src/setupTests.ts",
-    "./src/**/*.test.ts",
-    "./src/**/*.test.tsx",
-    "./feature/**/*.test.ts",
-    "./feature/**/*.test.tsx"
+    "node_modules"
   ]
 }
