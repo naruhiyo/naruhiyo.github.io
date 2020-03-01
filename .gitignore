@@ -1,7 +1,3 @@
-*.DS_Store
-*.vscode
-node_modules
-*package-lock.json
 dist
+node_modules
 types/**/scss/*.d.ts
-stories/**/*.js
