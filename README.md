@@ -22,7 +22,7 @@ $ npm run dev # you can access http://localhost:7777
 
 ### Any Requests
 
-You can any request for improving this repo.
+Any request for improving this repo will be fine.
 
 - PR(pull request) => [.github/PULL_REQUEST_TEMPLATE.md](https://github.com/naruhiyo/naruhiyo.github.io/blob/develop/.github/PULL_REQUEST_TEMPLATE.md)
 - issue => [.github/ISSUE_TEMPLATE/BUG_REPORT.md](https://github.com/naruhiyo/naruhiyo.github.io/blob/develop/.github/PULL_REQUEST_TEMPLATE.md)
