@@ -26,7 +26,6 @@ Any request for improving this repo will be fine.
 
 - PR(pull request) => [.github/PULL_REQUEST_TEMPLATE.md](https://github.com/naruhiyo/naruhiyo.github.io/blob/develop/.github/PULL_REQUEST_TEMPLATE.md)
 - issue => [.github/ISSUE_TEMPLATE/BUG_REPORT.md](https://github.com/naruhiyo/naruhiyo.github.io/blob/develop/.github/PULL_REQUEST_TEMPLATE.md)
-- suggestion => [.github/ISSUE_TEMPLATE/IMPROVE_SUGGESTIONS.md](https://github.com/naruhiyo/naruhiyo.github.io/blob/develop/.github/ISSUE_TEMPLATE/IMPROVE_SUGGESTIONS.md)
 
 ### Licence
 
