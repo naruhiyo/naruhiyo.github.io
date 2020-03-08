@@ -24,9 +24,9 @@ $ npm run dev # you can access http://localhost:7777
 
 You can any request for improving this repo.
 
-- PR(pull request) => `.github/template/PULL_REQUEST.md`
-- issue => `.github/template/ISSUE_REPORT.md`
-- suggestion => `.github/template/IMPROVE_SUGGESTIONS.md`
+- PR(pull request) => `.github/PULL_REQUEST_TEMPLATE.md`
+- issue => `.github/ISSUE_TEMPLATE/BUG_REPORT.md`
+- suggestion => `.github/ISSUE_TEMPLATE/IMPROVE_SUGGESTIONS.md`
 
 ### Licence
 
