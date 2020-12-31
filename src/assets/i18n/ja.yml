@@ -36,6 +36,11 @@ products:
         image: "public/images/partytion.gif"
         desc: "飲み会でのミニゲームとして使えるiPhoneアプリ"
         github: "https://github.com/naruhiyo/partytion"
+    - product:
+        name: "aman"
+        image: "public/images/aman.gif"
+        desc: "`man`コマンドからコマンドのオプションを検索して出力してくれるCLI"
+        github: "https://github.com/naruhiyo/aman"
 activities:
   head: "Activity"
   items:
@@ -45,4 +50,4 @@ activities:
         github: "https://github.com/naruhiyo/algorithm-enhancement"
 contact:
   head: "Contact us"
-  message: "`***@gmail.com` \n\n `***` には ***sb.gm.0823*** と入力してください。"
+  message: "`***@gmail.com` \n\n `***` には ***naruhiyo.apps*** と入力してください。"
