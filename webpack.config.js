@@ -1,11 +1,11 @@
+/* eslint-disable no-undef */
 const path = require('path')
 const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const WriteFileWebpackPlugin = require('write-file-webpack-plugin')
-const TerserJSPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const environment = process.env.NODE_ENV || 'development'
 const isProduction = environment === 'production'
 const publicPath = isProduction ? 'build' : 'dist'
@@ -23,6 +23,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, publicPath),
     filename: isProduction ? '[name].[chunkhash].js' : '[name].js',
+    clean: true,
   },
   optimization: {
     splitChunks: {
@@ -47,16 +48,10 @@ module.exports = {
           chunks: 'initial',
           priority: -40,
           enforce: true,
-        }
-      }
+        },
+      },
     },
-    minimizer: [
-      new TerserJSPlugin({
-        cache: true,
-        parallel: true,
-      }), 
-      new OptimizeCSSAssetsPlugin(),
-    ],
+    minimizer: [new OptimizeCSSAssetsPlugin()],
   },
   resolve: {
     extensions: [
@@ -76,8 +71,8 @@ module.exports = {
       'eot',
       'ttf',
       '.svg',
-      '.ico'
-    ]
+      '.ico',
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -90,7 +85,7 @@ module.exports = {
         removeEmptyAttributes: true,
       },
       inject: true,
-      chunksSortMode: 'dependency',
+      chunksSortMode: 'auto',
       favicon: path.resolve(__dirname, './favicon.ico'),
       meta: {
         title: 'NaruHiyo Pages',
@@ -103,69 +98,65 @@ module.exports = {
         //- /* ==== Windows Theme ==== */
         'msapplication-TileImage': '',
         'msapplication-TileColor': '#a1d8e6',
-      }
+      },
     }),
-    new MiniCssExtractPlugin({
-      filename: isProduction ? '[name].[chunkhash].css' : '[name].css',
-      allChunks: true,
+    new MiniCssExtractPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets/images'),
+          to: path.resolve(__dirname, `${resourcePath}/images`),
+        },
+      ],
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'src/assets/images'),
-        to: path.resolve(__dirname, `${resourcePath}/images`)
-      }
-    ]),
     new WriteFileWebpackPlugin(),
   ],
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
+        loader: 'awesome-typescript-loader',
       },
       {
         enforce: 'pre',
         test: /\.js$/,
-        use: [{ loader: 'source-map-loader' }, { loader: 'babel-loader' }]
+        use: [{ loader: 'source-map-loader' }, { loader: 'babel-loader' }],
       },
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2,
-                modules: true,
-                sourceMap: !isProduction,
-              }
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              modules: true,
+              sourceMap: !isProduction,
             },
-            {
-              loader: 'typed-css-modules-loader',
-              options: {
-                camelCase: true,
-                searchDir: './src',
-                outDir: './types',
-              }
+          },
+          {
+            loader: 'typed-css-modules-loader',
+            options: {
+              camelCase: true,
+              searchDir: './src',
+              outDir: './types',
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: !isProduction,
-                plugins: [autoprefixer()],
-              }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: !isProduction,
+              plugins: [autoprefixer()],
             },
-            {
-              loader: 'sass-loader',
-            },
-          ],
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         // test: /\.(png|jpe?g|gif|bmp|tiff|woff|eot|ttf|svg|ico)$/,
@@ -175,9 +166,9 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: isProduction ? '[name]-[hash].[ext]' : '[name].[ext]',
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         test: /\.(yml|yaml)$/,
@@ -193,6 +184,6 @@ module.exports = {
     inline: true, // The mode of inline.
     hot: false, // use HMR
     clientLogLevel: 'info', // The log level(none, error, warning, info)
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 }
