@@ -5,12 +5,12 @@ footer:
   copyright: "narugit and hiyoko3"
 banner: "public/images/top.png"
 collaborators:
-  head: "Collaborators"
+  head: "開発者"
   items:
     - profile:
         name: "@narugit"
         image: "public/images/narugit.png"
-        bio: "Genius gourmet engineer"
+        bio: "グルメエンジニア"
         link:
           github: "https://github.com/narugit"
           portfolio: "https://narugit.github.io/"
@@ -18,13 +18,13 @@ collaborators:
     - profile:
         name: "@hiyoko3"
         image: "public/images/hiyoko3.png"
-        bio: "Full stack piyopiyo engineer"
+        bio: "ひよこエンジニア"
         link:
           github: "https://github.com/hiyoko3"
           portfolio: "https://hiyoko3.github.io"
           atcoder: "https://atcoder.jp/users/ae_hiyoko3"
 products:
-  head: "Products"
+  head: "作ったもの"
   items:
     - product:
         name: "Memoma"
@@ -41,8 +41,13 @@ products:
         image: "public/images/aman.gif"
         desc: "`man`コマンドからコマンドのオプションを検索して出力してくれるCLI"
         github: "https://github.com/naruhiyo/aman"
+    - product:
+        name: "appetizer"
+        image: "public/images/appetizer.gif"
+        desc: "昼食や夕食の時間帯に指定された駅の近くにある飲食店を紹介してくれるVS Code拡張です"
+        github: "https://github.com/naruhiyo/appetizer"
 activities:
-  head: "Activity"
+  head: "活動"
   items:
     - activity:
         name: "NaruHiyo 競プロ部"
