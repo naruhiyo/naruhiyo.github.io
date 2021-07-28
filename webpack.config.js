@@ -4,7 +4,6 @@ const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const WriteFileWebpackPlugin = require('write-file-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const environment = process.env.NODE_ENV || 'development'
 const isProduction = environment === 'production'
@@ -109,13 +108,12 @@ module.exports = {
         },
       ],
     }),
-    new WriteFileWebpackPlugin(),
   ],
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader',
+        loader: 'ts-loader',
       },
       {
         enforce: 'pre',
@@ -131,7 +129,6 @@ module.exports = {
             options: {
               importLoaders: 2,
               modules: true,
-              sourceMap: !isProduction,
             },
           },
           {
@@ -145,8 +142,9 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: !isProduction,
-              plugins: [autoprefixer()],
+              postcssOptions: {
+                plugins: [autoprefixer()],
+              },
             },
           },
           {
