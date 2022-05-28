@@ -1,6 +1,6 @@
 # naruhiyo landing page
 
-***NaruHiyo Project portfilio***
+**_NaruHiyo Project portfilio_**
 
 - [Welcome Access!](https://naruhiyo.github.io/)
 
@@ -16,9 +16,7 @@ $ npm run dev # you can access http://localhost:7777
 
 ### UI Framework
 
-|name|in purpose|working?|note|
-|:--|:--|:--|:--|
-|grommet|dev, prod|Yes|[documentation](https://v2.grommet.io/)|
+[grommet](https://v2.grommet.io/)
 
 ### Any Requests
 

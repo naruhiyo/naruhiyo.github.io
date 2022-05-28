@@ -1,26 +1,20 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "rootDirs": ["src", "types"],
-    "outDir": "dist",
+    "target": "es6",
+    "module": "es2015",
     "sourceMap": true,
-    "module": "commonjs",
-    "target": "es5",
-    "lib": ["es5", "es6", "es7", "es2018", "dom", "es2015.promise"],
+    "strict": true,
+    "moduleResolution": "node", // nod_modules からライブラリを読み込む
+    "lib": ["ES2021", "DOM"],
     "jsx": "react",
-    "allowJs": true,
     "noImplicitAny": true,
     "removeComments": true,
-    "preserveConstEnums": true,
-    "experimentalDecorators": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true
-  },
-  "include": ["./src/**/*", "types/**/*.ts"],
-  "exclude": [
-    "coverage",
-    "dist",
-    "node_modules"
-  ]
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["src/*"]
+    }
+  }
 }
