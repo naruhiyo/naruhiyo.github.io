@@ -57,12 +57,12 @@ const Top = () => {
           <Box>
             <Image fit="cover" src={t('banner')}></Image>
 
-            <Box pad={size} margin={{ bottom: size }}>
+            <Box pad="medium" margin={{ bottom: size }}>
               <Heading level="3">{collaborators.head}</Heading>
               <Grid
                 columns={{
                   count: 'fill',
-                  size: 'small',
+                  size: 'medium',
                 }}
                 gap={size}
               >

@@ -1,6 +1,6 @@
 import { Box, Button, Heading, Image, Text } from 'grommet'
 import { Github } from 'grommet-icons'
-import * as React from 'react'
+import React from 'react'
 
 type productProps = {
   key: number
@@ -16,13 +16,7 @@ type productProps = {
 
 const Product = (props: productProps) => {
   return (
-    <Box
-      elevation="large"
-      key={props.id}
-      pad={props.size}
-      background="white"
-      margin="xsmall"
-    >
+    <Box elevation="large" key={props.id} pad={props.size} background="white" margin="xsmall">
       <Heading level={3} margin="xsmall">
         {props.product.name}
       </Heading>
@@ -36,12 +30,7 @@ const Product = (props: productProps) => {
       </Text>
 
       {props.product.github && (
-        <Button
-          href={props.product.github}
-          target="_blank"
-          plain
-          hoverIndicator="light-3"
-        >
+        <Button href={props.product.github} target="_blank" plain hoverIndicator="light-3">
           <Box direction="row" pad="small">
             <Github />
             <Text margin={{ left: 'xsmall' }}>Github</Text>

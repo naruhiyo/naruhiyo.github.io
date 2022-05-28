@@ -14,7 +14,7 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
-      "@src/*": ["src/*"]
+      "@src/*": ["src/*"] // tsファイル内でのimportの相対解決に必要, baseUrlも併せてセットする必要あり
     }
   }
 }

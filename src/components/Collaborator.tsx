@@ -1,6 +1,6 @@
 import { Box, Button, Heading, Image, Text } from 'grommet'
 import { Article, Github, Link } from 'grommet-icons'
-import * as React from 'react'
+import React from 'react'
 
 type collaboratorProps = {
   key: number
@@ -20,13 +20,7 @@ type collaboratorProps = {
 
 const Collaborator = (props: collaboratorProps) => {
   return (
-    <Box
-      a11yTitle="Collaborator Components"
-      elevation={props.size}
-      key={props.id}
-      background="white"
-      pad={props.size}
-    >
+    <Box a11yTitle="Collaborator Components" elevation={props.size} key={props.id} background="white" pad={props.size}>
       <Box height="small" width="small" alignSelf="center" pad="small">
         <Image fit="contain" src={props.profile.image}></Image>
       </Box>
@@ -39,12 +33,7 @@ const Collaborator = (props: collaboratorProps) => {
       </Text>
 
       {props.profile.link.github && (
-        <Button
-          href={props.profile.link.github}
-          target="_blank"
-          plain
-          hoverIndicator="light-3"
-        >
+        <Button href={props.profile.link.github} target="_blank" plain hoverIndicator="light-3">
           <Box direction="row" pad="small">
             <Github />
             <Text margin={{ left: 'xsmall' }}>Github</Text>
@@ -52,12 +41,7 @@ const Collaborator = (props: collaboratorProps) => {
         </Button>
       )}
       {props.profile.link.portfolio && (
-        <Button
-          href={props.profile.link.portfolio}
-          target="_blank"
-          plain
-          hoverIndicator="light-3"
-        >
+        <Button href={props.profile.link.portfolio} target="_blank" plain hoverIndicator="light-3">
           <Box direction="row" pad="small">
             <Link />
             <Text margin={{ left: 'xsmall' }}>Portfolio</Text>
@@ -65,12 +49,7 @@ const Collaborator = (props: collaboratorProps) => {
         </Button>
       )}
       {props.profile.link.atcoder && (
-        <Button
-          href={props.profile.link.atcoder}
-          target="_blank"
-          plain
-          hoverIndicator="light-3"
-        >
+        <Button href={props.profile.link.atcoder} target="_blank" plain hoverIndicator="light-3">
           <Box direction="row" pad="small">
             <Article />
             <Text margin={{ left: 'xsmall' }}>AtCoder</Text>
