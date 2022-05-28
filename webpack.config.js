@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+
+// local variables
 const environment = process.env.NODE_ENV || 'development'
 const isProduction = environment === 'production'
 const publicPath = isProduction ? 'build' : 'dist'
@@ -15,7 +17,7 @@ module.exports = {
   // If mode is 'development', javascript files output with adding source map.
   watch: !isProduction,
   mode: environment,
-  devtool: isProduction ? false : 'source-map',
+  devtool: isProduction ? false : 'inline-source-map',
   entry: {
     'public/main': path.resolve(__dirname, 'src/main.tsx'),
   },
@@ -90,8 +92,7 @@ module.exports = {
         title: 'NaruHiyo Pages',
         keywords: 'NaruHiyo, Github Pages, Portfolio',
         author: 'narugit, hiyoko3',
-        description:
-          'Naruhiyo is a project to develop some application such as mobile, desktop, webapp.',
+        description: 'Naruhiyo is a project to develop some application such as mobile, desktop, webapp.',
         'theme-color': '#a1d8e6',
         'format-detection': 'telephone=no', //- Disabled phone number (iOS)
         //- /* ==== Windows Theme ==== */
@@ -114,11 +115,6 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
-      },
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        use: [{ loader: 'source-map-loader' }, { loader: 'babel-loader' }],
       },
       {
         test: /\.scss$/,
@@ -169,19 +165,29 @@ module.exports = {
         ],
       },
       {
-        test: /\.(yml|yaml)$/,
-        use: [{ loader: 'json-loader' }, { loader: 'yaml-loader' }],
+        test: /\.ya?ml$/,
+        use: [{ loader: 'yaml-loader' }],
       },
     ],
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      '@src': path.resolve(__dirname, 'src/'),
+    },
+  },
   devServer: {
+    compress: true, // Enable gzip compression for everything served:
     host: '0.0.0.0',
     port: 7777, // port number
-    contentBase: path.join(__dirname, 'dist/'), // Document root on server
-    progress: false, // Show progress on console.
-    inline: true, // The mode of inline.
-    hot: false, // use HMR
-    clientLogLevel: 'info', // The log level(none, error, warning, info)
+    static: {
+      directory: path.join(__dirname, 'dist/'), // Document root on server
+    },
+    client: {
+      progress: false, // Show progress on console.
+      overlay: true, // show error when there are compiler errors or warnings.
+      logging: 'info', // A log level(none, error, warning, info)
+    },
     historyApiFallback: true,
   },
 }

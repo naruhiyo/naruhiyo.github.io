@@ -1,20 +1,11 @@
-import {
-  Box,
-  Grid,
-  Grommet,
-  Heading,
-  Image,
-  Markdown,
-  ResponsiveContext,
-  Text,
-} from 'grommet'
-import * as React from 'react'
+import Activity from '@src/components/Activity'
+import Collaborator from '@src/components/Collaborator'
+import Footer from '@src/components/layouts/Footer'
+import Header from '@src/components/layouts/Header'
+import Product from '@src/components/Product'
+import { Box, Grid, Grommet, Heading, Image, Markdown, ResponsiveContext, Text } from 'grommet'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
-import Collaborator from './Collaborator'
-import Footer from './layouts/Footer'
-import Header from './layouts/Header'
-import Product from './Product'
-import Activity from './Activity'
 const grommetCustomStyle = {
   global: {},
   image: {
@@ -44,23 +35,17 @@ const Top = () => {
 
   const productList = products.items.map((item: any, idx: number) => (
     <ResponsiveContext.Consumer key={idx}>
-      {size => (
-        <Product product={item.product} key={idx} id={idx} size={size} />
-      )}
+      {(size) => <Product product={item.product} key={idx} id={idx} size={size} />}
     </ResponsiveContext.Consumer>
   ))
   const collaboratorList = collaborators.items.map((item: any, idx: number) => (
     <ResponsiveContext.Consumer key={idx}>
-      {size => (
-        <Collaborator profile={item.profile} key={idx} id={idx} size={size} />
-      )}
+      {(size) => <Collaborator profile={item.profile} key={idx} id={idx} size={size} />}
     </ResponsiveContext.Consumer>
   ))
   const activityList = activities.items.map((item: any, idx: number) => (
     <ResponsiveContext.Consumer key={idx}>
-      {size => (
-        <Activity activity={item.activity} key={idx} id={idx} size={size} />
-      )}
+      {(size) => <Activity activity={item.activity} key={idx} id={idx} size={size} />}
     </ResponsiveContext.Consumer>
   ))
 
@@ -68,7 +53,7 @@ const Top = () => {
     <Grommet theme={grommetCustomStyle} full>
       <Header />
       <ResponsiveContext.Consumer>
-        {size => (
+        {(size) => (
           <Box>
             <Image fit="cover" src={t('banner')}></Image>
 
@@ -118,12 +103,7 @@ const Top = () => {
             <Box pad={size} margin={{ bottom: size }}>
               <Heading level="3">{contact.head}</Heading>
 
-              <Text
-                textAlign="center"
-                alignSelf="center"
-                margin={{ vertical: size }}
-                size="xsmall"
-              >
+              <Text textAlign="center" alignSelf="center" margin={{ vertical: size }} size="xsmall">
                 <Markdown>{contact.message}</Markdown>
               </Text>
             </Box>
