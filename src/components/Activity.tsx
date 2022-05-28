@@ -1,6 +1,6 @@
 import { Box, Button, Heading, Text } from 'grommet'
 import { Github } from 'grommet-icons'
-import * as React from 'react'
+import React from 'react'
 
 type activityProps = {
   key: number
@@ -15,13 +15,7 @@ type activityProps = {
 
 const Activity = (props: activityProps) => {
   return (
-    <Box
-      elevation="large"
-      key={props.id}
-      pad={props.size}
-      background="white"
-      margin="xsmall"
-    >
+    <Box elevation="large" key={props.id} pad={props.size} background="white" margin="xsmall">
       <Heading level={3} margin="xsmall">
         {props.activity.name}
       </Heading>
@@ -31,12 +25,7 @@ const Activity = (props: activityProps) => {
       </Text>
 
       {props.activity.github && (
-        <Button
-          href={props.activity.github}
-          target="_blank"
-          plain
-          hoverIndicator="light-3"
-        >
+        <Button href={props.activity.github} target="_blank" plain hoverIndicator="light-3">
           <Box direction="row" pad="small">
             <Github />
             <Text margin={{ left: 'xsmall' }}>Github</Text>

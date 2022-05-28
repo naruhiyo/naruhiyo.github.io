@@ -4,13 +4,9 @@
   "description": "Portofilo of NaruHiyo Project",
   "main": "index.js",
   "scripts": {
-    "tcm": "tcm src -p assets/scss/**/*.scss -c -o ./types",
-    "predev": "npm run tcm",
+    "type:scss": "npx typed-scss-modules src/assets/scss/**/*.scss",
     "dev": "webpack serve -c webpack.config.js",
-    "prebuild": "npm run tcm",
-    "build": "rm -rf build/public/*; NODE_ENV=production webpack",
-    "lint": "eslint --ext .ts --ext .tsx src/**/*.ts src/**/*.tsx",
-    "lint:fix": "eslint --ext .ts --ext .tsx  src/**/*.ts src/**/*.tsx --fix"
+    "build": "rm -rf build/public/*; NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -64,12 +60,11 @@
     "prettier": "^2.6.2",
     "react-css-modules": "^4.7.11",
     "react-is": "^18.1.0",
+    "sass": "^1.52.1",
     "sass-loader": "^13.0.0",
     "source-map-loader": "^3.0.1",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.0",
-    "typed-css-modules": "^0.7.2",
-    "typed-css-modules-loader": "0.0.18",
     "typescript": "^4.7.2",
     "url-loader": "^4.1.1",
     "webpack": "^5.72.1",

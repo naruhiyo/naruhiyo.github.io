@@ -127,14 +127,7 @@ module.exports = {
               modules: true,
             },
           },
-          {
-            loader: 'typed-css-modules-loader',
-            options: {
-              camelCase: true,
-              searchDir: './src',
-              outDir: './types',
-            },
-          },
+
           {
             loader: 'postcss-loader',
             options: {

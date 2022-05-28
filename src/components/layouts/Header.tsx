@@ -1,5 +1,5 @@
-import { Box, Image, Select, Heading } from 'grommet'
-import * as React from 'react'
+import { Box, Heading, Image, Select } from 'grommet'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 const Header = () => {
@@ -8,13 +8,7 @@ const Header = () => {
 
   const Header: any = t('header')
   return (
-    <Box
-      background="neutral-3"
-      direction="row"
-      align="center"
-      justify="between"
-      pad="xsmall"
-    >
+    <Box background="neutral-3" direction="row" align="center" justify="between" pad="xsmall">
       <Box direction="row" align="center" pad="xsmall">
         <Box width="xxsmall" height="xxsmall">
           <Image fit="cover" src={Header.logo} />
@@ -25,11 +19,7 @@ const Header = () => {
       </Box>
 
       <Box width="xsmall">
-        <Select
-          options={['ja']}
-          value={value}
-          onChange={({ option }) => setValue(option)}
-        />
+        <Select options={['ja']} value={value} onChange={({ option }) => setValue(option)} />
       </Box>
     </Box>
   )
