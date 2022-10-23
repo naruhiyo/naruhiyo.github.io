@@ -30,6 +30,9 @@ module.exports = {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }
+    },
+    react: {
+      version: 'detect'
     }
   }
 };
