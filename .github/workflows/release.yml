@@ -8,28 +8,15 @@ jobs:
     runs-on: ubuntu-latest # using linux OS
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 15.x
-          registry-url: https://registry.npmjs.org
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          node-version: 17.x
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build app
         run: npm run build
@@ -39,5 +26,5 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./build
-          publish_branch: master  # deploying branch
-          commit_message: "App build(last commit: ${{ github.event.head_commit.message }})"
+          publish_branch: master # deploying branch
+          commit_message: 'App build(last commit: ${{ github.event.head_commit.message }})'

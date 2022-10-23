@@ -1,0 +1,92 @@
+{
+  "header": {
+    "title": "NaruHiyo Pages",
+    "logo": "images/brand-logo.png"
+  },
+  "footer": {
+    "copyright": "narugit and hiyoko3"
+  },
+  "banner": "images/top.png",
+  "collaborators": {
+    "head": "Collaborators",
+    "items": [
+      {
+        "profile": {
+          "name": "@narugit",
+          "image": "images/narugit.png",
+          "bio": "Genius gourmet engineer",
+          "link": {
+            "github": "https://github.com/narugit",
+            "portfolio": "https://narugit.github.io/",
+            "atcoder": "https://atcoder.jp/users/narucode"
+          }
+        }
+      },
+      {
+        "profile": {
+          "name": "@hiyoko3",
+          "image": "images/hiyoko3.png",
+          "bio": "ひよこエンジニア",
+          "link": {
+            "github": "https://github.com/hiyoko3",
+            "portfolio": "https://hiyoko3.github.io",
+            "atcoder": "https://atcoder.jp/users/ae_hiyoko3"
+          }
+        }
+      }
+    ]
+  },
+  "products": {
+    "head": "Products",
+    "items": [
+      {
+        "product": {
+          "name": "Memoma",
+          "image": "images/memoma.gif",
+          "desc": "Electronを利用したクロスプラットフォーム対応の3カラム型メモアプリ。Markdown記法に対応",
+          "github": "https://github.com/naruhiyo/Memoma"
+        }
+      },
+      {
+        "product": {
+          "name": "Partytion",
+          "image": "images/partytion.gif",
+          "desc": "飲み会でのミニゲームとして使えるiPhoneアプリ",
+          "github": "https://github.com/naruhiyo/partytion"
+        }
+      },
+      {
+        "product": {
+          "name": "aman",
+          "image": "images/aman.gif",
+          "desc": "`man`コマンドからコマンドのオプションを検索して出力してくれるCLI",
+          "github": "https://github.com/naruhiyo/aman"
+        }
+      },
+      {
+        "product": {
+          "name": "appetizer",
+          "image": "images/appetizer.gif",
+          "desc": "昼食や夕食の時間帯に指定された駅の近くにある飲食店を紹介してくれるVS Code拡張です",
+          "github": "https://github.com/naruhiyo/appetizer"
+        }
+      }
+    ]
+  },
+  "activities": {
+    "head": "Activity",
+    "items": [
+      {
+        "activity": {
+          "name": "NaruHiyo 競プロ部",
+          "desc": "プログラミング能力を向上させるために AtCdoer を利用してアルゴリズムを勉強中！",
+          "github": "https://github.com/naruhiyo/algorithm-enhancement"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "head": "Contact us",
+    "message": "`***@gmail.com` \n\n `***` には ***naruhiyo.apps*** と入力してください。"
+  }
+}

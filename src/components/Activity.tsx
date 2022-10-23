@@ -1,17 +1,17 @@
-import { Box, Button, Heading, Text } from 'grommet'
-import { Github } from 'grommet-icons'
-import React from 'react'
+import { Box, Button, Heading, Text } from 'grommet';
+import { Github } from 'grommet-icons';
+import React from 'react';
 
 type activityProps = {
-  key: number
-  id: number
+  key: number;
+  id: number;
   activity: {
-    name: string
-    desc: string
-    github: string
-  }
-  size: string
-}
+    name: string;
+    desc: string;
+    github: string;
+  };
+  size: string;
+};
 
 const Activity = (props: activityProps) => {
   return (
@@ -33,7 +33,7 @@ const Activity = (props: activityProps) => {
         </Button>
       )}
     </Box>
-  )
-}
+  );
+};
 
-export default Activity
+export default Activity;

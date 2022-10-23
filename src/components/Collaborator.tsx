@@ -1,22 +1,22 @@
-import { Box, Button, Heading, Image, Text } from 'grommet'
-import { Article, Github, Link } from 'grommet-icons'
-import React from 'react'
+import { Box, Button, Heading, Image, Text } from 'grommet';
+import { Article, Github, Link } from 'grommet-icons';
+import React from 'react';
 
 type collaboratorProps = {
-  key: number
-  id: number
+  key: number;
+  id: number;
   profile: {
-    name: string
-    image: string
-    bio: string
+    name: string;
+    image: string;
+    bio: string;
     link: {
-      github: string
-      portfolio: string
-      atcoder: string
-    }
-  }
-  size: string
-}
+      github: string;
+      portfolio: string;
+      atcoder: string;
+    };
+  };
+  size: string;
+};
 
 const Collaborator = (props: collaboratorProps) => {
   return (
@@ -57,7 +57,7 @@ const Collaborator = (props: collaboratorProps) => {
         </Button>
       )}
     </Box>
-  )
-}
+  );
+};
 
-export default Collaborator
+export default Collaborator;

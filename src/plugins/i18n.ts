@@ -1,17 +1,15 @@
-import i18next from 'i18next'
-import i18nextBrowserLanguagedetector from 'i18next-browser-languagedetector'
-import { initReactI18next } from 'react-i18next'
-import enYml from '../assets/i18n/en.yml'
-import jaYml from '../assets/i18n/ja.yml'
+import i18next from 'i18next';
+import i18nextBrowserLanguagedetector from 'i18next-browser-languagedetector';
+import { initReactI18next } from 'react-i18next';
 
 const resources = {
   ja: {
-    translation: jaYml,
+    translation: await import('@src/i18n/ja.json')
   },
   en: {
-    translation: enYml,
-  },
-}
+    translation: await import('@src/i18n/en.json')
+  }
+};
 
 i18next
   .use(i18nextBrowserLanguagedetector)
@@ -19,13 +17,11 @@ i18next
   .init({
     resources,
     lng: 'ja',
-
     keySeparator: false, // we do not use keys in form messages.welcome
-
     interpolation: {
-      escapeValue: false, // react already safes from xss
+      escapeValue: false // react already safes from xss
     },
-    returnObjects: true,
-  })
+    returnObjects: true
+  });
 
-export default i18next
+export default i18next;

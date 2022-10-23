@@ -11,7 +11,7 @@
 $ npm i
 
 # Start a server
-$ npm run dev # you can access http://localhost:7777
+$ npm run dev # you can access http://localhost:***
 ```
 
 ### UI Framework
