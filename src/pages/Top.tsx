@@ -14,21 +14,4 @@ export const Top = () => {
       <Contact />
     </Container>
   );
-
-  // // <Grommet theme={grommetCustomStyle} full>
-  // //   <ResponsiveContext.Consumer>
-  // //     {(size) => (
-  // //       <Box>
-  //         {/*
-  //         <Box pad={size} margin={{ bottom: size }}>
-  //           <Heading level="3">{contact.head}</Heading>
-
-  //           <Text textAlign="center" alignSelf="center" margin={{ vertical: size }} size="xsmall">
-  //             <Markdown>{contact.message}</Markdown>
-  //           </Text>
-  //         </Box> */}
-  //       {/* </Box>
-  //     )}
-  //   </ResponsiveContext.Consumer>
-  // </Grommet> */}
 };
