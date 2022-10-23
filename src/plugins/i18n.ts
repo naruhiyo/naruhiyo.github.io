@@ -1,13 +1,15 @@
+import enJson from '@src/i18n/en.json';
+import jaJson from '@src/i18n/ja.json';
 import i18next from 'i18next';
 import i18nextBrowserLanguagedetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 const resources = {
   ja: {
-    translation: await import('@src/i18n/ja.json')
+    translation: jaJson
   },
   en: {
-    translation: await import('@src/i18n/en.json')
+    translation: enJson
   }
 };
 
