@@ -17,7 +17,7 @@ export const Activity = (props: ActivitySchema) => {
   const activity = props.activity;
 
   return (
-    <Card>
+    <Card sx={{ height: 200 }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {activity.name}

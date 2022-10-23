@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ColorThemeContext } from '@src/context/ColorThemeContext';
@@ -42,12 +43,19 @@ function App() {
           {/* SPA用Router親 */}
           <BrowserRouter>
             {/* レイアウト */}
-            <Header />
-            <Routes>
-              {/* Appコンテンツ */}
-              <Route path="/" element={<Top />} />
-            </Routes>
-            <Footer />
+            <Box
+              sx={{
+                bgcolor: 'background.default',
+                color: 'text.primary'
+              }}
+            >
+              <Header />
+              <Routes>
+                {/* Appコンテンツ */}
+                <Route path="/" element={<Top />} />
+              </Routes>
+              <Footer />
+            </Box>
           </BrowserRouter>
         </ThemeProvider>
       </ColorThemeContext.Provider>

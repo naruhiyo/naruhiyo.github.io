@@ -19,7 +19,7 @@ export const Product = (props: ProductSchema) => {
   const product = props.product;
 
   return (
-    <Card>
+    <Card sx={{ height: 390 }}>
       <CardMedia component="img" height="200" image={product.image} alt="collaborator-icon" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

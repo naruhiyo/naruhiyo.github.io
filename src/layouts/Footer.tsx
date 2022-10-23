@@ -1,3 +1,6 @@
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,9 +14,13 @@ const Footer = () => {
   const footer: FooterSchema = t('footer') as FooterSchema;
 
   return (
-    <Typography variant="body2" align="center">
-      &copy; {footer.copyright}
-    </Typography>
+    <AppBar position="static" sx={{ top: 'auto', bottom: 0 }}>
+      <Toolbar>
+        <Typography variant="body2" align="center" sx={{ flexGrow: 1 }}>
+          &copy; {footer.copyright}
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 
