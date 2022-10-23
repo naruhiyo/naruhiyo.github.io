@@ -1,44 +1,39 @@
-import { Box, Button, Heading, Image, Text } from 'grommet';
-import { Github } from 'grommet-icons';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 import React from 'react';
 
-type productProps = {
-  key: number;
-  id: number;
+export type ProductSchema = {
   product: {
     name: string;
     image: string;
     desc: string;
     github: string;
   };
-  size: string;
 };
 
-const Product = (props: productProps) => {
+export const Product = (props: ProductSchema) => {
+  const product = props.product;
+
   return (
-    <Box elevation="large" key={props.id} pad={props.size} background="white" margin="xsmall">
-      <Heading level={3} margin="xsmall">
-        {props.product.name}
-      </Heading>
-
-      <Box width="medium" height="small" alignSelf="center" pad="small">
-        <Image fit="contain" src={props.product.image}></Image>
-      </Box>
-
-      <Text textAlign="center" margin="small" size="small">
-        {props.product.desc}
-      </Text>
-
-      {props.product.github && (
-        <Button href={props.product.github} target="_blank" plain hoverIndicator="light-3">
-          <Box direction="row" pad="small">
-            <Github />
-            <Text margin={{ left: 'xsmall' }}>Github</Text>
-          </Box>
+    <Card>
+      <CardMedia component="img" height="200" image={product.image} alt="collaborator-icon" />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {product.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {product.desc}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button variant="outlined" href={product.github} target="_blank" size="small">
+          Github
         </Button>
-      )}
-    </Box>
+      </CardActions>
+    </Card>
   );
 };
-
-export default Product;

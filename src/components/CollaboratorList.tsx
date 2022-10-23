@@ -16,7 +16,7 @@ export const CollaboratorList = () => {
   return (
     <Grid container spacing={2}>
       {collaborators.items.map((item: CollaboratorSchema, idx: number) => (
-        <Grid key={idx} xs={4} md={3}>
+        <Grid key={idx} xs={10} md={3}>
           <Collaborator collaborator={item.collaborator} />
         </Grid>
       ))}

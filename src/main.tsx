@@ -5,7 +5,7 @@ import '@fontsource/roboto/700.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from '@src/components/App';
+import App from '@src/App';
 import '@src/plugins/i18n';
 
 const root: ReactDOM.Root = ReactDOM.createRoot(document.getElementById('root') as Element);

@@ -1,15 +1,16 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Footer from '@src/components/layouts/Footer';
-import Header from '@src/components/layouts/Header';
-import Top from '@src/components/Top';
 import { ColorThemeContext } from '@src/context/ColorThemeContext';
+import Footer from '@src/layouts/Footer';
+import Header from '@src/layouts/Header';
+import { Top } from '@src/pages/Top';
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 type ColorTheme = 'light' | 'dark';
 
 function App() {
+  // テーマカラーの動的変更設定
   const [mode, setMode] = useState<ColorTheme>('light');
 
   const theme = React.useMemo(
