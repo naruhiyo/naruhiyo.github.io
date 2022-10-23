@@ -11,7 +11,7 @@
     "head": "開発者",
     "items": [
       {
-        "profile": {
+        "collaborator": {
           "name": "@narugit",
           "image": "images/narugit.png",
           "bio": "グルメエンジニア",
@@ -23,7 +23,7 @@
         }
       },
       {
-        "profile": {
+        "collaborator": {
           "name": "@hiyoko3",
           "image": "images/hiyoko3.png",
           "bio": "ひよこエンジニア",

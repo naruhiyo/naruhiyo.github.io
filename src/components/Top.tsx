@@ -1,11 +1,7 @@
-import Activity from '@src/components/Activity';
-import Collaborator from '@src/components/Collaborator';
-import Footer from '@src/components/layouts/Footer';
-import Header from '@src/components/layouts/Header';
-import Product from '@src/components/Product';
-import { Box, Grid, Grommet, Heading, Image, ResponsiveContext } from 'grommet';
+import Box from '@mui/material/Box';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { CollaboratorList } from './CollaboratorList';
 const grommetCustomStyle = {
   global: {},
   image: {
@@ -20,10 +16,7 @@ const Top = () => {
     head: string;
     items: [];
   } = t('products');
-  const collaborators: {
-    head: string;
-    items: [];
-  } = t('collaborators');
+
   const contact: {
     head: string;
     message: string;
@@ -33,86 +26,82 @@ const Top = () => {
     items: [];
   } = t('activities');
 
-  const productList = products.items.map((item: any, idx: number) => (
-    <ResponsiveContext.Consumer key={idx}>
-      {(size) => <Product product={item.product} key={idx} id={idx} size={size} />}
-    </ResponsiveContext.Consumer>
-  ));
-  const collaboratorList = collaborators.items.map((item: any, idx: number) => (
-    <ResponsiveContext.Consumer key={idx}>
-      {(size) => <Collaborator profile={item.profile} key={idx} id={idx} size={size} />}
-    </ResponsiveContext.Consumer>
-  ));
-  const activityList = activities.items.map((item: any, idx: number) => (
-    <ResponsiveContext.Consumer key={idx}>
-      {(size) => <Activity activity={item.activity} key={idx} id={idx} size={size} />}
-    </ResponsiveContext.Consumer>
-  ));
+  // const productList = products.items.map((item: any, idx: number) => (
+  //   <ResponsiveContext.Consumer key={idx}>
+  //     {(size) => <Product product={item.product} key={idx} id={idx} size={size} />}
+  //   </ResponsiveContext.Consumer>
+  // ));
+
+  // const activityList = activities.items.map((item: any, idx: number) => (
+  //   <ResponsiveContext.Consumer key={idx}>
+  //     {(size) => <Activity activity={item.activity} key={idx} id={idx} size={size} />}
+  //   </ResponsiveContext.Consumer>
+  // ));
 
   return (
-    <Grommet theme={grommetCustomStyle} full>
-      <Header />
-      <ResponsiveContext.Consumer>
-        {(size) => (
-          <Box>
-            <Image fit="cover" src={t('banner')}></Image>
-
-            {/* <Box pad="medium" margin={{ bottom: size }}>
-              <Heading level="3">{collaborators.head}</Heading>
-              <Grid
-                columns={{
-                  count: 'fill',
-                  size: 'medium'
-                }}
-                gap={size}
-              >
-                {collaboratorList}
-              </Grid>
-            </Box> */}
-
-            <Box background="light-1">
-              <Box pad={size} margin={{ bottom: size }}>
-                <Heading level="3">{products.head}</Heading>
-                <Grid
-                  columns={{
-                    count: 'fill',
-                    size: size
-                  }}
-                  gap="small"
-                >
-                  {productList}
-                </Grid>
-              </Box>
-            </Box>
-
-            <Box background="light-1">
-              <Box pad={size} margin={{ bottom: size }}>
-                <Heading level="3">{activities.head}</Heading>
-                <Grid
-                  columns={{
-                    count: 'fill',
-                    size: size
-                  }}
-                  gap="small"
-                >
-                  {activityList}
-                </Grid>
-              </Box>
-            </Box>
-            {/* 
-            <Box pad={size} margin={{ bottom: size }}>
-              <Heading level="3">{contact.head}</Heading>
-
-              <Text textAlign="center" alignSelf="center" margin={{ vertical: size }} size="xsmall">
-                <Markdown>{contact.message}</Markdown>
-              </Text>
-            </Box> */}
-          </Box>
-        )}
-      </ResponsiveContext.Consumer>
-      <Footer />
-    </Grommet>
+    <Box>
+      <CollaboratorList />
+    </Box>
   );
+
+  // // <Grommet theme={grommetCustomStyle} full>
+  // //   <ResponsiveContext.Consumer>
+  // //     {(size) => (
+  // //       <Box>
+  //         {/* <Box pad="medium" margin={{ bottom: size }}>
+  //           <Heading level="3">{collaborators.head}</Heading>
+  //           <Grid
+  //             columns={{
+  //               count: 'fill',
+  //               size: 'medium'
+  //             }}
+  //             gap={size}
+  //           >
+  //             {collaboratorList}
+  //           </Grid>
+  //         </Box> */}
+
+  //         {/* <Box background="light-1">
+  //           <Box pad={size} margin={{ bottom: size }}>
+  //             <Heading level="3">{products.head}</Heading>
+  //             <Grid
+  //               columns={{
+  //                 count: 'fill',
+  //                 size: size
+  //               }}
+  //               gap="small"
+  //             >
+  //               {productList}
+  //             </Grid>
+  //           </Box>
+  //         </Box> */}
+
+  //         {/* <Box background="light-1">
+  //           <Box pad={size} margin={{ bottom: size }}>
+  //             <Heading level="3">{activities.head}</Heading>
+  //             <Grid
+  //               columns={{
+  //                 count: 'fill',
+  //                 size: size
+  //               }}
+  //               gap="small"
+  //             >
+  //               {activityList}
+  //             </Grid>
+  //           </Box>
+  //         </Box> */}
+  //         {/*
+  //         <Box pad={size} margin={{ bottom: size }}>
+  //           <Heading level="3">{contact.head}</Heading>
+
+  //           <Text textAlign="center" alignSelf="center" margin={{ vertical: size }} size="xsmall">
+  //             <Markdown>{contact.message}</Markdown>
+  //           </Text>
+  //         </Box> */}
+  //       {/* </Box>
+  //     )}
+  //   </ResponsiveContext.Consumer>
+  // </Grommet> */}
 };
 
 export default Top;

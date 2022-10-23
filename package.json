@@ -38,7 +38,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
-    "normalize.css": "^8.0.1",
     "prettier": "^2.7.1",
     "react-css-modules": "^4.7.11",
     "typescript": "^4.8.4",
@@ -48,6 +47,11 @@
     "vite-plugin-html": "^3.2.0"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.10",
     "grommet": "^2.27.0",
     "grommet-icons": "^4.8.0",
     "i18next": "^22.0.2",
@@ -55,7 +59,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.0.0",
-    "react-router": "^6.4.2",
     "react-router-dom": "^6.4.2",
     "styled-components": "^5.3.6"
   }

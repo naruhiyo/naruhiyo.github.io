@@ -1,26 +1,37 @@
-import { Box, Heading, Image, Select } from 'grommet';
-import React from 'react';
+import InvertColorsIcon from '@mui/icons-material/InvertColors';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { ColorThemeContext, ColorThemeContextSchema } from '@src/context/ColorThemeContext';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+
+type HeaderSchema = {
+  title: string;
+  logo: string;
+};
 
 const Header = () => {
   const { t } = useTranslation();
-  const [value, setValue] = React.useState('ja');
+  const colorContext: ColorThemeContextSchema = useContext(ColorThemeContext);
 
-  const Header: any = t('header');
+  const header: HeaderSchema = t('header') as HeaderSchema;
+
   return (
-    <Box background="neutral-3" direction="row" align="center" justify="between" pad="xsmall">
-      <Box direction="row" align="center" pad="xsmall">
-        <Box width="xxsmall" height="xxsmall">
-          <Image fit="cover" src={Header.logo} />
-        </Box>
-        <Heading margin={{ horizontal: 'small' }} level="3">
-          {Header.title}
-        </Heading>
-      </Box>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            {header.title}
+          </Typography>
 
-      <Box width="xsmall">
-        <Select options={['ja']} value={value} onChange={({ option }) => setValue(option)} />
-      </Box>
+          <IconButton color="inherit" onClick={colorContext.toggleColorTheme}>
+            <InvertColorsIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     </Box>
   );
 };
