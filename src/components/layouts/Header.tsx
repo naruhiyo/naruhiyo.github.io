@@ -1,12 +1,12 @@
-import { Box, Heading, Image, Select } from 'grommet'
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { Box, Heading, Image, Select } from 'grommet';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
-  const { t } = useTranslation()
-  const [value, setValue] = React.useState('ja')
+  const { t } = useTranslation();
+  const [value, setValue] = React.useState('ja');
 
-  const Header: any = t('header')
+  const Header: any = t('header');
   return (
     <Box background="neutral-3" direction="row" align="center" justify="between" pad="xsmall">
       <Box direction="row" align="center" pad="xsmall">
@@ -22,7 +22,7 @@ const Header = () => {
         <Select options={['ja']} value={value} onChange={({ option }) => setValue(option)} />
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

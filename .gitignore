@@ -1,3 +1,5 @@
 dist
 node_modules
 types/**/scss/*.d.ts
+.vscode/*
+!.vscode/settings.json

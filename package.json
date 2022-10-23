@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "type:scss": "npx typed-scss-modules src/assets/scss/**/*.scss",
-    "dev": "webpack serve -c webpack.config.js",
-    "build": "rm -rf build/public/*; NODE_ENV=production webpack"
+    "dev": "vite",
+    "build": "NODE_ENV=production vite build",
+    "preview": "NODE_ENV=production vite preview"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
+    "@vitejs/plugin-react": "^2.1.0",
     "autoprefixer": "^10.4.7",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
@@ -70,7 +72,11 @@
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0",
-    "yaml-loader": "^0.8.0"
+    "yaml-loader": "^0.8.0",
+    "vite": "^3.1.8",
+    "vite-plugin-env-compatible": "^1.1.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-html": "^3.2.0"
   },
   "dependencies": {
     "grommet": "^2.23.0",

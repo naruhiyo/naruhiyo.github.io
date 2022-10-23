@@ -1,6 +1,6 @@
-import Top from '@src/components/Top'
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Top from '@src/components/Top';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default class App extends React.Component {
   render() {
@@ -10,6 +10,6 @@ export default class App extends React.Component {
           <Route path="/" element={<Top />} />
         </Routes>
       </BrowserRouter>
-    )
+    );
   }
 }

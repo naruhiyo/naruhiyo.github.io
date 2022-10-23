@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "es2015",
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "ES6", "ES2022", "ESNext"],
     "sourceMap": true,
     "strict": true,
-    "moduleResolution": "node", // nod_modules からライブラリを読み込む
-    "lib": ["ES2021", "DOM"],
-    "jsx": "react",
+    "noImplicitThis": true /* Raise error on 'this' expressions with an implied 'any' type. */,
+    "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
     "noImplicitAny": true,
-    "removeComments": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
+    "moduleResolution": "node", // nod_modules からライブラリを読み込む
     "baseUrl": "./",
     "paths": {
       "@src/*": ["src/*"] // tsファイル内でのimportの相対解決に必要, baseUrlも併せてセットする必要あり
-    }
+    },
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "jsx": "react",
+    "resolveJsonModule": true
   }
 }

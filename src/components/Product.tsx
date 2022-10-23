@@ -1,18 +1,18 @@
-import { Box, Button, Heading, Image, Text } from 'grommet'
-import { Github } from 'grommet-icons'
-import React from 'react'
+import { Box, Button, Heading, Image, Text } from 'grommet';
+import { Github } from 'grommet-icons';
+import React from 'react';
 
 type productProps = {
-  key: number
-  id: number
+  key: number;
+  id: number;
   product: {
-    name: string
-    image: string
-    desc: string
-    github: string
-  }
-  size: string
-}
+    name: string;
+    image: string;
+    desc: string;
+    github: string;
+  };
+  size: string;
+};
 
 const Product = (props: productProps) => {
   return (
@@ -38,7 +38,7 @@ const Product = (props: productProps) => {
         </Button>
       )}
     </Box>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;
