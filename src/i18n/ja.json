@@ -67,8 +67,16 @@
         "product": {
           "name": "appetizer",
           "image": "images/appetizer.gif",
-          "desc": "昼食や夕食の時間帯に指定された駅の近くにある飲食店を紹介してくれるVS Code拡張です",
+          "desc": "昼食や夕食の時間帯に指定された駅の近くにある飲食店を紹介してくれるVS Code拡張",
           "github": "https://github.com/naruhiyo/appetizer"
+        }
+      },
+      {
+        "product": {
+          "name": "Net Doctor",
+          "image": "images/net-doctor.gif",
+          "desc": "接続しているネットワークに異常がないかを診断するアプリ",
+          "github": "https://github.com/naruhiyo/net_doctor"
         }
       }
     ]
