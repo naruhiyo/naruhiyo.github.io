@@ -27,7 +27,9 @@ export default () => {
       // generate html
       createHtmlPlugin(),
       // lint
-      eslintPlugin()
+      eslintPlugin({
+        fix: true
+      })
     ],
     publicDir: path.resolve(__dirname, `${SRC_PATH}/assets`),
     build: {
