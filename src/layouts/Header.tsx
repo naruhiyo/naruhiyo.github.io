@@ -27,7 +27,7 @@ const Header = () => {
             {header.title}
           </Typography>
 
-          <IconButton color="inherit" onClick={colorContext.toggleColorTheme}>
+          <IconButton color="inherit" onClick={colorContext.toggleColorTheme} aria-label="toggle-btn">
             <InvertColorsIcon />
           </IconButton>
         </Toolbar>
