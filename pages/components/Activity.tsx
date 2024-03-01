@@ -3,15 +3,8 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { ActivitySchema } from '@src/types/Activity';
 import React from 'react';
-
-export type ActivitySchema = {
-  activity: {
-    name: string;
-    desc: string;
-    github: string;
-  };
-};
 
 export const Activity = (props: ActivitySchema) => {
   const activity = props.activity;

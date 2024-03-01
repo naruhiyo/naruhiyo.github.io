@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-complete-tag",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "aaron-bond.better-comments",
+    "naumovs.color-highlight",
+    "esbenp.prettier-vscode",
+    "jeff-hykin.better-dockerfile-syntax",
+    "ms-azuretools.vscode-docker"
+  ]
+}

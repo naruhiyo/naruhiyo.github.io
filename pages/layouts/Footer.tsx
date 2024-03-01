@@ -1,17 +1,13 @@
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-
 import Typography from '@mui/material/Typography';
+import { FooterSchema } from '@src/types/Footer';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-
-type FooterSchema = {
-  copyright: string;
-};
 
 const Footer = () => {
-  const { t } = useTranslation();
-  const footer: FooterSchema = t('footer') as FooterSchema;
+  const footer: FooterSchema = {
+    copyright: 'narugit and hiyoko3'
+  };
 
   return (
     <AppBar position="static" sx={{ top: 'auto', bottom: 0 }}>

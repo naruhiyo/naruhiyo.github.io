@@ -4,20 +4,8 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { CollaboratorSchema } from '@src/types/Collaborator';
 import React from 'react';
-
-export type CollaboratorSchema = {
-  collaborator: {
-    name: string;
-    image: string;
-    bio: string;
-    link: {
-      github: string;
-      portfolio: string;
-      atcoder: string;
-    };
-  };
-};
 
 export const Collaborator = (props: CollaboratorSchema) => {
   const collaborator = props.collaborator;

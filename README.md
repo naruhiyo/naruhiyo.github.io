@@ -1,30 +1,31 @@
-# naruhiyo landing page
+# NaruHiyo Project portfilio
 
-**_NaruHiyo Project portfilio_**
+[![MIT](https://img.shields.io/badge/license-MIT-blue)](LICENCE)
 
-- [Welcome Access!](https://naruhiyo.github.io/)
+## Production Page
 
-## Getting Started
+**[Welcome Access!](https://naruhiyo.github.io/)**
+
+## Developer documentation
+
+### Languages
+
+- React
+- Typescript
+- [MUI](https://mui.com/)
+
+### quickstart
+
+### Set up local
 
 ```sh
-# package install
-$ npm i
+node -v
+# => v20.10.0
 
-# Start a server
-$ npm run dev # you can access http://localhost:***
+npm i -g pnpm
+
+pnpm install
+
+pnpm run dev
+# => Local:   http://localhost:8888/
 ```
-
-### UI Framework
-
-[MUI](https://mui.com/)
-
-### Any Requests
-
-Any request for improving this repo will be fine.
-
-- PR(pull request) => [.github/PULL_REQUEST_TEMPLATE.md](https://github.com/naruhiyo/naruhiyo.github.io/blob/develop/.github/PULL_REQUEST_TEMPLATE.md)
-- issue => [.github/ISSUE_TEMPLATE/BUG_REPORT.md](https://github.com/naruhiyo/naruhiyo.github.io/blob/develop/.github/PULL_REQUEST_TEMPLATE.md)
-
-### Licence
-
-MIT

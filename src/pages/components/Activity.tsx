@@ -2,35 +2,25 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { ActivitySchema } from '@src/types/Activity';
 import React from 'react';
 
-export type ProductSchema = {
-  product: {
-    name: string;
-    image: string;
-    desc: string;
-    github: string;
-  };
-};
-
-export const Product = (props: ProductSchema) => {
-  const product = props.product;
+export const Activity = (props: ActivitySchema) => {
+  const activity = props.activity;
 
   return (
-    <Card sx={{ height: 390 }}>
-      <CardMedia component="img" height="200" image={product.image} alt="collaborator-icon" />
+    <Card sx={{ height: 200 }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {product.name}
+          {activity.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {product.desc}
+          {activity.desc}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="outlined" href={product.github} target="_blank" size="small">
+        <Button variant="outlined" href={activity.github} target="_blank" size="small">
           Github
         </Button>
       </CardActions>

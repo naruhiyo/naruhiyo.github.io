@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from '@src/App';
-import '@src/plugins/i18n';
 
-const root: ReactDOM.Root = ReactDOM.createRoot(document.getElementById('root') as Element);
-root.render(<App />);
+const root: Element = document.getElementById('root') as Element;
+const reactApp: ReactDOM.Root = ReactDOM.createRoot(root);
+reactApp.render(<App />);

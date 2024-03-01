@@ -6,9 +6,8 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 
 // https://vitejs.dev/config/
 export default () => {
-  const IS_PROD = process.env.NODE_ENV === 'production';
   const SRC_PATH = 'src';
-  const OUTPUT_PATH = IS_PROD ? 'build' : 'dist';
+  const OUTPUT_PATH = 'build';
 
   return defineConfig({
     root: path.resolve(__dirname, SRC_PATH),
@@ -19,7 +18,7 @@ export default () => {
           replacement: path.resolve(__dirname, SRC_PATH)
         }
       ],
-      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+      extensions: ['.ts', '.tsx', '.json']
     },
     plugins: [
       // compile react
@@ -35,6 +34,10 @@ export default () => {
     build: {
       outDir: path.resolve(__dirname, OUTPUT_PATH),
       emptyOutDir: true
+    },
+    server: {
+      host: '0.0.0.0',
+      port: 8888
     }
   });
 };
