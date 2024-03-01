@@ -18,7 +18,7 @@ export default () => {
           replacement: path.resolve(__dirname, SRC_PATH)
         }
       ],
-      extensions: ['.ts', '.tsx', '.json']
+      extensions: ['.js', '.ts', '.tsx']
     },
     plugins: [
       // compile react
