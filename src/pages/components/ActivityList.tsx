@@ -1,19 +1,23 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
-import { Activity, ActivitySchema } from '@src/components/Activity';
+import { Activity } from '@src/pages/components/Activity';
+import { ActivityListSchema, ActivitySchema } from '@src/types/Activity';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-
-type ActivityListSchema = {
-  head: string;
-  items: ActivitySchema[];
-};
 
 export const ActivityList = () => {
-  const { t } = useTranslation();
-
-  const activities: ActivityListSchema = t('activities') as ActivityListSchema;
+  const activities: ActivityListSchema = {
+    head: '活動',
+    items: [
+      {
+        activity: {
+          name: 'NaruHiyo 競プロ部',
+          desc: 'プログラミング能力を向上させるために AtCdoer を利用してアルゴリズムを勉強中！',
+          github: 'https://github.com/naruhiyo/algorithm-enhancement'
+        }
+      }
+    ]
+  };
 
   return (
     <Box sx={{ my: 2 }}>

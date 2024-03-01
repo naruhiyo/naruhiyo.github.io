@@ -1,12 +1,10 @@
 {
   "name": "naruhiyo.github.io",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "Portofilo of NaruHiyo Project",
-  "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "NODE_ENV=production vite build",
-    "preview": "NODE_ENV=production vite preview"
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -23,34 +21,30 @@
   },
   "homepage": "https://github.com/naruhiyo/naruhiyo.github.io.git#readme",
   "devDependencies": {
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
     "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^6.20.0",
-    "@typescript-eslint/parser": "^6.20.0",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "typescript": "^5.3.3",
-    "vite": "^5.0.12",
-    "vite-plugin-env-compatible": "^2.0.1",
+    "vite": "^5.1.4",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-html": "^3.2.2"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.3",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
-    "@mui/icons-material": "^5.15.6",
-    "@mui/material": "^5.15.6",
-    "i18next": "^23.8.1",
-    "i18next-browser-languagedetector": "^7.2.0",
+    "@mui/icons-material": "^5.15.11",
+    "@mui/material": "^5.15.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^14.0.1",
-    "react-router-dom": "^6.21.3"
+    "react-router-dom": "^6.22.2"
   }
 }

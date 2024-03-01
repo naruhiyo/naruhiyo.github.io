@@ -3,17 +3,14 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
+import { ContactSchema } from '@src/types/Contact';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-
-export type ContactSchema = {
-  head: string;
-  message: string;
-};
 
 export const Contact = () => {
-  const { t } = useTranslation();
-  const contact: ContactSchema = t('contact') as ContactSchema;
+  const contact: ContactSchema = {
+    head: 'Contact us',
+    message: '`***@gmail.com` \n\n `***` には ***naruhiyo.apps*** と入力してください。'
+  };
 
   return (
     <Box sx={{ my: 2 }}>
