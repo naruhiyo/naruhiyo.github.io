@@ -1,10 +1,7 @@
 import { InvertColors } from '@mui/icons-material';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { ColorThemeContext, ColorThemeContextSchema } from '@src/context/ColorThemeContext';
+import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
+import { ColorThemeContext } from '@src/context/ColorThemeContext';
+import { ColorThemeContextSchema } from '@src/types/Color';
 import { HeaderSchema } from '@src/types/Header';
 import React, { useContext } from 'react';
 
@@ -18,7 +15,7 @@ const Header = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar elevation={0} position="static" color="inherit">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {header.title}

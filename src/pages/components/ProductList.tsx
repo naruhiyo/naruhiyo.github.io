@@ -1,5 +1,4 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Product } from '@src/pages/components/Product';
 import { ProductListSchema, ProductSchema } from '@src/types/Product';
@@ -7,7 +6,7 @@ import React from 'react';
 
 export const ProductList = () => {
   const products: ProductListSchema = {
-    head: '作ったもの',
+    head: 'Products',
     items: [
       {
         product: {
@@ -53,13 +52,14 @@ export const ProductList = () => {
   };
 
   return (
-    <Box sx={{ my: 2 }}>
-      <Typography variant="h5" component="div">
+    <Box sx={{ my: 8 }}>
+      <Typography variant="h5" component="div" sx={{ mb: 5 }} align="center">
         {products.head}
       </Typography>
-      <Grid container spacing={2} sx={{ my: 2 }}>
+
+      <Grid container spacing={3} rowSpacing={2} justifyContent="center">
         {products.items.map((item: ProductSchema, idx: number) => (
-          <Grid key={idx} xs={12} md={3}>
+          <Grid key={idx} xs={10} md={4}>
             <Product product={item.product} />
           </Grid>
         ))}

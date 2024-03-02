@@ -7,6 +7,6 @@ services:
       - '8888:8888'
     volumes:
       - .:/app
-      - naruhiyo_node_modules:/app/node_modules
+      - web_node_modules:/app/node_modules
 volumes:
-  naruhiyo_node_modules:
+  web_node_modules:

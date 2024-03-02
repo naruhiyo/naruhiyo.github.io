@@ -1,5 +1,4 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Activity } from '@src/pages/components/Activity';
 import { ActivityListSchema, ActivitySchema } from '@src/types/Activity';
@@ -7,7 +6,7 @@ import React from 'react';
 
 export const ActivityList = () => {
   const activities: ActivityListSchema = {
-    head: '活動',
+    head: 'Activities',
     items: [
       {
         activity: {
@@ -20,13 +19,14 @@ export const ActivityList = () => {
   };
 
   return (
-    <Box sx={{ my: 2 }}>
-      <Typography variant="h5" component="div">
+    <Box sx={{ my: 8 }}>
+      <Typography variant="h5" component="div" sx={{ mb: 5 }} align="center">
         {activities.head}
       </Typography>
-      <Grid container spacing={2} sx={{ my: 2 }}>
+
+      <Grid container spacing={5} rowSpacing={2} justifyContent="center">
         {activities.items.map((item: ActivitySchema, idx: number) => (
-          <Grid key={idx} xs={12} md={3}>
+          <Grid key={idx} xs={10} md={4}>
             <Activity activity={item.activity} />
           </Grid>
         ))}
