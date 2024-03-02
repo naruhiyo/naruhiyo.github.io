@@ -1,6 +1,4 @@
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import { Box, Container, Typography } from '@mui/material';
 import { FooterSchema } from '@src/types/Footer';
 import React from 'react';
 
@@ -10,13 +8,20 @@ const Footer = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ top: 'auto', bottom: 0 }}>
-      <Toolbar>
-        <Typography variant="body2" align="center" sx={{ flexGrow: 1 }}>
+    <Box
+      component="footer"
+      sx={{
+        py: 3,
+        px: 2,
+        mt: 'auto'
+      }}
+    >
+      <Container maxWidth="sm">
+        <Typography variant="body2" align="center">
           &copy; {footer.copyright}
         </Typography>
-      </Toolbar>
-    </AppBar>
+      </Container>
+    </Box>
   );
 };
 
