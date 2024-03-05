@@ -14,7 +14,12 @@
 - Typescript
 - [MUI](https://mui.com/)
 
-### quickstart
+### Quick Preview
+
+```sh
+docker-compose up -d web
+# => http://localhost:8888/
+```
 
 ### Set up local
 
