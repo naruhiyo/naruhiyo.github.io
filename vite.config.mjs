@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
+import viteCompression from 'vite-plugin-compression';
 import eslintPlugin from 'vite-plugin-eslint';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
@@ -28,16 +29,29 @@ export default () => {
       // lint
       eslintPlugin({
         fix: true
-      })
+      }),
+      // compress
+      viteCompression()
     ],
     publicDir: path.resolve(__dirname, `${SRC_PATH}/assets`),
+    // production build
     build: {
       outDir: path.resolve(__dirname, OUTPUT_PATH),
       emptyOutDir: true
     },
+    // local dev
     server: {
       host: '0.0.0.0',
       port: 8888
+    },
+    // ssg
+    ssr: {
+      noExternal: ['@mui/material']
+    },
+    ssgOptions: {
+      crittersOptions: {
+        preload: 'media'
+      }
     }
   });
 };

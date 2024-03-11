@@ -1,6 +1,13 @@
 {
+  "eslint.enable": true,
   "prettier.configPath": "prettier.config.js",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": ["source.addMissingImports", "source.organizeImports"],
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  }
 }
