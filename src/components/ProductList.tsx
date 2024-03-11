@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
-import { Product } from '@src/pages/components/Product';
+import { Product } from '@src/components/Product';
 import { ProductListSchema, ProductSchema } from '@src/types/Product';
 import React from 'react';
 

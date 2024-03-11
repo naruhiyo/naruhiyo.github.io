@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
-import { Activity } from '@src/pages/components/Activity';
+import { Activity } from '@src/components/Activity';
 import { ActivityListSchema, ActivitySchema } from '@src/types/Activity';
 import React from 'react';
 

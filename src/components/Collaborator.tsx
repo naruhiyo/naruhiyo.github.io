@@ -6,7 +6,7 @@ export const Collaborator = (props: CollaboratorSchema) => {
   const collaborator = props.collaborator;
 
   return (
-    <Card sx={{ height: 350 }}>
+    <Card sx={{ maxWidth: 320 }}>
       <CardMedia component="img" height="200" image={collaborator.image} alt="collaborator-icon" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
