@@ -1,6 +1,6 @@
 {
   "name": "naruhiyo.github.io",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Portofilo of NaruHiyo Project",
   "scripts": {
     "dev": "vite",
