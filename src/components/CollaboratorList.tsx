@@ -22,13 +22,13 @@ export const CollaboratorList = () => {
       },
       {
         collaborator: {
-          name: '@hiyoko3',
-          image: 'images/hiyoko3.png',
+          name: '@aecomet',
+          image: 'images/aecomet.png',
           bio: 'ひよこエンジニア',
           link: {
-            github: 'https://github.com/hiyoko3',
-            portfolio: 'https://hiyoko3.github.io',
-            atcoder: 'https://atcoder.jp/users/ae_hiyoko3'
+            github: 'https://github.com/aecomet',
+            portfolio: 'https://aecomet.github.io',
+            atcoder: 'https://atcoder.jp/users/ae_aecomet'
           }
         }
       }
