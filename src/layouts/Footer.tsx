@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer = () => {
   const footer: FooterSchema = {
-    copyright: 'narugit and hiyoko3'
+    copyright: 'narugit and aecomet'
   };
 
   return (

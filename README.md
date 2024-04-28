@@ -25,7 +25,7 @@ docker-compose up -d web
 
 ```sh
 node -v
-# => v20.10.0
+# => v20.12.2
 
 npm i -g pnpm
 
