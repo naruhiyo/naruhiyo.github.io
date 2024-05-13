@@ -1,10 +1,11 @@
 {
   "name": "naruhiyo.github.io",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Portofilo of NaruHiyo Project",
   "scripts": {
     "dev": "vite",
-    "build": "vite-react-ssg build"
+    "build": "vite-react-ssg build",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
@@ -22,19 +23,23 @@
   "homepage": "https://github.com/naruhiyo/naruhiyo.github.io.git#readme",
   "devDependencies": {
     "@childrentime/devcert": "^1.2.8",
-    "@types/react": "^18.3.1",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.2.0",
+    "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
     "@vitejs/plugin-react": "^4.2.1",
+    "conventional-changelog-cli": "^5.0.0",
     "critters": "^0.0.22",
-    "eslint": "^9.1.1",
+    "eslint": "^9.2.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.34.1",
+    "globals": "^15.2.0",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5",
-    "vite": "^5.2.10",
+    "typescript-eslint": "^7.8.0",
+    "vite": "^5.2.11",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-html": "^3.2.2",
@@ -44,8 +49,8 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@fontsource/roboto": "^5.0.13",
-    "@mui/icons-material": "^5.15.15",
-    "@mui/material": "^5.15.15",
+    "@mui/icons-material": "^5.15.17",
+    "@mui/material": "^5.15.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }

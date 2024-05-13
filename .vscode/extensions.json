@@ -8,6 +8,7 @@
     "naumovs.color-highlight",
     "esbenp.prettier-vscode",
     "jeff-hykin.better-dockerfile-syntax",
-    "ms-azuretools.vscode-docker"
+    "ms-azuretools.vscode-docker",
+    "foxundermoon.shell-format"
   ]
 }
