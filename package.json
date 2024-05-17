@@ -1,6 +1,6 @@
 {
   "name": "naruhiyo.github.io",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Portofilo of NaruHiyo Project",
   "scripts": {
     "dev": "vite",
@@ -29,7 +29,6 @@
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "conventional-changelog-cli": "^5.0.0",
     "critters": "^0.0.22",
     "eslint": "^9.2.0",
     "eslint-config-prettier": "^9.1.0",
