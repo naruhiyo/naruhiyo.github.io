@@ -191,18 +191,11 @@
     "file": "assets/roboto-vietnamese-700-normal-SekShQfT.woff2",
     "src": "../node_modules/.pnpm/@fontsource+roboto@5.0.13/node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff2"
   },
-  "_vendor.C7HB9o5f.js": {
-    "file": "vendor.C7HB9o5f.js",
-    "name": "vendor"
-  },
   "index.html": {
-    "file": "app.as38ePS2.js",
+    "file": "app.CqnBpCUu.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
-    "imports": [
-      "_vendor.C7HB9o5f.js"
-    ],
     "css": [
       "assets/app-KCmbnpiO.css"
     ],
