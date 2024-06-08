@@ -1,4 +1,4 @@
-FROM node:20.12.2-alpine as builder
+FROM node:22.2.0-slim as builder
 
 WORKDIR /app
 COPY --chown=node:node . /app
@@ -6,7 +6,7 @@ RUN yarn global add pnpm &&\
   pnpm install &&\
   pnpm run build
 
-FROM httpd:alpine3.19
+FROM httpd:alpine3.20
 WORKDIR /usr/local/apache2/htdocs
 EXPOSE 8888
 COPY --chown=www-data:www-data --from=builder /app/package.json /app/package.json
