@@ -16,8 +16,10 @@
 
 ### Quick Preview
 
+### Quick Preview
+
 ```sh
-docker-compose up -d web
+docker run -p 8888:80 --rm ghcr.io/aecomet/portfolio
 # => http://localhost:8888/
 ```
 
@@ -25,7 +27,7 @@ docker-compose up -d web
 
 ```sh
 node -v
-# => v22.2.0
+# => v22.4.0
 
 npm i -g pnpm
 
