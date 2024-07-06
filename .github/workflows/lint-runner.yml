@@ -1,0 +1,66 @@
+name: Lint Runner
+
+on: [pull_request]
+
+jobs:
+  reviewdog:
+    name: Reviewdog
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    container:
+      image: ghcr.io/aecomet/reviewdog-base:22.4.0
+      credentials:
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_ACTIONS }}
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run reviewdog
+        uses: reviewdog/action-eslint@v1
+        with:
+          reporter: github-check
+          eslint_flags: 'src/'
+
+  commitlint:
+    name: Commitlint
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    container:
+      image: ghcr.io/aecomet/commitlint-base:22.4.0
+      credentials:
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_ACTIONS }}
+
+    steps:
+      - name: Get depth
+        run: echo "fetch_depth=$(( ${{ env.commits }} + 1 ))" >> $GITHUB_ENV
+        env:
+          commits: ${{ github.event.pull_request.commits }}
+
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: ${{ env.fetch_depth }}
+
+      - name: Set dir as safe directory
+        run: git config --global --add safe.directory $(pwd)
+
+      - name: Run commitlint
+        run: pnpx commitlint --from ${{ env.from }} --to ${{ env.to }} --verbose --config ${{ env.config }}
+        env:
+          from: ${{ github.event.pull_request.base.sha }}
+          to: ${{ github.event.pull_request.head.sha }}
+          config: /app/commitlint.config.mjs
