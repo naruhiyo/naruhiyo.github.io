@@ -31,12 +31,12 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9.4.0
+          version: 9.12.1
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22.4.0
+          node-version: 22.9.0
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -102,7 +102,7 @@ jobs:
             org.opencontainers.image.version=latest
 
       - name: Build and Push a Image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           platforms: linux/amd64,linux/arm64
           context: .

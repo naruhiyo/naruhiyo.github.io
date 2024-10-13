@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid2';
 import { Collaborator } from '@src/components/Collaborator';
 import { CollaboratorListSchema, CollaboratorSchema } from '@src/types/Collaborator';
 import React from 'react';
@@ -43,7 +43,7 @@ export const CollaboratorList = () => {
 
       <Grid container spacing={5} rowSpacing={2} justifyContent="center">
         {collaborators.items.map((item: CollaboratorSchema, idx: number) => (
-          <Grid key={idx} xs={10} md={3}>
+          <Grid key={idx} size={{ xs: 10, md: 3 }}>
             <Collaborator collaborator={item.collaborator} />
           </Grid>
         ))}

@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     /* build option */
-    "target": "ES2022",
-    "module": "ES2022",
+    "target": "ES2023",
+    "module": "ESNext",
     "lib": ["DOM", "ESNext"],
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
     "removeComments": true,
 
     /* Generates corresponding '.map' file. */
@@ -13,6 +13,18 @@
     /* Enable strict options. */
     "strict": true,
     "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+
+    /* Imports support */
+    "esModuleInterop": true,
+
+    /* Optimizations for build */
+    "skipLibCheck": true,
+    "incremental": true,
+    "noEmitOnError": true,
 
     /* resolve options */
     "baseUrl": "./",

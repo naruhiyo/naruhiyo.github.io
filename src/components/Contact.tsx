@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid2';
 import { ContactSchema } from '@src/types/Contact';
 import React from 'react';
 
@@ -16,7 +16,7 @@ export const Contact = () => {
       </Typography>
 
       <Grid container spacing={5} rowSpacing={2} justifyContent="center">
-        <Grid xs={10} md={10}>
+        <Grid size={{ xs: 10, md: 10 }}>
           <Typography variant="body1" component="p" align="center" style={{ whiteSpace: 'pre-line' }}>
             {contact.message}
           </Typography>

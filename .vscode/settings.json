@@ -1,5 +1,6 @@
 {
   "eslint.enable": true,
+  "eslint.useFlatConfig": true,
   "prettier.configPath": "prettier.config.js",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,

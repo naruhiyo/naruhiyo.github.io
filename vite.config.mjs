@@ -52,7 +52,7 @@ export default () => {
     },
     // ssg
     ssr: {
-      noExternal: ['@mui/material']
+      noExternal: ['@mui/material', '@mui/icons-material']
     },
     ssgOptions: {
       crittersOptions: {
