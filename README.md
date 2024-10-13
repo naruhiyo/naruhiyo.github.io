@@ -27,7 +27,7 @@ docker run -p 8888:80 --rm ghcr.io/aecomet/portfolio
 
 ```sh
 node -v
-# => v22.4.0
+# => v22.9.0
 
 npm i -g pnpm
 
