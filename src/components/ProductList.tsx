@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid2';
 import { Product } from '@src/components/Product';
 import { ProductListSchema, ProductSchema } from '@src/types/Product';
 import React from 'react';
@@ -47,6 +47,14 @@ export const ProductList = () => {
           desc: '接続しているネットワークに異常がないかを診断するアプリ',
           github: 'https://github.com/naruhiyo/net_doctor'
         }
+      },
+      {
+        product: {
+          name: 'Life Timeline',
+          image: 'images/life-timeline.gif',
+          desc: '自身の生活に起きた出来事を記録しタイムラインとして閲覧できるWebサービス',
+          github: 'https://github.com/naruhiyo/life-timeline'
+        }
       }
     ]
   };
@@ -59,7 +67,7 @@ export const ProductList = () => {
 
       <Grid container spacing={3} rowSpacing={2} justifyContent="center">
         {products.items.map((item: ProductSchema, idx: number) => (
-          <Grid key={idx} xs={10} md={4}>
+          <Grid key={idx} size={{ xs: 10, md: 4 }}>
             <Product product={item.product} />
           </Grid>
         ))}
