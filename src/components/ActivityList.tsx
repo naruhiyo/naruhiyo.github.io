@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid2';
 import { Activity } from '@src/components/Activity';
 import { ActivityListSchema, ActivitySchema } from '@src/types/Activity';
 import React from 'react';
@@ -26,7 +26,7 @@ export const ActivityList = () => {
 
       <Grid container spacing={5} rowSpacing={2} justifyContent="center">
         {activities.items.map((item: ActivitySchema, idx: number) => (
-          <Grid key={idx} xs={10} md={4}>
+          <Grid key={idx} size={{ xs: 10, md: 4 }}>
             <Activity activity={item.activity} />
           </Grid>
         ))}

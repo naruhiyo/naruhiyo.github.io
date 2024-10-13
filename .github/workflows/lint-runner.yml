@@ -2,17 +2,17 @@ name: Lint Runner
 
 on: [pull_request]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   reviewdog:
     name: Reviewdog
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      pull-requests: write
-
     container:
-      image: ghcr.io/aecomet/reviewdog-base:22.4.0
+      image: ghcr.io/aecomet/reviewdog-base:22.9.0
       credentials:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_ACTIONS }}
@@ -34,12 +34,8 @@ jobs:
     name: Commitlint
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      pull-requests: write
-
     container:
-      image: ghcr.io/aecomet/commitlint-base:22.4.0
+      image: ghcr.io/aecomet/commitlint-base:22.9.0
       credentials:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_ACTIONS }}
