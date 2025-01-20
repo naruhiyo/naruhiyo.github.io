@@ -1,4 +1,4 @@
-FROM node:22.9.0-slim as builder
+FROM node:22.13.0-slim as builder
 
 WORKDIR /app
 COPY --chown=node:node . /app
