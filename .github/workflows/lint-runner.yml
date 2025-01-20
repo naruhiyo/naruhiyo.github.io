@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/aecomet/reviewdog-base:22.9.0
+      image: ghcr.io/aecomet/reviewdog-base:22.13.0
       credentials:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_ACTIONS }}
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/aecomet/commitlint-base:22.9.0
+      image: ghcr.io/aecomet/commitlint-base:22.13.0
       credentials:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_ACTIONS }}
