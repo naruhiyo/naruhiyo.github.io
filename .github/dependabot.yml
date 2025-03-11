@@ -1,0 +1,22 @@
+version: 2
+
+updates:
+  # NPM
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: 'chore: npm'
+    open-pull-requests-limit: 5
+
+  # Github Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    assignees:
+      - aecomet
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: 'chore: actions'
+    open-pull-requests-limit: 5
