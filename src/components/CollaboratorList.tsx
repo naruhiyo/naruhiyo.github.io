@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import { Collaborator } from '@src/components/Collaborator';
 import { CollaboratorListSchema, CollaboratorSchema } from '@src/types/Collaborator';
 import React from 'react';

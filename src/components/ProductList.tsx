@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import { Product } from '@src/components/Product';
 import { ProductListSchema, ProductSchema } from '@src/types/Product';
 import React from 'react';
