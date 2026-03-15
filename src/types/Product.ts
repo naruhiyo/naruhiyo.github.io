@@ -1,7 +1,8 @@
 export type ProductSchema = {
   product: {
+    order: string;
     name: string;
-    image: string;
+    tag: string;
     desc: string;
     github: string;
   };

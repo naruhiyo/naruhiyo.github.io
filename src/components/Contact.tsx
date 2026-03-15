@@ -1,27 +1,30 @@
-import { Box, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid';
 import { ContactSchema } from '@src/types/Contact';
 import React from 'react';
 
 export const Contact = () => {
   const contact: ContactSchema = {
-    head: 'Contact us',
-    message: '***@gmail.com \n\n *** には ***naruhiyo.apps*** と入力してください。'
+    eyebrow: 'Get In Touch',
+    title: "Let's ",
+    emphasis: 'Connect',
+    message: ['コラボレーションのご相談、プロジェクトのご依頼など', 'お気軽にご連絡ください。'],
+    email: 'naruhiyo.apps@gmail.com'
   };
 
   return (
-    <Box sx={{ my: 8 }}>
-      <Typography variant="h5" component="div" sx={{ mb: 5 }} align="center">
-        {contact.head}
-      </Typography>
-
-      <Grid container spacing={5} rowSpacing={2} justifyContent="center">
-        <Grid size={{ xs: 10, md: 10 }}>
-          <Typography variant="body1" component="p" align="center" style={{ whiteSpace: 'pre-line' }}>
-            {contact.message}
-          </Typography>
-        </Grid>
-      </Grid>
-    </Box>
+    <section className="contact-panel">
+      <div className="contact-bg-text">Contact</div>
+      <p className="contact-eyebrow">{contact.eyebrow}</p>
+      <h2 className="contact-title">
+        {contact.title}
+        <em>{contact.emphasis}</em>
+      </h2>
+      <p className="contact-sub">
+        {contact.message[0]}
+        <br />
+        {contact.message[1]}
+      </p>
+      <div className="gold-rule"></div>
+      <p className="contact-email">{contact.email}</p>
+    </section>
   );
 };

@@ -49,15 +49,6 @@ export default () => {
     server: {
       host: '0.0.0.0',
       port: 8888
-    },
-    // ssg
-    ssr: {
-      noExternal: ['@mui/material', '@mui/icons-material']
-    },
-    ssgOptions: {
-      crittersOptions: {
-        preload: 'media'
-      }
     }
   });
 };

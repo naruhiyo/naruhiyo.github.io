@@ -1,26 +1,15 @@
-import { Box, Container, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
 import { FooterSchema } from '@src/types/Footer';
 import React from 'react';
 
 const Footer = () => {
   const footer: FooterSchema = {
-    copyright: 'narugit and aecomet'
+    copyright: '© narugit and aecomet — NaruHiyo'
   };
 
   return (
-    <Box
-      component="footer"
-      sx={{
-        py: 3,
-        px: 2,
-        mt: 'auto'
-      }}
-    >
-      <Container maxWidth="sm">
-        <Typography variant="body2" align="center">
-          &copy; {footer.copyright}
-        </Typography>
-      </Container>
+    <Box component="footer" className="site-footer">
+      <p className="contact-footer">{footer.copyright}</p>
     </Box>
   );
 };

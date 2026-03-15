@@ -1,4 +1,10 @@
+export type HeaderNavigationSchema = {
+  label: string;
+  path: string;
+  end?: boolean;
+};
+
 export type HeaderSchema = {
-  title: string;
-  logo: string;
+  shortTitle: string;
+  navigation: HeaderNavigationSchema[];
 };

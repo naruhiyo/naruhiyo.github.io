@@ -1,56 +1,76 @@
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { ColorThemeContext } from '@src/context/ColorThemeContext';
 import Footer from '@src/layouts/Footer';
 import Header from '@src/layouts/Header';
+import { ActivityPage } from '@src/pages/Activities';
+import { CollaboratorsPage } from '@src/pages/Collaborators';
+import { ContactPage } from '@src/pages/ContactPage';
+import { ProductsPage } from '@src/pages/Products';
 import { Top } from '@src/pages/Top';
-import { ColorTheme } from '@src/types/Color';
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+
+const ROUTE_ORDER = ['/', '/collaborators', '/products', '/activities', '/contact'];
 
 function App() {
-  // テーマカラーの動的変更設定
-  const [mode, setMode] = useState<ColorTheme>('light');
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode
-        }
-      }),
-    [mode]
-  );
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorTheme: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const currentIndex = ROUTE_ORDER.indexOf(location.pathname);
+
+      if (currentIndex === -1) {
+        return;
       }
-    }),
-    []
-  );
+
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        const nextPath = ROUTE_ORDER[currentIndex + 1];
+
+        if (nextPath) {
+          navigate(nextPath);
+        }
+      }
+
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        const previousPath = ROUTE_ORDER[currentIndex - 1];
+
+        if (previousPath) {
+          navigate(previousPath);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [location.pathname, navigate]);
 
   return (
     <React.Fragment>
-      {/* CSSリセット */}
       <CssBaseline />
-      {/* カラーテーマの変更に必要なロジックをグローバル化させる */}
-      <ColorThemeContext.Provider value={colorMode}>
-        {/* カラーテーマ */}
-        <ThemeProvider theme={theme}>
-          {/* レイアウト */}
-          <Box
-            sx={{
-              bgcolor: 'background.default',
-              color: 'text.primary'
-            }}
-          >
-            <Header />
-            <Top />
-            <Footer />
-          </Box>
-        </ThemeProvider>
-      </ColorThemeContext.Provider>
+      <Box className="app-shell">
+        <Header />
+        <Box component="main" className="app-main">
+          <div key={location.pathname} className="route-transition">
+            <Routes>
+              <Route path="/" element={<Top />} />
+              <Route path="/collaborators" element={<CollaboratorsPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/activities" element={<ActivityPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </div>
+        </Box>
+        <Footer />
+      </Box>
     </React.Fragment>
   );
 }

@@ -1,5 +1,3 @@
-import { Box, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid';
 import { Product } from '@src/components/Product';
 import { ProductListSchema, ProductSchema } from '@src/types/Product';
 import React from 'react';
@@ -10,49 +8,55 @@ export const ProductList = () => {
     items: [
       {
         product: {
+          order: '01',
           name: 'Memoma',
-          image: 'images/memoma.gif',
-          desc: 'Electronを利用したクロスプラットフォーム対応の3カラム型メモアプリ。Markdown記法に対応',
+          tag: 'Desktop App',
+          desc: 'Electronを利用したクロスプラットフォーム対応の3カラム型メモアプリ。Markdown記法に対応。',
           github: 'https://github.com/naruhiyo/Memoma'
         }
       },
       {
         product: {
+          order: '02',
           name: 'Partytion',
-          image: 'images/partytion.gif',
-          desc: '飲み会でのミニゲームとして使えるiPhoneアプリ',
+          tag: 'iOS App',
+          desc: '飲み会でのミニゲームとして使えるiPhoneアプリ。宴の場に彩りを。',
           github: 'https://github.com/naruhiyo/partytion'
         }
       },
       {
         product: {
+          order: '03',
           name: 'aman',
-          image: 'images/aman.gif',
-          desc: '`man`コマンドからコマンドのオプションを検索して出力してくれるCLI',
+          tag: 'CLI Tool',
+          desc: 'manコマンドからコマンドのオプションを検索して出力してくれるCLIツール。',
           github: 'https://github.com/naruhiyo/aman'
         }
       },
       {
         product: {
+          order: '04',
           name: 'appetizer',
-          image: 'images/appetizer.gif',
-          desc: '昼食や夕食の時間帯に指定された駅の近くにある飲食店を紹介してくれるVS Code拡張',
+          tag: 'VS Code Extension',
+          desc: '昼食・夕食の時間帯に指定された駅近の飲食店を紹介するVS Code拡張。',
           github: 'https://github.com/naruhiyo/appetizer'
         }
       },
       {
         product: {
+          order: '05',
           name: 'Net Doctor',
-          image: 'images/net-doctor.gif',
-          desc: '接続しているネットワークに異常がないかを診断するアプリ',
+          tag: 'Network Tool',
+          desc: '接続しているネットワークに異常がないかを診断するアプリ。',
           github: 'https://github.com/naruhiyo/net_doctor'
         }
       },
       {
         product: {
+          order: '06',
           name: 'Life Timeline',
-          image: 'images/life-timeline.gif',
-          desc: '自身の生活に起きた出来事を記録しタイムラインとして閲覧できるWebサービス',
+          tag: 'Web Service',
+          desc: '自身の生活に起きた出来事を記録しタイムラインとして閲覧できるWebサービス。',
           github: 'https://github.com/naruhiyo/life-timeline'
         }
       }
@@ -60,18 +64,10 @@ export const ProductList = () => {
   };
 
   return (
-    <Box sx={{ my: 8 }}>
-      <Typography variant="h5" component="div" sx={{ mb: 5 }} align="center">
-        {products.head}
-      </Typography>
-
-      <Grid container spacing={3} rowSpacing={2} justifyContent="center">
-        {products.items.map((item: ProductSchema, idx: number) => (
-          <Grid key={idx} size={{ xs: 10, md: 4 }}>
-            <Product product={item.product} />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <section aria-label={products.head} className="product-table">
+      {products.items.map((item: ProductSchema) => (
+        <Product key={item.product.order} product={item.product} />
+      ))}
+    </section>
   );
 };

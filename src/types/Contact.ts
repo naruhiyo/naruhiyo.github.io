@@ -1,4 +1,7 @@
 export type ContactSchema = {
-  head: string;
-  message: string;
+  eyebrow: string;
+  title: string;
+  emphasis: string;
+  message: string[];
+  email: string;
 };
