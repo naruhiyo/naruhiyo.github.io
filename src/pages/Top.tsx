@@ -1,22 +1,26 @@
-import { Card, CardMedia } from '@mui/material';
-import Container from '@mui/material/Container';
-import { ActivityList } from '@src/components/ActivityList';
-import { CollaboratorList } from '@src/components/CollaboratorList';
-import { Contact } from '@src/components/Contact';
-import { ProductList } from '@src/components/ProductList';
+import Box from '@mui/material/Box';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Top = () => {
   return (
-    <Container>
-      <Card sx={{ height: 300 }} elevation={0}>
-        <CardMedia component="img" height="300" image="/images/top.png" alt="top-image" />
-      </Card>
+    <Box component="section" className="page page-home">
+      <section className="hero">
+        <div className="hero-ring"></div>
+        <div className="hero-ring"></div>
+        <div className="hero-ring"></div>
 
-      <CollaboratorList />
-      <ProductList />
-      <ActivityList />
-      <Contact />
-    </Container>
+        <p className="hero-eyebrow">Gourmet × Technology × Business</p>
+        <h1 className="hero-title">
+          Naru<em>Hiyo</em>
+        </h1>
+        <p className="hero-subtitle">美食とビジネスの交差点で、新たな価値を創造する</p>
+        <div className="hero-cta">
+          <Link className="btn-outline" to="/collaborators">
+            Explore
+          </Link>
+        </div>
+      </section>
+    </Box>
   );
 };

@@ -1,5 +1,3 @@
-import { Box, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid';
 import { Collaborator } from '@src/components/Collaborator';
 import { CollaboratorListSchema, CollaboratorSchema } from '@src/types/Collaborator';
 import React from 'react';
@@ -36,18 +34,10 @@ export const CollaboratorList = () => {
   };
 
   return (
-    <Box sx={{ mt: 5, mb: 8 }}>
-      <Typography variant="h5" component="div" sx={{ mb: 5 }} align="center">
-        {collaborators.head}
-      </Typography>
-
-      <Grid container spacing={5} rowSpacing={2} justifyContent="center">
-        {collaborators.items.map((item: CollaboratorSchema, idx: number) => (
-          <Grid key={idx} size={{ xs: 10, md: 3 }}>
-            <Collaborator collaborator={item.collaborator} />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <section aria-label={collaborators.head} className="collab-grid">
+      {collaborators.items.map((item: CollaboratorSchema) => (
+        <Collaborator key={item.collaborator.name} collaborator={item.collaborator} />
+      ))}
+    </section>
   );
 };

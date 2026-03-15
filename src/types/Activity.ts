@@ -1,8 +1,14 @@
+export type ActivityStatSchema = {
+  value: string;
+  label: string;
+};
+
 export type ActivitySchema = {
   activity: {
     name: string;
-    desc: string;
+    body: string[];
     github: string;
+    stats: ActivityStatSchema[];
   };
 };
 

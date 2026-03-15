@@ -1,4 +1,3 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import { CollaboratorSchema } from '@src/types/Collaborator';
 import React from 'react';
 
@@ -6,27 +5,23 @@ export const Collaborator = (props: CollaboratorSchema) => {
   const collaborator = props.collaborator;
 
   return (
-    <Card sx={{ maxWidth: 320 }}>
-      <CardMedia component="img" height="200" image={collaborator.image} alt="collaborator-icon" />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {collaborator.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {collaborator.bio}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button variant="outlined" href={collaborator.link.portfolio} target="_blank" size="small">
+    <article className="collab-card">
+      <p className="collab-handle">{collaborator.name}</p>
+      <div className="collab-avatar-wrap">
+        <img src={collaborator.image} alt={collaborator.name} />
+      </div>
+      <p className="collab-role">{collaborator.bio}</p>
+      <div className="collab-links">
+        <a className="link-pill" href={collaborator.link.portfolio} target="_blank" rel="noreferrer">
           Portfolio
-        </Button>
-        <Button variant="outlined" href={collaborator.link.atcoder} target="_blank" size="small">
+        </a>
+        <a className="link-pill" href={collaborator.link.atcoder} target="_blank" rel="noreferrer">
           AtCoder
-        </Button>
-        <Button variant="outlined" href={collaborator.link.github} target="_blank" size="small">
+        </a>
+        <a className="link-pill" href={collaborator.link.github} target="_blank" rel="noreferrer">
           Github
-        </Button>
-      </CardActions>
-    </Card>
+        </a>
+      </div>
+    </article>
   );
 };

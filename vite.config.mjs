@@ -33,13 +33,14 @@ export default () => {
       // compress
       viteCompression()
     ],
-    publicDir: path.resolve(__dirname, `${SRC_PATH}/assets`),
+    publicDir: path.resolve(__dirname, `${SRC_PATH}/assets/public`),
     // production build
     build: {
       rollupOptions: {
         output: {
           chunkFileNames: 'vendor.[hash].js',
-          entryFileNames: '[name].[hash].js'
+          entryFileNames: '[name].[hash].js',
+          assetFileNames: '[name].[hash][extname]'
         }
       },
       outDir: path.resolve(__dirname, OUTPUT_PATH),
@@ -49,15 +50,6 @@ export default () => {
     server: {
       host: '0.0.0.0',
       port: 8888
-    },
-    // ssg
-    ssr: {
-      noExternal: ['@mui/material', '@mui/icons-material']
-    },
-    ssgOptions: {
-      crittersOptions: {
-        preload: 'media'
-      }
     }
   });
 };

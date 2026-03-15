@@ -1,4 +1,3 @@
-import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 import { ActivitySchema } from '@src/types/Activity';
 import React from 'react';
 
@@ -6,20 +5,38 @@ export const Activity = (props: ActivitySchema) => {
   const activity = props.activity;
 
   return (
-    <Card sx={{ height: 200 }}>
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {activity.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {activity.desc}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button variant="outlined" href={activity.github} target="_blank" size="small">
-          Github
-        </Button>
-      </CardActions>
-    </Card>
+    <section className="activity-feature">
+      <div className="activity-main">
+        <h3 className="activity-title">
+          {activity.name.split('\n').map((line) => (
+            <React.Fragment key={line}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </h3>
+        <p className="activity-body">
+          {activity.body.map((paragraph) => (
+            <React.Fragment key={paragraph}>
+              {paragraph}
+              <br />
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
+        <a className="link-pill" href={activity.github} target="_blank" rel="noreferrer">
+          Github Repository
+        </a>
+      </div>
+
+      <div className="activity-side">
+        {activity.stats.map((stat) => (
+          <div key={stat.label} className="activity-stat">
+            <div className="stat-number">{stat.value}</div>
+            <div className="stat-label">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
