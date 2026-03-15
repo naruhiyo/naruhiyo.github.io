@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <Box component="header" className={`site-nav${isScrolled ? ' scrolled' : ''}`}>
       <NavLink className="nav-logo" to="/" end>
-        {header.shortTitle}
+        <img src="/images/brand-logo.png" alt={header.shortTitle} className="nav-logo-img" />
       </NavLink>
 
       <Box component="nav" aria-label="primary navigation">

@@ -9,10 +9,7 @@ export const ActivityList = () => {
       {
         activity: {
           name: 'NaruHiyo\n競プロ部',
-          body: [
-            'プログラミング能力を向上させるために AtCoder を利用してアルゴリズムを勉強中！',
-            '論理的思考とエレガントな解法の追求。ビジネスの課題解決に直結するアルゴリズム的思考力を磨いています。'
-          ],
+          body: ['プログラミング能力を向上させるために AtCoder を利用してアルゴリズムを勉強中！'],
           github: 'https://github.com/naruhiyo/algorithm-enhancement',
           stats: [
             { value: '2', label: 'Active Members' },

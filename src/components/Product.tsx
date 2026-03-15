@@ -12,6 +12,11 @@ export const Product = (props: ProductSchema) => {
         <span className="product-tag">{product.tag}</span>
       </div>
       <p className="product-desc">{product.desc}</p>
+      {product.image && (
+        <div className="product-img-wrap">
+          <img src={product.image} alt={product.name} className="product-img" />
+        </div>
+      )}
       <span className="product-arrow" aria-hidden="true">
         →
       </span>

@@ -5,6 +5,7 @@ export type ProductSchema = {
     tag: string;
     desc: string;
     github: string;
+    image?: string;
   };
 };
 
