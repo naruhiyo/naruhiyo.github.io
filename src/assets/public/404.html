@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>404 — NaruHiyo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="https://naruhiyo.github.io/images/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Cinzel:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0d0b08;
+        --gold: #c9a84c;
+        --gold-light: #e8d08a;
+        --gold-dim: #7a6530;
+        --cream: #f2ead8;
+        --cream-dim: #a09070;
+        --border: rgba(201, 168, 76, 0.25);
+        --border-bright: rgba(201, 168, 76, 0.6);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      /* noise texture */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0.03;
+      }
+
+      /* decorative ring */
+      body::after {
+        content: '';
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: min(80vw, 560px);
+        height: min(80vw, 560px);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        pointer-events: none;
+        z-index: 0;
+        animation: ring-pulse 6s ease-in-out infinite;
+      }
+
+      @keyframes ring-pulse {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: translate(-50%, -50%) scale(1.03);
+        }
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 2rem;
+        animation: fade-up 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
+      }
+
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(32px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .eyebrow {
+        font-family: 'Cinzel', serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.35em;
+        color: var(--gold-dim);
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+
+      .code {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(5rem, 18vw, 10rem);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dim) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+      }
+
+      .rule {
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--gold), transparent);
+        margin: 0 auto 2rem;
+      }
+
+      .message {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1rem, 3vw, 1.35rem);
+        font-weight: 300;
+        font-style: italic;
+        color: var(--cream-dim);
+        letter-spacing: 0.04em;
+        line-height: 1.7;
+        margin-bottom: 3rem;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6em;
+        font-family: 'Cinzel', serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        padding: 0.85em 2.2em;
+        transition:
+          border-color 0.3s,
+          color 0.3s,
+          background 0.3s;
+      }
+
+      .back-link::before {
+        content: '←';
+        font-family: sans-serif;
+        font-size: 0.9em;
+        transition: transform 0.3s;
+      }
+
+      .back-link:hover {
+        color: var(--gold-light);
+        border-color: var(--border-bright);
+        background: rgba(201, 168, 76, 0.06);
+      }
+
+      .back-link:hover::before {
+        transform: translateX(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="eyebrow">NaruHiyo — Gourmet × Business</p>
+      <p class="code">404</p>
+      <div class="rule"></div>
+      <p class="message">お探しのページは見つかりませんでした。</p>
+      <a class="back-link" href="/">Return Home</a>
+    </div>
+  </body>
+</html>

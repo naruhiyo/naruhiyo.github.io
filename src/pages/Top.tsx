@@ -26,11 +26,6 @@ export const Top = () => {
             Explore
           </Link>
         </div>
-
-        <div className="scroll-hint" aria-hidden="true">
-          <span>Scroll</span>
-          <div className="scroll-line"></div>
-        </div>
       </section>
     </Box>
   );

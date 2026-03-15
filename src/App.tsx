@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Footer from '@src/layouts/Footer';
-import Header from '@src/layouts/Header';
+import Footer from '@src/components/Footer';
+import Header from '@src/components/Header';
 import { ActivityPage } from '@src/pages/Activities';
 import { CollaboratorsPage } from '@src/pages/Collaborators';
 import { ContactPage } from '@src/pages/ContactPage';
