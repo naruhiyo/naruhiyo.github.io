@@ -1,7 +1,7 @@
 import { CollaboratorSchema } from '@src/types/Collaborator';
-import React from 'react';
+import { memo } from 'react';
 
-export const Collaborator = (props: CollaboratorSchema) => {
+export const Collaborator = memo((props: CollaboratorSchema) => {
   const collaborator = props.collaborator;
 
   return (
@@ -24,4 +24,4 @@ export const Collaborator = (props: CollaboratorSchema) => {
       </div>
     </article>
   );
-};
+});

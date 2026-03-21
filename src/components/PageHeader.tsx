@@ -1,5 +1,3 @@
-import React from 'react';
-
 type PageHeaderProps = {
   number: string;
   label: string;

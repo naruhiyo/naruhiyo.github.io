@@ -1,31 +1,13 @@
 import { Activity } from '@src/components/Activity';
-import { ActivityListSchema, ActivitySchema } from '@src/types/Activity';
-import React from 'react';
+import { GenericList } from '@src/components/GenericList';
+import { ACTIVITIES_DATA } from '@src/data/activities';
+import { ActivitySchema } from '@src/types/Activity';
 
-export const ActivityList = () => {
-  const activities: ActivityListSchema = {
-    head: 'Activities',
-    items: [
-      {
-        activity: {
-          name: 'NaruHiyo\n競プロ部',
-          body: ['プログラミング能力を向上させるために AtCoder を利用してアルゴリズムを勉強中！'],
-          github: 'https://github.com/naruhiyo/algorithm-enhancement',
-          stats: [
-            { value: '2', label: 'Active Members' },
-            { value: '6', label: 'Products Shipped' },
-            { value: '∞', label: 'Curiosity' }
-          ]
-        }
-      }
-    ]
-  };
-
-  return (
-    <section aria-label={activities.head}>
-      {activities.items.map((item: ActivitySchema) => (
-        <Activity key={item.activity.github} activity={item.activity} />
-      ))}
-    </section>
-  );
-};
+export const ActivityList = () => (
+  <GenericList<ActivitySchema>
+    label={ACTIVITIES_DATA.head}
+    items={ACTIVITIES_DATA.items}
+    renderItem={(item) => <Activity activity={item.activity} />}
+    keyExtractor={(item) => item.activity.github}
+  />
+);

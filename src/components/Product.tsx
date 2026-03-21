@@ -1,7 +1,7 @@
 import { ProductSchema } from '@src/types/Product';
-import React from 'react';
+import { memo } from 'react';
 
-export const Product = (props: ProductSchema) => {
+export const Product = memo((props: ProductSchema) => {
   const product = props.product;
 
   return (
@@ -22,4 +22,4 @@ export const Product = (props: ProductSchema) => {
       </span>
     </a>
   );
-};
+});

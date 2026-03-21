@@ -1,10 +1,8 @@
-import Box from '@mui/material/Box';
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const Top = () => {
   return (
-    <Box component="section" className="page page-home">
+    <section className="page page-home">
       <section className="hero">
         <div className="hero-ring"></div>
         <div className="hero-ring"></div>
@@ -21,6 +19,6 @@ export const Top = () => {
           </Link>
         </div>
       </section>
-    </Box>
+    </section>
   );
 };
