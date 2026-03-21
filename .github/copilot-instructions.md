@@ -10,7 +10,7 @@ applyTo: '**'
 
 - Use meaningful names for variables and functions.
 - Keep comments concise and specific.
-- Avoid magic numbers; define them as named constants.
+- Avoid magic numbers; define them as named constants or CSS variables.
 - Prioritize code readability.
 
 ## Code Review
@@ -28,28 +28,36 @@ Always follow this order — never skip a step:
 
 ### Review Checklist
 
-#### Vue
+#### React
 
-- Use Composition API (`<script setup>`).
-- Ensure `defineProps` / `defineEmits` are properly typed.
-- Always specify `:key` on `v-for` directives.
-- Do not use `v-if` and `v-for` on the same element.
-- Component names must be in PascalCase.
-- Avoid unnecessary `watch` or `computed` usage.
+- Use functional components with hooks; do not use class components.
+- Keep React imports minimal — do not import `React` globally (automatic JSX runtime is enabled).
+  Import named exports only when needed: `import { useState, useEffect } from 'react'`.
+- Add `React.memo()` / `memo()` to pure presentational components that receive stable props.
+- Do not create inline objects or functions in JSX props (causes unnecessary re-renders).
+- Ensure `useEffect` dependencies are correct and complete.
+- Use named exports for components; default exports are allowed for page-level components.
+- Component file names and component names must be in PascalCase.
 
-#### Vuetify
+#### React Router
 
-- Prefer Vuetify components over custom implementations.
-- Use Vuetify's theme and color system (e.g., `color` prop) consistently.
-- Use the grid system (`v-row` / `v-col`) for responsive layouts.
-- Use Vuetify's icon component (`v-icon`) for icons.
+- Use `<Link>` or `<NavLink>` from `react-router-dom` for navigation; avoid raw `<a>` tags for internal links.
+- Use `React.lazy` + `Suspense` for route-level code splitting.
+- Define routes centrally in `App.tsx`.
 
-#### Vue Router
+#### TypeScript
 
-- Set a `name` for every route definition.
-- Use `<RouterLink>` or `router.push()` for navigation; avoid raw `<a>` tags.
-- Use `<RouterView>` with a `key` where appropriate to prevent unintended component reuse.
-- Apply navigation guards (`beforeEach`, etc.) for authentication and authorization when needed.
+- All props, state, and function return types must be explicitly typed.
+- Do not use `any`; use `unknown` or specific types instead.
+- Define data schemas as TypeScript types in `src/types/`.
+- Extract static/constant data to `src/data/` and type it with the appropriate schema.
+
+#### SCSS
+
+- Do not use magic numbers for spacing or transition durations — use the CSS variables defined in `:root`.
+  Available variables: `--space-sm`, `--space-md`, `--space-lg`, `--space-xl`, `--space-2xl`, `--space-3xl`,
+  `--transition-fast`, `--transition-normal`, `--transition-slow`.
+- Use semantic HTML elements (`<header>`, `<main>`, `<footer>`, `<section>`, `<nav>`, `<article>`) instead of generic `<div>` wrappers where appropriate.
 
 ### Lint / Format
 
@@ -75,13 +83,14 @@ pnpm dev
 
 Manually verify the following routes are reachable without errors:
 
-| Route     | Path                               |
-| --------- | ---------------------------------- |
-| Home      | `/`                                |
-| Profile   | `/profile`                         |
-| Career    | `/career`                          |
-| Contact   | `/contact`                         |
-| Not Found | any undefined path (e.g., `/test`) |
+| Route         | Path            |
+| ------------- | --------------- |
+| Home          | `/`             |
+| Collaborators | `/collaborators` |
+| Products      | `/products`     |
+| Activities    | `/activities`   |
+| Contact       | `/contact`      |
+| Not Found     | any undefined path (e.g., `/test`) — redirects to `/` |
 
 ### Build Verification
 
@@ -123,10 +132,10 @@ All commit messages must follow the [Conventional Commits](https://www.conventio
 ### Examples
 
 ```
-feat(auth): add login with Google OAuth
-fix(router): prevent duplicate navigation on back button
-docs: update README with setup instructions
-chore(deps): upgrade vuetify to v4
+feat(collaborators): add GitHub stats to member cards
+fix(router): prevent scroll position reset on back navigation
+docs: update architecture.md with data layer description
+chore(deps): upgrade react-router-dom to v7
 ```
 
 ## Package Updates
