@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Footer from '@src/components/Footer';
 import Header from '@src/components/Header';
 import { ActivityPage } from '@src/pages/Activities';
@@ -52,9 +51,9 @@ function App() {
   }, [location.pathname, navigate]);
 
   return (
-    <Box className="app-shell">
+    <div className="app-shell">
       <Header />
-      <Box component="main" className="app-main">
+      <main className="app-main">
         <div key={location.pathname} className="route-transition">
           <Routes>
             <Route path="/" element={<Top />} />
@@ -65,9 +64,9 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
-      </Box>
+      </main>
       <Footer />
-    </Box>
+    </div>
   );
 }
 

@@ -1,7 +1,7 @@
 import { ActivitySchema } from '@src/types/Activity';
-import { Fragment } from 'react';
+import { Fragment, memo } from 'react';
 
-export const Activity = (props: ActivitySchema) => {
+export const Activity = memo((props: ActivitySchema) => {
   const activity = props.activity;
 
   return (
@@ -39,4 +39,4 @@ export const Activity = (props: ActivitySchema) => {
       </div>
     </section>
   );
-};
+});
