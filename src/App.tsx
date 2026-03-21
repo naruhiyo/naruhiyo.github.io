@@ -1,12 +1,15 @@
 import Footer from '@src/components/Footer';
 import Header from '@src/components/Header';
-import { ActivityPage } from '@src/pages/Activities';
-import { CollaboratorsPage } from '@src/pages/Collaborators';
-import { ContactPage } from '@src/pages/ContactPage';
-import { ProductsPage } from '@src/pages/Products';
-import { Top } from '@src/pages/Top';
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+
+const Top = lazy(() => import('@src/pages/Top').then((m) => ({ default: m.Top })));
+const CollaboratorsPage = lazy(() =>
+  import('@src/pages/Collaborators').then((m) => ({ default: m.CollaboratorsPage }))
+);
+const ProductsPage = lazy(() => import('@src/pages/Products').then((m) => ({ default: m.ProductsPage })));
+const ActivityPage = lazy(() => import('@src/pages/Activities').then((m) => ({ default: m.ActivityPage })));
+const ContactPage = lazy(() => import('@src/pages/ContactPage').then((m) => ({ default: m.ContactPage })));
 
 const ROUTE_ORDER = ['/', '/collaborators', '/products', '/activities', '/contact'];
 
@@ -55,14 +58,16 @@ function App() {
       <Header />
       <main className="app-main">
         <div key={location.pathname} className="route-transition">
-          <Routes>
-            <Route path="/" element={<Top />} />
-            <Route path="/collaborators" element={<CollaboratorsPage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/activities" element={<ActivityPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+          <Suspense fallback={<div className="page-loading" aria-label="Loading" />}>
+            <Routes>
+              <Route path="/" element={<Top />} />
+              <Route path="/collaborators" element={<CollaboratorsPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/activities" element={<ActivityPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Suspense>
         </div>
       </main>
       <Footer />
