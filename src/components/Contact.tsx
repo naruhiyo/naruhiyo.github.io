@@ -1,5 +1,4 @@
 import { ContactSchema } from '@src/types/Contact';
-import React from 'react';
 
 export const Contact = () => {
   const contact: ContactSchema = {

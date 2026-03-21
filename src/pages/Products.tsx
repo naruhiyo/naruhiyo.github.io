@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import { PageHeader } from '@src/components/PageHeader';
 import { ProductList } from '@src/components/ProductList';
-import React from 'react';
 
 export const ProductsPage = () => {
   return (

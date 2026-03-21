@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import { FooterSchema } from '@src/types/Footer';
-import React from 'react';
 
 const Footer = () => {
   const footer: FooterSchema = {

@@ -31,7 +31,7 @@ export default [
   /* override recommended config */
   {
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off'
+      '@typescript-eslint/no-explicit-any': 'error'
     }
   }
 ];

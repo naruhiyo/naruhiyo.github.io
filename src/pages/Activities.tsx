@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import { ActivityList } from '@src/components/ActivityList';
 import { PageHeader } from '@src/components/PageHeader';
-import React from 'react';
 
 export const ActivityPage = () => {
   return (

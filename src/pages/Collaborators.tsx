@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import { CollaboratorList } from '@src/components/CollaboratorList';
 import { PageHeader } from '@src/components/PageHeader';
-import React from 'react';
 
 export const CollaboratorsPage = () => {
   return (

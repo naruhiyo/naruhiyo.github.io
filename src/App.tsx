@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 import Footer from '@src/components/Footer';
 import Header from '@src/components/Header';
 import { ActivityPage } from '@src/pages/Activities';
@@ -7,7 +6,7 @@ import { CollaboratorsPage } from '@src/pages/Collaborators';
 import { ContactPage } from '@src/pages/ContactPage';
 import { ProductsPage } from '@src/pages/Products';
 import { Top } from '@src/pages/Top';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 const ROUTE_ORDER = ['/', '/collaborators', '/products', '/activities', '/contact'];
@@ -53,25 +52,22 @@ function App() {
   }, [location.pathname, navigate]);
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Box className="app-shell">
-        <Header />
-        <Box component="main" className="app-main">
-          <div key={location.pathname} className="route-transition">
-            <Routes>
-              <Route path="/" element={<Top />} />
-              <Route path="/collaborators" element={<CollaboratorsPage />} />
-              <Route path="/products" element={<ProductsPage />} />
-              <Route path="/activities" element={<ActivityPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </div>
-        </Box>
-        <Footer />
+    <Box className="app-shell">
+      <Header />
+      <Box component="main" className="app-main">
+        <div key={location.pathname} className="route-transition">
+          <Routes>
+            <Route path="/" element={<Top />} />
+            <Route path="/collaborators" element={<CollaboratorsPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/activities" element={<ActivityPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
       </Box>
-    </React.Fragment>
+      <Footer />
+    </Box>
   );
 }
 

@@ -1,6 +1,5 @@
 import { Product } from '@src/components/Product';
 import { ProductListSchema, ProductSchema } from '@src/types/Product';
-import React from 'react';
 
 export const ProductList = () => {
   const products: ProductListSchema = {

@@ -1,6 +1,5 @@
 import { Activity } from '@src/components/Activity';
 import { ActivityListSchema, ActivitySchema } from '@src/types/Activity';
-import React from 'react';
 
 export const ActivityList = () => {
   const activities: ActivityListSchema = {

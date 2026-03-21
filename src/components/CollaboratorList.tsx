@@ -1,6 +1,5 @@
 import { Collaborator } from '@src/components/Collaborator';
 import { CollaboratorListSchema, CollaboratorSchema } from '@src/types/Collaborator';
-import React from 'react';
 
 export const CollaboratorList = () => {
   const collaborators: CollaboratorListSchema = {

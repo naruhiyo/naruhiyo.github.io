@@ -1,5 +1,5 @@
 import { ActivitySchema } from '@src/types/Activity';
-import React from 'react';
+import { Fragment } from 'react';
 
 export const Activity = (props: ActivitySchema) => {
   const activity = props.activity;
@@ -9,19 +9,19 @@ export const Activity = (props: ActivitySchema) => {
       <div className="activity-main">
         <h3 className="activity-title">
           {activity.name.split('\n').map((line) => (
-            <React.Fragment key={line}>
+            <Fragment key={line}>
               {line}
               <br />
-            </React.Fragment>
+            </Fragment>
           ))}
         </h3>
         <p className="activity-body">
           {activity.body.map((paragraph) => (
-            <React.Fragment key={paragraph}>
+            <Fragment key={paragraph}>
               {paragraph}
               <br />
               <br />
-            </React.Fragment>
+            </Fragment>
           ))}
         </p>
         <a className="link-pill" href={activity.github} target="_blank" rel="noreferrer">

@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import { HeaderSchema } from '@src/types/Header';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const Header = () => {

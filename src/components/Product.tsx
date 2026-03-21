@@ -1,5 +1,4 @@
 import { ProductSchema } from '@src/types/Product';
-import React from 'react';
 
 export const Product = (props: ProductSchema) => {
   const product = props.product;
