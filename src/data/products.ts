@@ -10,7 +10,8 @@ export const PRODUCTS_DATA: ProductListSchema = {
         tag: 'Desktop App',
         desc: 'Electronを利用したクロスプラットフォーム対応の3カラム型メモアプリ。Markdown記法に対応。',
         github: 'https://github.com/naruhiyo/Memoma',
-        image: '/images/memoma.gif'
+        image: '/images/memoma.gif',
+        video: '/images/memoma.mp4'
       }
     },
     {
@@ -20,7 +21,8 @@ export const PRODUCTS_DATA: ProductListSchema = {
         tag: 'iOS App',
         desc: '飲み会でのミニゲームとして使えるiPhoneアプリ。宴の場に彩りを。',
         github: 'https://github.com/naruhiyo/partytion',
-        image: '/images/partytion.gif'
+        image: '/images/partytion.gif',
+        video: '/images/partytion.mp4'
       }
     },
     {
@@ -30,7 +32,8 @@ export const PRODUCTS_DATA: ProductListSchema = {
         tag: 'CLI Tool',
         desc: 'manコマンドからコマンドのオプションを検索して出力してくれるCLIツール。',
         github: 'https://github.com/naruhiyo/aman',
-        image: '/images/aman.gif'
+        image: '/images/aman.gif',
+        video: '/images/aman.mp4'
       }
     },
     {
@@ -40,7 +43,8 @@ export const PRODUCTS_DATA: ProductListSchema = {
         tag: 'VS Code Extension',
         desc: '昼食・夕食の時間帯に指定された駅近の飲食店を紹介するVS Code拡張。',
         github: 'https://github.com/naruhiyo/appetizer',
-        image: '/images/appetizer.gif'
+        image: '/images/appetizer.gif',
+        video: '/images/appetizer.mp4'
       }
     },
     {
@@ -50,7 +54,8 @@ export const PRODUCTS_DATA: ProductListSchema = {
         tag: 'Network Tool',
         desc: '接続しているネットワークに異常がないかを診断するアプリ。',
         github: 'https://github.com/naruhiyo/net_doctor',
-        image: '/images/net-doctor.gif'
+        image: '/images/net-doctor.gif',
+        video: '/images/net-doctor.mp4'
       }
     },
     {
@@ -60,7 +65,8 @@ export const PRODUCTS_DATA: ProductListSchema = {
         tag: 'Web Service',
         desc: '自身の生活に起きた出来事を記録しタイムラインとして閲覧できるWebサービス。',
         github: 'https://github.com/naruhiyo/life-timeline',
-        image: '/images/life-timeline.gif'
+        image: '/images/life-timeline.gif',
+        video: '/images/life-timeline.mp4'
       }
     }
   ]

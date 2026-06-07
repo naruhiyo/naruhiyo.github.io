@@ -1,0 +1,5 @@
+pnpm-lock.yaml
+build
+node_modules
+docs
+.github/copilot-instructions.md

@@ -6,6 +6,9 @@ import tslint from 'typescript-eslint';
 
 export default [
   {
+    ignores: ['build/', 'node_modules/', 'pnpm-lock.yaml']
+  },
+  {
     files: ['**/*.{mjs,ts,tsx}'],
     languageOptions: {
       globals: {

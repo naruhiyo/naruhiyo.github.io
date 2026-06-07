@@ -9,9 +9,7 @@ export const COLLABORATORS_DATA: CollaboratorListSchema = {
         image: 'images/narugit.png',
         bio: 'グルメエンジニア',
         link: {
-          github: 'https://github.com/narugit',
-          portfolio: 'https://narugit.github.io/',
-          atcoder: 'https://atcoder.jp/users/narucode'
+          portfolio: 'https://narugit.github.io/'
         }
       }
     },
@@ -21,9 +19,7 @@ export const COLLABORATORS_DATA: CollaboratorListSchema = {
         image: 'images/aecomet.png',
         bio: 'ひよこエンジニア',
         link: {
-          github: 'https://github.com/aecomet',
-          portfolio: 'https://aecomet.github.io',
-          atcoder: 'https://atcoder.jp/users/ae_aecomet'
+          portfolio: 'https://aecomet.github.io'
         }
       }
     }
