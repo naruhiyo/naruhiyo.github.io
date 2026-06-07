@@ -1,2 +1,3 @@
-allowBuilds:
-  lefthook: true
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - lefthook
