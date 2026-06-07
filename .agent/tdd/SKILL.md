@@ -272,4 +272,4 @@ refactor(component): extract nav items to config
    ```
 
 5. **この SKILL.md 自身も更新内容を反映する**
-   （`.opencode/skills/tdd/SKILL.md` に配置。プロジェクトと一緒にコミットされる）
+   （`.agent/tdd/SKILL.md` に配置。プロジェクトと一緒にコミットされる）
