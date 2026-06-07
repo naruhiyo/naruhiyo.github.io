@@ -64,7 +64,8 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+video {
   display: block;
   max-width: 100%;
 }
@@ -540,6 +541,11 @@ img {
 .product-row:hover .product-arrow {
   transform: translateX(4px);
   opacity: 1;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
 }
 
 .product-row:hover .product-img {

@@ -12,10 +12,16 @@ export const Product = memo((props: ProductSchema) => {
         <span className="product-tag">{product.tag}</span>
       </div>
       <p className="product-desc">{product.desc}</p>
-      {product.image && (
+      {product.video ? (
         <div className="product-img-wrap">
-          <img src={product.image} alt={product.name} className="product-img" />
+          <video src={product.video} poster={product.image} className="product-img" autoPlay muted loop playsInline />
         </div>
+      ) : (
+        product.image && (
+          <div className="product-img-wrap">
+            <img src={product.image} alt={product.name} className="product-img" />
+          </div>
+        )
       )}
       <span className="product-arrow" aria-hidden="true">
         →

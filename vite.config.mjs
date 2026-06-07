@@ -38,6 +38,11 @@ export default () => {
     build: {
       rollupOptions: {
         output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/react-dom')) return 'vendor-react-dom';
+            if (id.includes('node_modules/react-router')) return 'vendor-router';
+            if (id.includes('node_modules/react')) return 'vendor-react';
+          },
           chunkFileNames: 'vendor.[hash].js',
           entryFileNames: '[name].[hash].js',
           assetFileNames: '[name].[hash][extname]'

@@ -4,9 +4,7 @@ export type CollaboratorSchema = {
     image: string;
     bio: string;
     link: {
-      github: string;
       portfolio: string;
-      atcoder: string;
     };
   };
 };

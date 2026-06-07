@@ -15,12 +15,6 @@ export const Collaborator = memo((props: CollaboratorSchema) => {
         <a className="link-pill" href={collaborator.link.portfolio} target="_blank" rel="noreferrer">
           Portfolio
         </a>
-        <a className="link-pill" href={collaborator.link.atcoder} target="_blank" rel="noreferrer">
-          AtCoder
-        </a>
-        <a className="link-pill" href={collaborator.link.github} target="_blank" rel="noreferrer">
-          Github
-        </a>
       </div>
     </article>
   );
