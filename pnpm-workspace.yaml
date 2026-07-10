@@ -1,3 +1,5 @@
 allowBuilds:
   '@parcel/watcher': true
   lefthook: true
+minimumReleaseAgeExclude:
+  - prettier@3.9.5
