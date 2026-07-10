@@ -5,7 +5,7 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     commit-message:
       prefix: 'chore: npm'
     open-pull-requests-limit: 5
@@ -16,7 +16,7 @@ updates:
     assignees:
       - aecomet
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     commit-message:
       prefix: 'chore: actions'
     open-pull-requests-limit: 5
