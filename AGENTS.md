@@ -35,6 +35,7 @@
 ```sh
 pnpm dev           # Start dev server
 pnpm build         # Build to build/
+pnpm test          # Run Vitest
 pnpm lint          # Run ESLint
 pnpm format:check  # Check formatting
 pnpm format        # Auto-format

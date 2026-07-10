@@ -37,6 +37,13 @@ pnpm run dev
 # => Local:   http://localhost:8888/
 ```
 
+## Test
+
+```sh
+pnpm test
+# Vitest: 5 pages, 3 components, 16 tests
+```
+
 ## Build
 
 ```sh
