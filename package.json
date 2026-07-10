@@ -27,18 +27,18 @@
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.2",
-    "eslint": "^10.5.0",
+    "@vitejs/plugin-react": "^6.0.3",
+    "eslint": "^10.6.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^17.7.0",
-    "lefthook": "^2.1.9",
-    "prettier": "^3.8.4",
+    "lefthook": "^2.1.10",
+    "prettier": "^3.9.4",
     "sass": "^1.101.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.62.0",
-    "vite": "^8.0.16",
+    "typescript-eslint": "^8.63.0",
+    "vite": "^8.1.4",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-html": "^3.2.2"
@@ -46,6 +46,6 @@
   "dependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-router-dom": "^7.17.0"
+    "react-router-dom": "^7.18.1"
   }
 }
