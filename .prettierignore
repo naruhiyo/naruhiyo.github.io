@@ -3,3 +3,7 @@ build
 node_modules
 docs
 .github/copilot-instructions.md
+opencode.json
+.oxlintrc.json
+test-results
+playwright-report
