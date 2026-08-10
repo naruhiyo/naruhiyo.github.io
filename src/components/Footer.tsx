@@ -1,13 +1,11 @@
-import { FooterSchema } from '@src/types/Footer';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
-  const footer: FooterSchema = {
-    copyright: '© narugit and aecomet — NaruHiyo'
-  };
+  const { t } = useTranslation();
 
   return (
     <footer className="site-footer">
-      <p className="contact-footer">{footer.copyright}</p>
+      <p className="contact-footer">{t('footer.copyright')}</p>
     </footer>
   );
 };

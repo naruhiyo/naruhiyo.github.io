@@ -1,7 +1,7 @@
 import Footer from '@src/components/Footer';
 import Header from '@src/components/Header';
 import { lazy, Suspense, useEffect } from 'react';
-import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 const Top = lazy(() => import('@src/pages/Top').then((m) => ({ default: m.Top })));
 const CollaboratorsPage = lazy(() =>
@@ -10,6 +10,7 @@ const CollaboratorsPage = lazy(() =>
 const ProductsPage = lazy(() => import('@src/pages/Products').then((m) => ({ default: m.ProductsPage })));
 const ActivityPage = lazy(() => import('@src/pages/Activities').then((m) => ({ default: m.ActivityPage })));
 const ContactPage = lazy(() => import('@src/pages/ContactPage').then((m) => ({ default: m.ContactPage })));
+const NotFoundPage = lazy(() => import('@src/pages/NotFound').then((m) => ({ default: m.NotFound })));
 
 const ROUTE_ORDER = ['/', '/collaborators', '/products', '/activities', '/contact'];
 
@@ -65,7 +66,7 @@ function App() {
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/activities" element={<ActivityPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
         </div>

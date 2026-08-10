@@ -1,22 +1,21 @@
-import { HeaderSchema } from '@src/types/Header';
+import { changeLocale } from '@src/i18n';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink, useLocation } from 'react-router-dom';
 
+const NAVIGATION = [
+  { key: 'home', path: '/', end: true },
+  { key: 'members', path: '/collaborators' },
+  { key: 'products', path: '/products' },
+  { key: 'activities', path: '/activities' },
+  { key: 'contact', path: '/contact' }
+];
+
 const Header = () => {
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState<boolean>(location.pathname !== '/');
   const pathnameRef = useRef(location.pathname);
-
-  const header: HeaderSchema = {
-    shortTitle: 'NH',
-    navigation: [
-      { label: 'Home', path: '/', end: true },
-      { label: 'Members', path: '/collaborators' },
-      { label: 'Products', path: '/products' },
-      { label: 'Activities', path: '/activities' },
-      { label: 'Contact', path: '/contact' }
-    ]
-  };
 
   useEffect(() => {
     pathnameRef.current = location.pathname;
@@ -40,23 +39,36 @@ const Header = () => {
     };
   }, []);
 
+  const toggleLocale = () => {
+    changeLocale(i18n.language === 'en' ? 'ja' : 'en');
+  };
+
   return (
     <header className={`site-nav${isScrolled ? ' scrolled' : ''}`}>
       <NavLink className="nav-logo" to="/" end>
-        <img src="/images/brand-logo.png" alt={header.shortTitle} className="nav-logo-img" />
+        <img src="/images/brand-logo.png" alt="NaruHiyo" className="nav-logo-img" />
       </NavLink>
 
-      <nav aria-label="primary navigation">
-        <ul className="nav-links">
-          {header.navigation.map((item) => (
-            <li key={item.path}>
-              <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to={item.path} end={item.end}>
-                {item.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="nav-area">
+        <nav aria-label={t('header.navAriaLabel')}>
+          <ul className="nav-links">
+            {NAVIGATION.map((item) => (
+              <li key={item.path}>
+                <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to={item.path} end={item.end}>
+                  {t(`header.${item.key}`)}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <button type="button" className="lang-toggle" onClick={toggleLocale} aria-label={t('header.langToggle')}>
+          <span className={i18n.language === 'ja' ? 'active' : ''}>JA</span>
+          <span aria-hidden="true" className="lang-divider">
+            /
+          </span>
+          <span className={i18n.language === 'en' ? 'active' : ''}>EN</span>
+        </button>
+      </div>
     </header>
   );
 };

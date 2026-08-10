@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export const Top = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="page page-home">
       <section className="hero">
@@ -8,14 +11,14 @@ export const Top = () => {
         <div className="hero-ring"></div>
         <div className="hero-ring"></div>
 
-        <p className="hero-eyebrow">Gourmet × Technology × Business</p>
+        <p className="hero-eyebrow">{t('top.eyebrow')}</p>
         <h1 className="hero-title">
           Naru<em>Hiyo</em>
         </h1>
-        <p className="hero-subtitle">美食とビジネスの交差点で、新たな価値を創造する</p>
+        <p className="hero-subtitle">{t('top.subtitle')}</p>
         <div className="hero-cta">
           <Link className="btn-outline" to="/collaborators">
-            Explore
+            {t('top.explore')}
           </Link>
         </div>
       </section>

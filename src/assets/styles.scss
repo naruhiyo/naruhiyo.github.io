@@ -169,6 +169,40 @@ video {
   color: var(--gold);
 }
 
+.nav-area {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--cream-dim);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.lang-toggle .lang-divider {
+  color: var(--gold-dim);
+  font-size: 0.6rem;
+}
+
+.lang-toggle span.active {
+  color: var(--gold);
+}
+
+.lang-toggle:hover {
+  color: var(--gold-light);
+}
+
 .page {
   position: relative;
 }
@@ -765,6 +799,21 @@ video {
   text-align: center;
 }
 
+.page-notfound {
+  display: flex;
+  min-height: calc(100vh - var(--nav-height));
+  align-items: center;
+  justify-content: center;
+}
+
+.notfound-message {
+  margin: 0 0 48px;
+  color: var(--cream-dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  line-height: 2;
+}
+
 @media (max-width: 768px) {
   :root {
     --nav-height: 78px;
@@ -775,6 +824,10 @@ video {
   }
 
   .nav-links {
+    gap: 20px;
+  }
+
+  .nav-area {
     gap: 20px;
   }
 

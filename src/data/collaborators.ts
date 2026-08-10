@@ -1,13 +1,13 @@
 import { CollaboratorListSchema } from '@src/types/Collaborator';
 
 export const COLLABORATORS_DATA: CollaboratorListSchema = {
-  head: 'Collaborators',
+  head: 'collaborators.head',
   items: [
     {
       collaborator: {
         name: '@narugit',
         image: 'images/narugit.png',
-        bio: 'グルメエンジニア',
+        bio: 'collaborators.items.narugit.bio',
         link: {
           portfolio: 'https://narugit.github.io/'
         }
@@ -17,7 +17,7 @@ export const COLLABORATORS_DATA: CollaboratorListSchema = {
       collaborator: {
         name: '@aecomet',
         image: 'images/aecomet.png',
-        bio: 'ひよこエンジニア',
+        bio: 'collaborators.items.aecomet.bio',
         link: {
           portfolio: 'https://aecomet.github.io'
         }

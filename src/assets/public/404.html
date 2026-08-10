@@ -187,8 +187,28 @@
       <p class="eyebrow">NaruHiyo — Gourmet × Business</p>
       <p class="code">404</p>
       <div class="rule"></div>
-      <p class="message">お探しのページは見つかりませんでした。</p>
-      <a class="back-link" href="/">Return Home</a>
+      <p class="message" data-lang="ja">お探しのページは見つかりませんでした。</p>
+      <p class="message" data-lang="en" hidden>The page you are looking for does not exist.</p>
+      <a class="back-link" href="/" data-lang="ja">ホームへ戻る</a>
+      <a class="back-link" href="/" data-lang="en" hidden>Return Home</a>
     </div>
+    <script>
+      (function () {
+        var locale = 'ja';
+        try {
+          var stored = localStorage.getItem('locale');
+          if (stored === 'en') {
+            locale = 'en';
+          }
+        } catch (e) {
+          // localStorage unavailable: fall back to Japanese
+        }
+
+        document.documentElement.lang = locale;
+        document.querySelectorAll('[data-lang]').forEach(function (el) {
+          el.hidden = el.getAttribute('data-lang') !== locale;
+        });
+      })();
+    </script>
   </body>
 </html>

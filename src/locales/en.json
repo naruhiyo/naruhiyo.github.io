@@ -1,0 +1,107 @@
+{
+  "header": {
+    "navAriaLabel": "Primary navigation",
+    "home": "Home",
+    "members": "Members",
+    "products": "Products",
+    "activities": "Activities",
+    "contact": "Contact",
+    "langToggle": "Switch language"
+  },
+  "footer": {
+    "copyright": "© narugit and aecomet — NaruHiyo"
+  },
+  "meta": {
+    "title": "NaruHiyo — Gourmet × Business",
+    "description": "NaruHiyo's portfolio site — creating new value at the crossroads of gastronomy and business.",
+    "ogDescription": "Blending gastronomy with technology to unlock new business possibilities — the NaruHiyo portfolio."
+  },
+  "top": {
+    "eyebrow": "Gourmet × Technology × Business",
+    "subtitle": "Creating new value at the crossroads of gastronomy and business.",
+    "explore": "Explore"
+  },
+  "pages": {
+    "collaborators": {
+      "label": "The Duo"
+    },
+    "products": {
+      "label": "Our Works"
+    },
+    "activities": {
+      "label": "What We Do"
+    }
+  },
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Contact",
+    "email": "naruhiyo.apps@***",
+    "note": "Replace *** with gmail.com",
+    "bgText": "Contact"
+  },
+  "products": {
+    "head": "Products",
+    "tags": {
+      "desktopApp": "Desktop App",
+      "iosApp": "iOS App",
+      "cliTool": "CLI Tool",
+      "vscodeExtension": "VS Code Extension",
+      "networkTool": "Network Tool",
+      "webService": "Web Service"
+    },
+    "items": {
+      "memoma": {
+        "desc": "A cross-platform three-column note app built with Electron, with Markdown support."
+      },
+      "partytion": {
+        "desc": "An iPhone app of mini-games to liven up your drinking party."
+      },
+      "aman": {
+        "desc": "A CLI tool that searches command options from the man command and prints them for you."
+      },
+      "appetizer": {
+        "desc": "A VS Code extension that suggests restaurants near the station around lunch and dinner time."
+      },
+      "netDoctor": {
+        "desc": "An app that diagnoses the health of the network you are connected to."
+      },
+      "lifeTimeline": {
+        "desc": "A web service that records the events of your daily life and lets you browse them as a timeline."
+      }
+    }
+  },
+  "activities": {
+    "head": "Activities",
+    "githubLabel": "GitHub Repository",
+    "items": {
+      "club": {
+        "name": "NaruHiyo\nCompetitive Programming Club",
+        "body": "Studying algorithms on AtCoder to level up our programming skills!",
+        "stats": {
+          "members": "Active Members",
+          "shipped": "Products Shipped",
+          "curiosity": "Curiosity"
+        }
+      }
+    }
+  },
+  "collaborators": {
+    "head": "Collaborators",
+    "portfolio": "Portfolio",
+    "items": {
+      "narugit": {
+        "bio": "Gourmet Engineer"
+      },
+      "aecomet": {
+        "bio": "Junior Engineer"
+      }
+    }
+  },
+  "notfound": {
+    "label": "Page Not Found",
+    "title": "Not",
+    "emphasis": "Found",
+    "message": "The page you are looking for does not exist.",
+    "back": "Return Home"
+  }
+}
