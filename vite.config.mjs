@@ -2,7 +2,6 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 import viteCompression from 'vite-plugin-compression';
-import eslintPlugin from 'vite-plugin-eslint';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
 // https://vitejs.dev/config/
@@ -26,10 +25,6 @@ export default () => {
       react(),
       // generate html
       createHtmlPlugin(),
-      // lint
-      eslintPlugin({
-        fix: true
-      }),
       // compress
       viteCompression()
     ],
