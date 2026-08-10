@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "preview": "vite preview --port 4173 --strictPort",
+    "lint": "oxlint",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run"
@@ -25,32 +27,27 @@
   },
   "homepage": "https://github.com/naruhiyo/naruhiyo.github.io.git#readme",
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@testing-library/jest-dom": "^6.9.1",
+    "@playwright/test": "^1.62.1",
+    "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.2",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.3",
-    "eslint": "^10.6.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.6",
-    "eslint-plugin-react": "^7.37.5",
-    "globals": "^17.7.0",
-    "jsdom": "^29.1.1",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "jsdom": "^30.0.1",
     "lefthook": "^2.1.10",
-    "prettier": "^3.9.5",
-    "sass": "^1.101.0",
-    "typescript": "^6.0.3",
-    "typescript-eslint": "^8.63.0",
-    "vite": "^8.1.4",
+    "oxlint": "^1.77.0",
+    "prettier": "^3.9.6",
+    "sass": "^1.102.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1",
     "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-html": "^3.2.2",
     "vitest": "^4.1.10"
   },
   "dependencies": {
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "react-router-dom": "^7.18.1"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.2"
   }
 }

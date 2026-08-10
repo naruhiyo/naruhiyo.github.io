@@ -1,4 +1,4 @@
-FROM node:26.3.0-slim AS builder
+FROM node:26.7.0-slim AS builder
 
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
@@ -10,7 +10,7 @@ COPY . .
 RUN pnpm run build && \
   rm -rf /root/.npm /root/.cache /tmp/*
 
-FROM httpd:2.4.67-alpine3.23
+FROM httpd:2.4.68-alpine3.24
 WORKDIR /usr/local/apache2/htdocs
 EXPOSE 8888
 COPY --chown=www-data:www-data --from=builder /app/build /usr/local/apache2/htdocs
