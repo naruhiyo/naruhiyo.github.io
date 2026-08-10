@@ -4,7 +4,7 @@
     "target": "ES2023",
     "module": "ESNext",
     "lib": ["DOM", "ESNext"],
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "removeComments": true,
 
     /* Generates corresponding '.map' file. */
@@ -27,9 +27,8 @@
     "noEmitOnError": true,
 
     /* resolve options */
-    "baseUrl": "./",
     "paths": {
-      "@src/*": ["src/*"]
+      "@src/*": ["./src/*"]
     },
     "resolveJsonModule": true,
 

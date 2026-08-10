@@ -3,3 +3,4 @@ allowBuilds:
   lefthook: true
 minimumReleaseAgeExclude:
   - prettier@3.9.5
+  - '@testing-library/jest-dom@7.0.1'

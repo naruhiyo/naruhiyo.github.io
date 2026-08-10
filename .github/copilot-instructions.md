@@ -62,9 +62,9 @@ Always follow this order — never skip a step:
 ### Lint/Format Verification
 
 Run before every commit:
-- Format check: `pnpm format:check` (Prettier with EditorConfig rules)
+- Format check: `pnpm format:check` (oxfmt with EditorConfig rules)
 - Lint: `pnpm lint` (if available for this project)
-- Auto-fix: `pnpm format` (applies Prettier fixes)
+- Auto-fix: `pnpm format` (applies oxfmt fixes)
 
 ### Route Verification
 

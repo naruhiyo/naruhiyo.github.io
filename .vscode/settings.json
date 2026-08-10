@@ -1,10 +1,8 @@
 {
-  "eslint.enable": true,
-  "eslint.useFlatConfig": true,
-  "prettier.configPath": "prettier.config.js",
+  "oxc.fmt.configPath": ".oxfmtrc.json",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.codeActionsOnSave": ["source.addMissingImports", "source.organizeImports"],
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
