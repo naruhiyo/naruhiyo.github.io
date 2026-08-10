@@ -8,8 +8,8 @@
     "preview": "vite preview --port 4173 --strictPort",
     "lint": "oxlint",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
     "test": "vitest run"
   },
   "repository": {
@@ -36,8 +36,8 @@
     "@vitejs/plugin-react": "^6.0.5",
     "jsdom": "^30.0.1",
     "lefthook": "^2.1.10",
+    "oxfmt": "^0.62.0",
     "oxlint": "^1.77.0",
-    "prettier": "^3.9.6",
     "sass": "^1.102.0",
     "typescript": "^7.0.2",
     "vite": "^8.2.1",
