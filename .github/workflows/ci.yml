@@ -29,6 +29,8 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm build
+      - name: Build Docker image
+        run: docker build -t app:ci .
 
   e2e:
     runs-on: ubuntu-latest
