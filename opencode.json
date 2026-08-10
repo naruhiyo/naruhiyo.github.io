@@ -1,10 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "extends": ["/Users/tatsuya/.config/opencode/opencode.jsonc"],
   "permission": {
-    "edit": {
-      "/Users/tatsuya/Public/code/frontend/naruhiyo.github.io/**": "allow"
-    },
     "bash": {
       "pnpm *": "allow",
       "git *": "allow",
