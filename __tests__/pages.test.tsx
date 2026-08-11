@@ -72,7 +72,7 @@ describe('Top', () => {
       </MemoryRouter>
     );
 
-    const link = screen.getByText('Explore');
+    const link = screen.getByText('見てみる');
     expect(link).toBeInTheDocument();
     expect(link.getAttribute('href')).toBe('/collaborators');
   });
@@ -99,7 +99,7 @@ describe('ActivityPage', () => {
 
     const header = screen.getByTestId('page-header');
     expect(header).toBeInTheDocument();
-    expect(header).toHaveTextContent(/What We Do/);
+    expect(header).toHaveTextContent(/アクティビティ/);
     expect(header).toHaveTextContent(/Acti/);
     expect(header).toHaveTextContent(/vities/);
   });
@@ -136,7 +136,7 @@ describe('CollaboratorsPage', () => {
 
     const header = screen.getByTestId('page-header');
     expect(header).toBeInTheDocument();
-    expect(header).toHaveTextContent(/The Duo/);
+    expect(header).toHaveTextContent(/メンバー/);
     expect(header).toHaveTextContent(/Collabo/);
     expect(header).toHaveTextContent(/rators/);
   });
@@ -196,7 +196,7 @@ describe('ProductsPage', () => {
 
     const header = screen.getByTestId('page-header');
     expect(header).toBeInTheDocument();
-    expect(header).toHaveTextContent(/Our Works/);
+    expect(header).toHaveTextContent(/プロダクト/);
     expect(header).toHaveTextContent(/Pro/);
     expect(header).toHaveTextContent(/ducts/);
   });

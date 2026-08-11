@@ -169,6 +169,104 @@ video {
   color: var(--gold);
 }
 
+.nav-area {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.lang-select {
+  position: relative;
+}
+
+.lang-trigger {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  padding: 4px 30px 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  background-color: rgba(201, 168, 76, 0.04);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237a6530' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 10px 6px;
+  color: var(--cream-dim);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.lang-trigger:hover,
+.lang-select.open .lang-trigger {
+  border-color: var(--border-bright);
+  background-color: rgba(201, 168, 76, 0.08);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23e8d08a' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  color: var(--gold-light);
+}
+
+.lang-trigger:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.16);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 700;
+  min-width: 100%;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  background: var(--bg2);
+  border: 1px solid var(--border-bright);
+  border-radius: 0;
+  animation: lang-fade 0.18s ease-out;
+}
+
+.lang-menu li {
+  padding: 8px 14px;
+  color: var(--cream-dim);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.lang-menu li:hover,
+.lang-menu li.highlight {
+  background-color: rgba(201, 168, 76, 0.08);
+  color: var(--gold-light);
+}
+
+.lang-menu li.active {
+  color: var(--gold);
+}
+
+@keyframes lang-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .page {
   position: relative;
 }
@@ -621,6 +719,10 @@ video {
   pointer-events: none;
 }
 
+html[lang='en'] .activity-main::after {
+  content: 'RACE';
+}
+
 .activity-title {
   margin: 0 0 20px;
   color: var(--white);
@@ -765,6 +867,21 @@ video {
   text-align: center;
 }
 
+.page-notfound {
+  display: flex;
+  min-height: calc(100vh - var(--nav-height));
+  align-items: center;
+  justify-content: center;
+}
+
+.notfound-message {
+  margin: 0 0 48px;
+  color: var(--cream-dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  line-height: 2;
+}
+
 @media (max-width: 768px) {
   :root {
     --nav-height: 78px;
@@ -775,6 +892,10 @@ video {
   }
 
   .nav-links {
+    gap: 20px;
+  }
+
+  .nav-area {
     gap: 20px;
   }
 
@@ -810,5 +931,53 @@ video {
 
   .site-footer {
     padding: 0 var(--space-sm) 28px;
+  }
+}
+
+/* スマートフォン幅（600px 以下）: ロゴ＋言語トグル / ナビ の2段組みにしてはみ出しを解消 */
+@media (max-width: 600px) {
+  :root {
+    --nav-height: 100px;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 12px 0;
+    padding: 16px var(--space-sm);
+  }
+
+  .nav-area {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+  }
+
+  .lang-select {
+    position: absolute;
+    top: 16px;
+    right: var(--space-sm);
+  }
+
+  .lang-trigger {
+    height: 32px; /* ロゴ（32px）と縦位置を揃える */
+    padding: 4px 28px 4px 12px;
+    font-size: 0.65rem;
+  }
+
+  .lang-menu li {
+    padding: 7px 12px;
+    font-size: 0.65rem;
   }
 }

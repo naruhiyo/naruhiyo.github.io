@@ -1,7 +1,9 @@
 import { ProductSchema } from '@src/types/Product';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const Product = memo((props: ProductSchema) => {
+  const { t } = useTranslation();
   const product = props.product;
 
   return (
@@ -9,9 +11,9 @@ export const Product = memo((props: ProductSchema) => {
       <span className="product-num">{product.order}</span>
       <div className="product-name-wrap">
         <p className="product-name">{product.name}</p>
-        <span className="product-tag">{product.tag}</span>
+        <span className="product-tag">{t(product.tag)}</span>
       </div>
-      <p className="product-desc">{product.desc}</p>
+      <p className="product-desc">{t(product.desc)}</p>
       {product.video ? (
         <div className="product-img-wrap">
           <video src={product.video} poster={product.image} className="product-img" autoPlay muted loop playsInline />

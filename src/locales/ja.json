@@ -1,0 +1,107 @@
+{
+  "header": {
+    "navAriaLabel": "メインナビゲーション",
+    "home": "ホーム",
+    "members": "メンバー",
+    "products": "プロダクト",
+    "activities": "アクティビティ",
+    "contact": "コンタクト",
+    "langToggle": "言語を切り替える"
+  },
+  "footer": {
+    "copyright": "© narugit and aecomet — NaruHiyo"
+  },
+  "meta": {
+    "title": "NaruHiyo — Gourmet × Business",
+    "description": "美食とビジネスの交差点で、新たな価値を創造する NaruHiyo のポートフォリオサイト",
+    "ogDescription": "美食とテクノロジーを融合し、ビジネスの可能性を拓く NaruHiyo のポートフォリオサイト。"
+  },
+  "top": {
+    "eyebrow": "Gourmet × Technology × Business",
+    "subtitle": "美食とビジネスの交差点で、新たな価値を創造する",
+    "explore": "見てみる"
+  },
+  "pages": {
+    "collaborators": {
+      "label": "メンバー"
+    },
+    "products": {
+      "label": "プロダクト"
+    },
+    "activities": {
+      "label": "アクティビティ"
+    }
+  },
+  "contact": {
+    "eyebrow": "お問い合わせ",
+    "title": "コンタクト",
+    "email": "naruhiyo.apps@***",
+    "note": "*** には gmail.com を入れてください",
+    "bgText": "コンタクト"
+  },
+  "products": {
+    "head": "プロダクト",
+    "tags": {
+      "desktopApp": "デスクトップアプリ",
+      "iosApp": "iOS アプリ",
+      "cliTool": "CLI ツール",
+      "vscodeExtension": "VS Code 拡張",
+      "networkTool": "ネットワークツール",
+      "webService": "Web サービス"
+    },
+    "items": {
+      "memoma": {
+        "desc": "Electronを利用したクロスプラットフォーム対応の3カラム型メモアプリ。Markdown記法に対応。"
+      },
+      "partytion": {
+        "desc": "飲み会でのミニゲームとして使えるiPhoneアプリ。宴の場に彩りを。"
+      },
+      "aman": {
+        "desc": "manコマンドからコマンドのオプションを検索して出力してくれるCLIツール。"
+      },
+      "appetizer": {
+        "desc": "昼食・夕食の時間帯に指定された駅近の飲食店を紹介するVS Code拡張。"
+      },
+      "netDoctor": {
+        "desc": "接続しているネットワークに異常がないかを診断するアプリ。"
+      },
+      "lifeTimeline": {
+        "desc": "自身の生活に起きた出来事を記録しタイムラインとして閲覧できるWebサービス。"
+      }
+    }
+  },
+  "activities": {
+    "head": "アクティビティ",
+    "githubLabel": "GitHub リポジトリ",
+    "items": {
+      "club": {
+        "name": "NaruHiyo\n競プロ部",
+        "body": "プログラミング能力を向上させるために AtCoder を利用してアルゴリズムを勉強中！",
+        "stats": {
+          "members": "アクティブメンバー",
+          "shipped": "リリースプロダクト",
+          "curiosity": "好奇心"
+        }
+      }
+    }
+  },
+  "collaborators": {
+    "head": "コラボレーター",
+    "portfolio": "ポートフォリオ",
+    "items": {
+      "narugit": {
+        "bio": "グルメエンジニア"
+      },
+      "aecomet": {
+        "bio": "ひよこエンジニア"
+      }
+    }
+  },
+  "notfound": {
+    "label": "ページが見つかりません",
+    "title": "Not",
+    "emphasis": "Found",
+    "message": "お探しのページは見つかりませんでした。",
+    "back": "ホームへ戻る"
+  }
+}

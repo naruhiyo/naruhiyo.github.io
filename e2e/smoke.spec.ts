@@ -14,6 +14,9 @@ for (const { path, selector } of [
 }
 
 test('navigates via header links', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.localStorage.setItem('locale', 'en');
+  });
   await page.goto('/#/');
   const nav = page.getByRole('navigation', { name: 'primary navigation' });
   for (const [label, path] of [
