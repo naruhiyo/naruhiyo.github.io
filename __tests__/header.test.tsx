@@ -30,6 +30,7 @@ describe('Header', () => {
     );
 
     fireEvent.click(screen.getByRole('button', { name: '言語を切り替える' }));
+    fireEvent.click(screen.getByRole('option', { name: 'English' }));
 
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Products')).toBeInTheDocument();
