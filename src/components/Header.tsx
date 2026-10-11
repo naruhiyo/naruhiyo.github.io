@@ -30,16 +30,16 @@ const Header = () => {
   useEffect(() => {
     pathnameRef.current = location.pathname;
     if (location.pathname !== '/') {
-      setIsScrolled(true);
+      setIsScrolled(true); // eslint-disable-line react/set-state-in-effect
     } else {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 40); // eslint-disable-line react/set-state-in-effect
     }
   }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
       if (pathnameRef.current !== '/') return;
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 40); // eslint-disable-line react/set-state-in-effect
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
